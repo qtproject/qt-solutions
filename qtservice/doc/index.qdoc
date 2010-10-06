@@ -1,0 +1,46 @@
+/*!
+	\page index.html
+	\title Service
+
+    	\section1 Description
+	
+		    	The QtService component is useful for developing Windows
+    	    	    	services and Unix daemons.
+		
+
+	
+			The project provides a QtService template class that can be used to
+			implement service applications, and a QtServiceController class
+                        to control a service.
+
+			On Windows systems the implementation uses the Service Control
+			Manager.
+
+			On Unix systems services are implemented as daemons.
+		
+
+    	
+		\section1 Classes
+	    \list
+	 \i  QtServiceController \i  QtServiceBase \i  QtService\endlist
+	
+		\section1 Examples
+	    \list
+	 \i  \link qtservice-example-interactive.html An Interactive Service \endlink  \i  \link qtservice-example-server.html A simple HTTP Server \endlink  \i  \link qtservice-example-controller.html A simple Service Controller \endlink \endlist
+	
+	
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+	*/

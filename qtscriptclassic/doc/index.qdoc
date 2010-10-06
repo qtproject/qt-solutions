@@ -1,0 +1,69 @@
+/*!
+	\page index.html
+	\title QtScript Classic
+
+    	\section1 Description
+	
+	            This component provides the original (pre-Qt 4.6)
+	            implementation of the QtScript module.
+		
+
+	
+	            Starting with version 4.6, the implementation
+	            of the QtScript module in Qt is based on
+	            JavaScriptCore, i.e. the JavaScript runtime in
+	            WebKit. As an alternative replacement,
+	            QtScriptClassic provides the original QtScript
+	            implementation, which does not use
+	            JavaScriptCore.
+
+                    This component is intended as a
+                    migration/mitigation solution for those pre-4.6
+                    QtScript users for whom certain issues (mentioned
+                    below) restrict their option to employ the new
+                    QtScript module. Hence, the maintenance and
+                    available support for this component will be on
+                    the level of security and build fixes. This
+                    component is not recommended for new software
+                    projects.
+
+	            The rationale for this component is twofold:
+
+	            Firstly, JavaScriptCore may not compile on all
+	            platforms that the original QtScript
+	            implementation does. QtScriptClassic is provided
+	            so that users affected by such build issues can
+	            continue to use QtScript with Qt versions 4.6 and
+	            later.
+
+	            Secondly, JavaScriptCore is only available
+	            under the LGPL license. QtScriptClassic is
+	            provided also under the the commercial Qt
+	            license.
+		
+
+    	
+		\section1 Classes
+	    \list
+	 \i  QScriptClass \i  QScriptClassPropertyIterator \i  QScriptContext \i  QScriptContextInfo \i  QScriptEngine \i  QScriptEngineAgent \i  QScriptExtensionPlugin \i  QScriptString \i  QScriptSyntaxCheckResult \i  QScriptValue \i  QScriptValueIterator \i  QScriptable\endlist
+	
+		\section1 Examples
+	    \list
+	 \i  \link qtscriptclassic-example-helloscript.html Hello, World! Example \endlink \endlist
+	
+	
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.6 / Windows XP / MSVC.NET 2008
+		    \i Qt 4.6 / Linux / gcc
+		    \i Qt 4.6 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+	*/

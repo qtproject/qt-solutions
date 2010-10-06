@@ -1,0 +1,49 @@
+/*!
+	\page index.html
+	\title JPEG 2000 Image Format
+
+    	\section1 Description
+	
+            The JPEG 2000 Image Format provides a QImageIOHandler plugin for
+            reading and writing JPEG 2000 files.
+        
+
+	
+		This QImageIOHandler plugin adds support for the JPEG 2000
+		image file format to Qt. Currently, it is only availabe as a dynamically loaded plugin.
+		We have plans to add support for statically linked plugins later.
+		JPEG 2000 is designed to produce better
+		compression and less quality loss than ordinary JPEG. QtJp2ImageHandler
+		uses the free, Open Source codec JasPer, which is an official
+		reference implementation of the JPEG 2000 Part-1 codec standard.
+        
+
+    	
+	\section1 Classes
+	    \list
+	 \i  QtJP2ImageHandler \i  QJPeg2Plugin\endlist
+	
+        \section1 Examples
+	    \list
+	 \i  \link qtjp2imageformat-example-simple.html Using the QPixmap API to load JPEG 2000 images \endlink \endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+    		\section1 Unsupported platforms
+		\list
+		\i Does not work with Jasper 1.900.0
+		    \endlist
+
+	
+	*/

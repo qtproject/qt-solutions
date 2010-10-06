@@ -1,0 +1,37 @@
+/*!
+	\page index.html
+	\title Locked File
+
+    	\section1 Description
+	The QtLockedFile class extends QFile with advisory locking functions.
+        
+
+	
+		This class extends the QFile class with inter-process
+		file locking capabilities. If an application requires that several
+		processes should access the same file, QtLockedFile can be used to
+		easily ensure that only one process at a time is writing to the file,
+		and that no process is writing to it while others are reading it.
+        
+
+    	
+	\section1 Classes
+	    \list
+	 \i  QtLockedFile\endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2005
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+	*/

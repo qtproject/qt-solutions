@@ -1,0 +1,57 @@
+/*!
+	\page index.html
+	\title Property Browser
+
+    	\section1 Description
+	
+            A property browser framework enabling the user to edit a
+            set of properties.
+	
+
+	
+            The framework provides a browser widget that displays the
+            given properties with labels and corresponding editing
+            widgets (e.g. line edits or comboboxes). The various types
+            of editing widgets are provided by the framework's editor
+            factories: For each property type, the framework provides
+            a property manager (e.g. QtIntPropertyManager and
+            QtStringPropertyManager) which can be associated with the
+            preferred editor factory (e.g. QtSpinBoxFactory and
+            QtLineEditFactory). The framework also provides a variant
+            based property type with corresponding variant manager and
+            factory. Finally, the framework provides three ready-made
+            implementations of the browser widget:
+            QtTreePropertyBrowser, QtButtonPropertyBrowser and QtGroupBoxPropertyBrowser.
+	
+
+    	
+        \section1 Classes
+	    \list
+	 \i  QtProperty \i  QtVariantProperty \i  QtAbstractPropertyManager \i  QtBoolPropertyManager \i  QtColorPropertyManager \i  QtCursorPropertyManager \i  QtDatePropertyManager \i  QtDateTimePropertyManager \i  QtDoublePropertyManager \i  QtEnumPropertyManager \i  QtFlagPropertyManager \i  QtFontPropertyManager \i  QtGroupPropertyManager \i  QtIntPropertyManager \i  QtKeySequencePropertyManager \i  QtCharPropertyManager \i  QtLocalePropertyManager \i  QtPointPropertyManager \i  QtPointFPropertyManager \i  QtRectPropertyManager \i  QtRectFPropertyManager \i  QtSizePropertyManager \i  QtSizeFPropertyManager \i  QtSizePolicyPropertyManager \i  QtStringPropertyManager \i  QtTimePropertyManager \i  QtVariantPropertyManager \i  QtAbstractEditorFactoryBase \i  QtAbstractEditorFactory \i  QtCheckBoxFactory \i  QtDateEditFactory \i  QtDateTimeEditFactory \i  QtDoubleSpinBoxFactory \i  QtEnumEditorFactory \i  QtLineEditFactory \i  QtScrollBarFactory \i  QtSliderFactory \i  QtSpinBoxFactory \i  QtTimeEditFactory \i  QtColorEditorFactory \i  QtFontEditorFactory \i  QtVariantEditorFactory \i  QtBrowserItem \i  QtAbstractPropertyBrowser \i  QtButtonPropertyBrowser \i  QtGroupBoxPropertyBrowser \i  QtTreePropertyBrowser\endlist
+	
+        \section1 Examples
+	    \list
+	 \i  \link qtpropertybrowser-example-simple.html Simple \endlink  \i  \link qtpropertybrowser-example-demo.html Demo \endlink  \i  \link qtpropertybrowser-example-canvas_typed.html Canvas Typed \endlink  \i  \link qtpropertybrowser-example-canvas_variant.html Canvas Variant \endlink  \i  \link qtpropertybrowser-example-extension.html Extension \endlink  \i  \link qtpropertybrowser-example-decoration.html Decoration \endlink  \i  \link qtpropertybrowser-example-object_controller.html Object Controller \endlink \endlist
+	
+    
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2008
+		    \i Qt 4.4, 4.5 / Linux / gcc
+		    \i Qt 4.4, 4.5 / MacOS X 10.5 / gcc
+		    \endlist
+
+    	
+
+	
+		\section1 Screenshots
+
+    		\img qttreepropertybrowser.png
+		    \img qtbuttonpropertybrowser.png
+		    \img qtgroupboxpropertybrowser.png
+		    
+	*/

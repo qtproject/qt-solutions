@@ -1,0 +1,47 @@
+/*!
+	\page index.html
+	\title Browser Plugin
+
+    	\section1 Description
+	
+		    	The QtBrowserPlugin solution is useful for implementing plugins for
+			web browser.
+		
+
+	
+			The project provides a framework that makes it simple to export
+			widgets and objects as plugins for web browsers supporting the Netscape
+			LiveConnect APIs.
+
+			Supported web browsers are Netscape, Mozilla FireFox and Opera.
+			Internet Explorer is supported when the plugin supports ActiveX via ActiveQt.
+		
+
+    	
+		\section1 Guidelines
+	    \list
+	 \i  \link developingplugins.html Developing Plugins \endlink \endlist
+	
+		\section1 Classes
+	    \list
+	 \i  QtNPBindable \i  QtNPFactory\endlist
+	
+		\section1 Examples
+	    \list
+	 \i  \link qtbrowserplugin-example-trivial.html A trivial "Hello, World" plugin. \endlink  \i  \link qtbrowserplugin-example-scripting.html A webpage that combines javascript and the trivial plugin. \endlink  \i  \link qtbrowserplugin-example-grapher.html A plugin widget displaying a data file as a graph. \endlink \endlist
+	
+	
+
+    	
+
+    	
+    		\section1 Tested platforms
+		\list
+		\i Qt 4.4, 4.5 / Windows XP / MSVC.NET 2008
+		    \i [experimental] Qt 4.4, 4.5 / Linux / gcc
+		    \endlist
+
+    	
+
+	
+	*/
