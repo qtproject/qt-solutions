@@ -43,6 +43,7 @@
 
 #include <QtGui/QWidget>
 #include <QtCore/QSet>
+#include <QtGui/QLineEdit>
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE
@@ -64,6 +65,7 @@ QT_BEGIN_NAMESPACE
 #  define QT_QTPROPERTYBROWSER_EXPORT
 #endif
 
+typedef QLineEdit::EchoMode EchoMode;
 
 class QtAbstractPropertyManager;
 class QtPropertyPrivate;
@@ -87,6 +89,7 @@ public:
     bool hasValue() const;
     QIcon valueIcon() const;
     QString valueText() const;
+    QString displayText() const;
 
     void setToolTip(const QString &text);
     void setStatusTip(const QString &text);
@@ -131,6 +134,8 @@ protected:
     virtual bool hasValue(const QtProperty *property) const;
     virtual QIcon valueIcon(const QtProperty *property) const;
     virtual QString valueText(const QtProperty *property) const;
+    virtual QString displayText(const QtProperty *property) const;
+    virtual EchoMode echoMode(const QtProperty *) const;
     virtual void initializeProperty(QtProperty *property) = 0;
     virtual void uninitializeProperty(QtProperty *property);
     virtual QtProperty *createProperty();

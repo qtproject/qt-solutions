@@ -53,6 +53,7 @@
 #include <QtGui/QPainter>
 #include <QtGui/QLabel>
 #include <QtGui/QCheckBox>
+#include <QtGui/QLineEdit>
 
 #include <limits.h>
 #include <float.h>
@@ -1229,11 +1230,12 @@ public:
 
     struct Data
     {
-        Data() : regExp(QString(QLatin1Char('*')),  Qt::CaseSensitive, QRegExp::Wildcard)
+        Data() : regExp(QString(QLatin1Char('*')),  Qt::CaseSensitive, QRegExp::Wildcard), echoMode(QLineEdit::Normal)
         {
         }
         QString val;
         QRegExp regExp;
+        int echoMode;
     };
 
     typedef QMap<const QtProperty *, Data> PropertyValueMap;
@@ -1328,12 +1330,36 @@ QRegExp QtStringPropertyManager::regExp(const QtProperty *property) const
 /*!
     \reimp
 */
+EchoMode QtStringPropertyManager::echoMode(const QtProperty *property) const
+{
+    return (EchoMode)getData<int>(d_ptr->m_values, &QtStringPropertyManagerPrivate::Data::echoMode, property, 0);
+}
+
+/*!
+    \reimp
+*/
 QString QtStringPropertyManager::valueText(const QtProperty *property) const
 {
     const QtStringPropertyManagerPrivate::PropertyValueMap::const_iterator it = d_ptr->m_values.constFind(property);
     if (it == d_ptr->m_values.constEnd())
         return QString();
+
     return it.value().val;
+}
+
+/*!
+    \reimp
+*/
+QString QtStringPropertyManager::displayText(const QtProperty *property) const
+{
+    const QtStringPropertyManagerPrivate::PropertyValueMap::const_iterator it = d_ptr->m_values.constFind(property);
+    if (it == d_ptr->m_values.constEnd())
+        return QString();
+
+    QLineEdit edit;
+    edit.setEchoMode((EchoMode)it.value().echoMode);
+    edit.setText(it.value().val);
+    return edit.displayText();
 }
 
 /*!
@@ -1389,6 +1415,24 @@ void QtStringPropertyManager::setRegExp(QtProperty *property, const QRegExp &reg
     it.value() = data;
 
     emit regExpChanged(property, data.regExp);
+}
+
+void QtStringPropertyManager::setEchoMode(QtProperty *property, EchoMode echoMode)
+{
+    const QtStringPropertyManagerPrivate::PropertyValueMap::iterator it = d_ptr->m_values.find(property);
+    if (it == d_ptr->m_values.end())
+        return;
+
+    QtStringPropertyManagerPrivate::Data data = it.value();
+
+    if (data.echoMode == echoMode)
+        return;
+
+    data.echoMode = echoMode;
+    it.value() = data;
+
+    emit propertyChanged(property);
+    emit echoModeChanged(property, data.echoMode);
 }
 
 /*!

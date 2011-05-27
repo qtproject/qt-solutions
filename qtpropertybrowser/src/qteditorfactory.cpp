@@ -906,6 +906,7 @@ public:
     void slotPropertyChanged(QtProperty *property, const QString &value);
     void slotRegExpChanged(QtProperty *property, const QRegExp &regExp);
     void slotSetValue(const QString &value);
+    void slotEchoModeChanged(QtProperty *, int);
 };
 
 void QtLineEditFactoryPrivate::slotPropertyChanged(QtProperty *property,
@@ -946,6 +947,26 @@ void QtLineEditFactoryPrivate::slotRegExpChanged(QtProperty *property,
             delete oldValidator;
         editor->blockSignals(false);
     }
+}
+
+void QtLineEditFactoryPrivate::slotEchoModeChanged(QtProperty *property, int echoMode)
+{
+    if (!m_createdEditors.contains(property))
+        return;
+
+    QtStringPropertyManager *manager = q_ptr->propertyManager(property);
+    if (!manager)
+        return;
+
+    QListIterator<QLineEdit *> itEditor(m_createdEditors[property]);
+    while (itEditor.hasNext()) {
+        QLineEdit *editor = itEditor.next();
+        editor->blockSignals(true);
+        editor->setEchoMode((EchoMode)echoMode);
+        editor->blockSignals(false);
+    }
+
+
 }
 
 void QtLineEditFactoryPrivate::slotSetValue(const QString &value)
@@ -1000,9 +1021,11 @@ QtLineEditFactory::~QtLineEditFactory()
 void QtLineEditFactory::connectPropertyManager(QtStringPropertyManager *manager)
 {
     connect(manager, SIGNAL(valueChanged(QtProperty *, const QString &)),
-                this, SLOT(slotPropertyChanged(QtProperty *, const QString &)));
+            this, SLOT(slotPropertyChanged(QtProperty *, const QString &)));
     connect(manager, SIGNAL(regExpChanged(QtProperty *, const QRegExp &)),
-                this, SLOT(slotRegExpChanged(QtProperty *, const QRegExp &)));
+            this, SLOT(slotRegExpChanged(QtProperty *, const QRegExp &)));
+    connect(manager, SIGNAL(echoModeChanged(QtProperty*, int)),
+            this, SLOT(slotEchoModeChanged(QtProperty *, int)));
 }
 
 /*!
@@ -1015,6 +1038,7 @@ QWidget *QtLineEditFactory::createEditor(QtStringPropertyManager *manager,
 {
 
     QLineEdit *editor = d_ptr->createEditor(property, parent);
+    editor->setEchoMode((EchoMode)manager->echoMode(property));
     QRegExp regExp = manager->regExp(property);
     if (regExp.isValid()) {
         QValidator *validator = new QRegExpValidator(regExp, editor);
@@ -1040,6 +1064,8 @@ void QtLineEditFactory::disconnectPropertyManager(QtStringPropertyManager *manag
                 this, SLOT(slotPropertyChanged(QtProperty *, const QString &)));
     disconnect(manager, SIGNAL(regExpChanged(QtProperty *, const QRegExp &)),
                 this, SLOT(slotRegExpChanged(QtProperty *, const QRegExp &)));
+    disconnect(manager, SIGNAL(echoModeChanged(QtProperty*,int)),
+                this, SLOT(slotEchoModeChanged(QtProperty *, int)));
 }
 
 // QtDateEditFactory

@@ -371,8 +371,9 @@ void QtPropertyEditorDelegate::paint(QPainter *painter, const QStyleOptionViewIt
         QTreeWidgetItem *item = m_editorPrivate->indexToItem(index);
         if (m_editedItem && m_editedItem == item)
             m_disablePainting = true;
-        }
+    }
     QItemDelegate::paint(painter, opt, index);
+    if (option.type)
     m_disablePainting = false;
 
     opt.palette.setCurrentColorGroup(QPalette::Active);
@@ -620,10 +621,10 @@ void QtTreePropertyBrowserPrivate::updateItem(QTreeWidgetItem *item)
     if (property->hasValue()) {
         QString toolTip = property->toolTip();
         if (toolTip.isEmpty())
-            toolTip = property->valueText();
+            toolTip = property->displayText();
         item->setToolTip(1, toolTip);
         item->setIcon(1, property->valueIcon());
-        item->setText(1, property->valueText());
+        property->displayText().isEmpty() ? item->setText(1, property->valueText()) : item->setText(1, property->displayText());
     } else if (markPropertiesWithoutValue() && !m_treeWidget->rootIsDecorated()) {
         expandIcon = m_expandIcon;
     }

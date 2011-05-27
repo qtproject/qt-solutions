@@ -42,6 +42,7 @@
 #include <QtCore/QSet>
 #include <QtCore/QMap>
 #include <QtGui/QIcon>
+#include <QtGui/QLineEdit>
 
 #if defined(Q_CC_MSVC)
 #    pragma warning(disable: 4786) /* MS VS 6: truncating debug info after 255 characters */
@@ -54,7 +55,10 @@ QT_BEGIN_NAMESPACE
 class QtPropertyPrivate
 {
 public:
-    QtPropertyPrivate(QtAbstractPropertyManager *manager) : m_enabled(true), m_modified(false), m_manager(manager) {}
+    QtPropertyPrivate(QtAbstractPropertyManager *manager)
+        : m_enabled(true),
+          m_modified(false),
+          m_manager(manager) {}
     QtProperty *q_ptr;
 
     QSet<QtProperty *> m_parentItems;
@@ -293,6 +297,19 @@ QIcon QtProperty::valueIcon() const
 QString QtProperty::valueText() const
 {
     return d_ptr->m_manager->valueText(this);
+}
+
+/*!
+    Returns the display text according to the echo-mode set on the editor.
+
+    When the editor is a QLineEdit, this will return a string equal to what
+    is displayed.
+
+    \sa QtAbstractPropertyManager::valueText()
+*/
+QString QtProperty::displayText() const
+{
+    return d_ptr->m_manager->displayText(this);
 }
 
 /*!
@@ -715,6 +732,35 @@ QString QtAbstractPropertyManager::valueText(const QtProperty *property) const
 {
     Q_UNUSED(property)
     return QString();
+}
+
+/*!
+    Returns a string representing the current state of the given \a
+    property.
+
+    The default implementation of this function returns an empty
+    string.
+
+    \sa QtProperty::valueText()
+*/
+QString QtAbstractPropertyManager::displayText(const QtProperty *property) const
+{
+    Q_UNUSED(property)
+    return QString();
+}
+
+/*!
+    Returns the echo mode representing the current state of the given \a
+    property.
+
+    The default implementation of this function returns QLineEdit::Normal.
+
+    \sa QtProperty::valueText()
+*/
+EchoMode QtAbstractPropertyManager::echoMode(const QtProperty *property) const
+{
+    Q_UNUSED(property)
+    return QLineEdit::Normal;
 }
 
 /*!

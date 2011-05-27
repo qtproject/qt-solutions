@@ -75,6 +75,11 @@ int main(int argc, char **argv)
     item->setValue("Value");
     topItem->addSubProperty(item);
 
+    item = variantManager->addProperty(QVariant::String, QString::number(i++) + QLatin1String(" String Property (Password)"));
+    item->setAttribute(QLatin1String("echoMode"), QLineEdit::Password);
+    item->setValue("Password");
+    topItem->addSubProperty(item);
+
     item = variantManager->addProperty(QVariant::Date, QString::number(i++) + QLatin1String(" Date Property"));
     item->setValue(QDate::currentDate().addDays(2));
     topItem->addSubProperty(item);
