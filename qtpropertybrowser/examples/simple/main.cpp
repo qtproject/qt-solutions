@@ -66,10 +66,25 @@ int main(int argc, char **argv)
     item->setAttribute(QLatin1String("singleStep"), 10);
     topItem->addSubProperty(item);
 
+    item = variantManager->addProperty(QVariant::Int, QString::number(i++) + QLatin1String(" Int Property (ReadOnly)"));
+    item->setValue(20);
+    item->setAttribute(QLatin1String("minimum"), 0);
+    item->setAttribute(QLatin1String("maximum"), 100);
+    item->setAttribute(QLatin1String("singleStep"), 10);
+    item->setAttribute(QLatin1String("readOnly"), true);
+    topItem->addSubProperty(item);
+
     item = variantManager->addProperty(QVariant::Double, QString::number(i++) + QLatin1String(" Double Property"));
     item->setValue(1.2345);
     item->setAttribute(QLatin1String("singleStep"), 0.1);
     item->setAttribute(QLatin1String("decimals"), 3);
+    topItem->addSubProperty(item);
+
+    item = variantManager->addProperty(QVariant::Double, QString::number(i++) + QLatin1String(" Double Property (ReadOnly)"));
+    item->setValue(1.23456);
+    item->setAttribute(QLatin1String("singleStep"), 0.1);
+    item->setAttribute(QLatin1String("decimals"), 5);
+    item->setAttribute(QLatin1String("readOnly"), true);
     topItem->addSubProperty(item);
 
     item = variantManager->addProperty(QVariant::String, QString::number(i++) + QLatin1String(" String Property"));
@@ -79,6 +94,12 @@ int main(int argc, char **argv)
     item = variantManager->addProperty(QVariant::String, QString::number(i++) + QLatin1String(" String Property (Password)"));
     item->setAttribute(QLatin1String("echoMode"), QLineEdit::Password);
     item->setValue("Password");
+    topItem->addSubProperty(item);
+
+    // Readonly String Property
+    item = variantManager->addProperty(QVariant::String, QString::number(i++) + QLatin1String(" String Property (ReadOnly)"));
+    item->setAttribute(QLatin1String("readOnly"), true);
+    item->setValue("readonly text");
     topItem->addSubProperty(item);
 
     item = variantManager->addProperty(QVariant::Date, QString::number(i++) + QLatin1String(" Date Property"));
