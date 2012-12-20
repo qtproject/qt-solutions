@@ -18,7 +18,7 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "Comments", "\0"
-            VALUE "CompanyName", "Nokia\0"
+            VALUE "CompanyName", "Digia\0"
             VALUE "FileDescription", "grapher\0"
             VALUE "FileExtents", "g1n\0"
             VALUE "FileOpenName", "Graphable data (*.g1n)\0"
@@ -28,7 +28,7 @@ BEGIN
             VALUE "MIMEType", "application/x-graphable\0"
             VALUE "OriginalFilename", "grapher.dll\0"
             VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Nokia grapher QtBrowserPlugin example\0"
+            VALUE "ProductName", "Grapher QtBrowserPlugin example\0"
             VALUE "ProductVersion", "1, 0, 0, 1\0"
             VALUE "SpecialBuild", "\0"
         END

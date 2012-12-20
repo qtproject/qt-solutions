@@ -148,10 +148,10 @@ moc_dir.variable = QMAKE_MOC
 uic_dir.name = uic_location
 uic_dir.variable = QMAKE_UIC
 
-QMAKE_TARGET_COMPANY = Nokia Corporation and/or its subsidiary(-ies)
+QMAKE_TARGET_COMPANY = Digia Plc and/or its subsidiary(-ies).
 QMAKE_TARGET_PRODUCT = Qt4
 QMAKE_TARGET_DESCRIPTION = C++ application development framework.
-QMAKE_TARGET_COPYRIGHT = Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies)
+QMAKE_TARGET_COPYRIGHT = Copyright (C) 2012 Digia Plc and/or its subsidiary(-ies).
 
 win32:DEFINES+=_USE_MATH_DEFINES
 
