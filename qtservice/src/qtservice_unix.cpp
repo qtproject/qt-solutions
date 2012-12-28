@@ -42,11 +42,11 @@
 #include "qtservice_p.h"
 #include "qtunixsocket.h"
 #include "qtunixserversocket.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QStringList>
-#include <QtCore/QFile>
-#include <QtCore/QTimer>
-#include <QtCore/QDir>
+#include <QCoreApplication>
+#include <QStringList>
+#include <QFile>
+#include <QTimer>
+#include <QDir>
 #include <pwd.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -55,9 +55,9 @@
 #include <syslog.h>
 #include <signal.h>
 #include <sys/stat.h>
-#include <QtCore/QMap>
-#include <QtCore/QSettings>
-#include <QtCore/QProcess>
+#include <QMap>
+#include <QSettings>
+#include <QProcess>
 
 static QString encodeName(const QString &name, bool allowUpper = false)
 {

@@ -38,9 +38,9 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtCore/QDate>
-#include <QtCore/QLocale>
+#include <QApplication>
+#include <QDate>
+#include <QLocale>
 #include "qtpropertymanager.h"
 #include "qtvariantproperty.h"
 #include "qttreepropertybrowser.h"

@@ -46,7 +46,7 @@
 
 #include "qwinhost.h"
 
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <qt_windows.h>
 
 /*!

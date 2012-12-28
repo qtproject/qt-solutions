@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
 #include "qscriptastvisitor_p.h"

@@ -45,7 +45,7 @@
 #ifndef CHILDVIEW_H
 #define CHILDVIEW_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 class ChildView : public QWidget
 {

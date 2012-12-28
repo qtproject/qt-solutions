@@ -48,9 +48,9 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QtDebug>
-#include <QtCore/qnumeric.h>
-#include <QtCore/QSysInfo>
+#include <QtDebug>
+#include <qnumeric.h>
+#include <QSysInfo>
 #include <math.h>
 
 QT_BEGIN_NAMESPACE

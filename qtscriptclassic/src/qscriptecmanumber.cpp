@@ -48,8 +48,8 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QtDebug>
-#include <QtCore/qnumeric.h>
+#include <QtDebug>
+#include <qnumeric.h>
 #include <math.h>
 
 QT_BEGIN_NAMESPACE

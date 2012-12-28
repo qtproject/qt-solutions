@@ -48,7 +48,7 @@
 #include "qscriptvalueimpl_p.h"
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
-#include <QtCore/qdatastream.h>
+#include <qdatastream.h>
 
 QT_BEGIN_NAMESPACE
 

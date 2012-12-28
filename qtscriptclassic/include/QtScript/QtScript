@@ -1,6 +1,6 @@
 #ifndef QT_QTSCRIPT_MODULE_H
 #define QT_QTSCRIPT_MODULE_H
-#include <QtCore/QtCore>
+#include <QtCore>
 #include "qscriptextensionplugin.h"
 #include "qscriptvalue.h"
 #include "qscriptstring.h"

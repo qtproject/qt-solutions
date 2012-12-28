@@ -50,9 +50,9 @@
 
 #include "qmfcapp.h"
 
-#include <QtCore/QEventLoop>
-#include <QtCore/QAbstractEventDispatcher>
-#include <QtGui/QWidget>
+#include <QEventLoop>
+#include <QAbstractEventDispatcher>
+#include <QWidget>
 
 #ifdef QTWINMIGRATE_WITHMFC
 #include <afxwin.h>

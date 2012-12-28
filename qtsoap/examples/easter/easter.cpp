@@ -38,8 +38,8 @@
 **
 ****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QLocale>
+#include <QCoreApplication>
+#include <QLocale>
 #include "easter.h"
 
 Easter::Easter(short year, QObject *parent)

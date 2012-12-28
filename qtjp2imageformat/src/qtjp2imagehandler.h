@@ -41,8 +41,8 @@
 #ifndef QTJPEG2000IMAGEHANDLER_H
 #define QTJPEG2000IMAGEHANDLER_H
 
-#include <QtGui/QImageIOHandler>
-#include <QtCore/QIODevice>
+#include <QImageIOHandler>
+#include <QIODevice>
 
 class QtJP2ImageHandler : public QImageIOHandler {
 public:

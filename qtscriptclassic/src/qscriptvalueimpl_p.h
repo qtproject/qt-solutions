@@ -57,7 +57,7 @@
 #include "qscriptenginefwd_p.h"
 #include "qscriptcontextfwd_p.h"
 
-#include <QtCore/QDateTime>
+#include <QDateTime>
 
 QT_BEGIN_NAMESPACE
 

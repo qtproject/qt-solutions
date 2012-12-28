@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 
 #include "qscriptengine_p.h"
@@ -51,11 +51,11 @@
 #include "qscriptable_p.h"
 #include "qscriptextqobject_p.h"
 
-#include <QtCore/QtDebug>
-#include <QtCore/QMetaMethod>
-#include <QtCore/QRegExp>
-#include <QtCore/QVarLengthArray>
-#include <QtCore/QPointer>
+#include <QtDebug>
+#include <QMetaMethod>
+#include <QRegExp>
+#include <QVarLengthArray>
+#include <QPointer>
 
 QT_BEGIN_NAMESPACE
 

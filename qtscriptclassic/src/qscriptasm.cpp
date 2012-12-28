@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 
-#include <QtCore/QTextStream>
+#include <QTextStream>
 
 
 #include "qscriptasm_p.h"

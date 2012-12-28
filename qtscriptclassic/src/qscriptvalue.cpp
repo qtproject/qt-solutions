@@ -51,8 +51,8 @@
 #include "qscriptclass.h"
 #include "qscriptclass_p.h"
 
-#include <QtCore/QDateTime>
-#include <QtCore/QRegExp>
+#include <QDateTime>
+#include <QRegExp>
 
 QT_BEGIN_NAMESPACE
 

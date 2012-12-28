@@ -42,7 +42,7 @@
 #ifndef QSCRIPTABLE_H
 #define QSCRIPTABLE_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
 QT_BEGIN_HEADER

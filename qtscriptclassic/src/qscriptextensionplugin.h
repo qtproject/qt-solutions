@@ -42,7 +42,7 @@
 #ifndef QSCRIPTEXTENSIONPLUGIN_H
 #define QSCRIPTEXTENSIONPLUGIN_H
 
-#include <QtCore/qplugin.h>
+#include <qplugin.h>
 
 
 #include "qscriptextensioninterface.h"

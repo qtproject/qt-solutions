@@ -42,7 +42,7 @@
 #ifndef QSCRIPTCLASS_P_H
 #define QSCRIPTCLASS_P_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
 QT_BEGIN_NAMESPACE

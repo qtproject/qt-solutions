@@ -48,7 +48,7 @@
 
 #include <qmfcapp.h>
 #include <qwinwidget.h>
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

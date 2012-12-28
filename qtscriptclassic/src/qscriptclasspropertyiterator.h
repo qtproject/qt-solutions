@@ -42,7 +42,7 @@
 #ifndef QSCRIPTCLASSPROPERTYITERATOR_H
 #define QSCRIPTCLASSPROPERTYITERATOR_H
 
-#include <QtCore/qstring.h>
+#include <qstring.h>
 
 
 #include "qscriptvalue.h"

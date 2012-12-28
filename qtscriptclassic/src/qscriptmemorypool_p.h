@@ -53,8 +53,8 @@
 // We mean it.
 //
 
-#include <QtCore/qglobal.h>
-#include <QtCore/qshareddata.h>
+#include <qglobal.h>
+#include <qshareddata.h>
 #include <string.h>
 
 QT_BEGIN_NAMESPACE

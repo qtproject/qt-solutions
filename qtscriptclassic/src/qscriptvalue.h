@@ -42,10 +42,10 @@
 #ifndef QSCRIPTVALUE_H
 #define QSCRIPTVALUE_H
 
-#include <QtCore/qstring.h>
+#include <qstring.h>
 
 
-#include <QtCore/qlist.h>
+#include <qlist.h>
 
 QT_BEGIN_HEADER
 

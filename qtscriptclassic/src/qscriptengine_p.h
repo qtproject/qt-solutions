@@ -45,13 +45,13 @@
 #include "qscriptenginefwd_p.h"
 
 
-#include <QtCore/QDateTime>
-#include <QtCore/QMutex>
-#include <QtCore/QLinkedList>
-#include <QtCore/QString>
-#include <QtCore/QVector>
-#include <QtCore/QHash>
-#include <QtCore/qnumeric.h>
+#include <QDateTime>
+#include <QMutex>
+#include <QLinkedList>
+#include <QString>
+#include <QVector>
+#include <QHash>
+#include <qnumeric.h>
 
 #include "qscriptengine.h"
 #include "qscriptnameid_p.h"

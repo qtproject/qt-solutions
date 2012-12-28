@@ -42,7 +42,7 @@
 #ifndef QSCRIPTVALUEFWD_P_H
 #define QSCRIPTVALUEFWD_P_H
 
-#include <QtCore/qatomic.h>
+#include <qatomic.h>
 
 
 #include "qscriptvalueimplfwd_p.h"

@@ -42,7 +42,7 @@
 #ifndef QSCRIPTBUFFER_P_H
 #define QSCRIPTBUFFER_P_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 #if defined(Q_OS_VXWORKS) && defined(m_data)
 #  undef m_data

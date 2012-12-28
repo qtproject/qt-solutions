@@ -42,7 +42,7 @@
 #ifndef QSCRIPTENGINEAGENT_P_H
 #define QSCRIPTENGINEAGENT_P_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
 //

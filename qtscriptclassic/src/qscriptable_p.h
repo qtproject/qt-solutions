@@ -42,7 +42,7 @@
 #ifndef QSCRIPTABLE_P_H
 #define QSCRIPTABLE_P_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 //
 //  W A R N I N G

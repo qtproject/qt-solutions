@@ -58,10 +58,10 @@
 
 #include "qscriptcontext.h"
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 #if defined Q_CC_MSVC && !defined Q_CC_MSVC_NET
-#include <QtCore/qnumeric.h>
+#include <qnumeric.h>
 #endif
 
 QT_BEGIN_NAMESPACE

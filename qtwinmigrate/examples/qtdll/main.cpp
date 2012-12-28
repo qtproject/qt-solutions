@@ -41,7 +41,7 @@
 #include <qmfcapp.h>
 #include <qwinwidget.h>
 
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 #include <windows.h>
 
 BOOL WINAPI DllMain( HINSTANCE hInstance, DWORD dwReason, LPVOID /*lpvReserved*/ )

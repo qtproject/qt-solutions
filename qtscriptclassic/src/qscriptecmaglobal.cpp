@@ -50,8 +50,8 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QVarLengthArray>
-#include <QtCore/qnumeric.h>
+#include <QVarLengthArray>
+#include <qnumeric.h>
 
 QT_BEGIN_NAMESPACE
 

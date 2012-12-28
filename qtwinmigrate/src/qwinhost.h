@@ -44,7 +44,7 @@
 #ifndef QWINHOST_H
 #define QWINHOST_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 
 #if defined(Q_WS_WIN)
 #  if !defined(QT_QTWINMIGRATE_EXPORT) && !defined(QT_QTWINMIGRATE_IMPORT)

@@ -42,7 +42,7 @@
 #include "qscriptclass.h"
 
 
-#include <QtCore/qstringlist.h>
+#include <qstringlist.h>
 
 #include "qscriptclasspropertyiterator.h"
 #include "qscriptstring.h"

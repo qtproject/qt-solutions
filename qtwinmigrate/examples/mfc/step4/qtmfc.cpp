@@ -48,7 +48,7 @@
 
 #include <qmfcapp.h>
 #include <qwinwidget.h>
-#include <QtGui/QMessageBox>
+#include <QMessageBox>
 #include "ui_optionsdialog.h"
 
 #ifdef _DEBUG

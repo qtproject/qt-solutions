@@ -49,9 +49,9 @@
 #include "qscriptobject_p.h"
 #include "qscriptclassdata_p.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QtDebug>
-#include <QtCore/qnumeric.h>
+#include <QStringList>
+#include <QtDebug>
+#include <qnumeric.h>
 
 #include <limits.h>
 

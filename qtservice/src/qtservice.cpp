@@ -40,17 +40,17 @@
 
 #include "qtservice.h"
 #include "qtservice_p.h"
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 #include <stdio.h>
-#include <QtCore/QTimer>
-#include <QtCore/QVector>
-#include <QtCore/QProcess>
+#include <QTimer>
+#include <QVector>
+#include <QProcess>
 
 #if defined(QTSERVICE_DEBUG)
 #include <QDebug>
-#include <QtCore/QFile>
-#include <QtCore/QTime>
-#include <QtCore/QMutex>
+#include <QFile>
+#include <QTime>
+#include <QMutex>
 #if defined(Q_OS_WIN32)
 #include <qt_windows.h>
 #else

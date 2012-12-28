@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 
 #include "qscriptecmacore_p.h"

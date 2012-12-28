@@ -46,9 +46,9 @@
 #include "childview.h"
 
 #include <qwinwidget.h>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QLayout>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

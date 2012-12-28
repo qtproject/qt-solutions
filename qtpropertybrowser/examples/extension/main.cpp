@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include "qtvariantproperty.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"

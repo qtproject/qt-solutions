@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 #include "qscriptecmacore_p.h"
 

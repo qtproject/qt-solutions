@@ -38,12 +38,12 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QScrollArea>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QIcon>
-#include <QtCore/QMap>
+#include <QApplication>
+#include <QScrollArea>
+#include <QGridLayout>
+#include <QLabel>
+#include <QIcon>
+#include <QMap>
 #include "qtpropertymanager.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"

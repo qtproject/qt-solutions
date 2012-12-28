@@ -39,9 +39,9 @@
 ****************************************************************************/
 
 #include "qtsoap.h"
-#include <QtCore/QSet>
-#include <QtNetwork/QNetworkRequest>
-#include <QtNetwork/QNetworkReply>
+#include <QSet>
+#include <QNetworkRequest>
+#include <QNetworkReply>
 
 /*! \page qtsoap-overview.html
 

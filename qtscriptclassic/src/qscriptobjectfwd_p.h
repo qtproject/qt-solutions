@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 
 #include "qscriptbuffer_p.h"

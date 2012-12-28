@@ -38,14 +38,14 @@
 **
 ****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtNetwork/QTcpServer>
-#include <QtNetwork/QTcpSocket>
-#include <QtCore/QTextStream>
-#include <QtCore/QDateTime>
-#include <QtCore/QStringList>
-#include <QtCore/QDir>
-#include <QtCore/QSettings>
+#include <QCoreApplication>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QTextStream>
+#include <QDateTime>
+#include <QStringList>
+#include <QDir>
+#include <QSettings>
 
 #include "qtservice.h"
 

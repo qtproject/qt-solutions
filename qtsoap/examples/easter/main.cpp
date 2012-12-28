@@ -43,8 +43,8 @@
 
     Returns the date of easter in a given year.
 */
-#include <QtCore/QCoreApplication>
-#include <QtCore/QFile>
+#include <QCoreApplication>
+#include <QFile>
 #include <stdlib.h>
 #include "easter.h"
 

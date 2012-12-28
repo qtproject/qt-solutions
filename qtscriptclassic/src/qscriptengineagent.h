@@ -42,10 +42,10 @@
 #ifndef QSCRIPTENGINEAGENT_H
 #define QSCRIPTENGINEAGENT_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
-#include <QtCore/qvariant.h>
+#include <qvariant.h>
 
 QT_BEGIN_HEADER
 

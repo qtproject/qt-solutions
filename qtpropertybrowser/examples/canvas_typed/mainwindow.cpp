@@ -42,12 +42,12 @@
 #include "qtpropertymanager.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"
-#include <QtGui/QMatrix>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QMenuBar>
-#include <QtGui/QMenu>
-#include <QtGui/QAction>
-#include <QtGui/QDockWidget>
+#include <QMatrix>
+#include <QMouseEvent>
+#include <QMenuBar>
+#include <QMenu>
+#include <QAction>
+#include <QDockWidget>
 
 void CanvasView::contentsMousePressEvent(QMouseEvent* event)
 {

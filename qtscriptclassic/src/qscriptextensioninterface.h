@@ -42,10 +42,10 @@
 #ifndef QSCRIPTEXTENSIONINTERFACE_H
 #define QSCRIPTEXTENSIONINTERFACE_H
 
-#include <QtCore/qfactoryinterface.h>
+#include <qfactoryinterface.h>
 
 
-#include <QtCore/qobject.h>
+#include <qobject.h>
 
 QT_BEGIN_HEADER
 

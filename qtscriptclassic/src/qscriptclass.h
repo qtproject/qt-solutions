@@ -42,10 +42,10 @@
 #ifndef QSCRIPTCLASS_H
 #define QSCRIPTCLASS_H
 
-#include <QtCore/qstring.h>
+#include <qstring.h>
 
 
-#include <QtCore/qvariant.h>
+#include <qvariant.h>
 #include "qscriptvalue.h"
 
 QT_BEGIN_HEADER

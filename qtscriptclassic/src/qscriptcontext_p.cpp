@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 
 
 #include "qscriptcontext_p.h"

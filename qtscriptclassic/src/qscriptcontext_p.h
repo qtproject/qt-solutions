@@ -48,7 +48,7 @@
 #include "qscriptenginefwd_p.h"
 #include "qscriptnameid_p.h"
 
-#include <QtCore/qnumeric.h>
+#include <qnumeric.h>
 
 QT_BEGIN_NAMESPACE
 

@@ -53,10 +53,10 @@
 // We mean it.
 //
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 
-#include <QtCore/qvector.h>
+#include <qvector.h>
 
 #include "qscriptvalueimplfwd_p.h"
 

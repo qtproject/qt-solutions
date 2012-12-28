@@ -42,7 +42,7 @@
 #ifndef QSCRIPTSTRING_P_H
 #define QSCRIPTSTRING_P_H
 
-#include <QtCore/qatomic.h>
+#include <qatomic.h>
 
 
 QT_BEGIN_NAMESPACE

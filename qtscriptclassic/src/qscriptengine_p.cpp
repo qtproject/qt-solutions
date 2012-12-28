@@ -61,20 +61,20 @@
 #include "qscriptclass_p.h"
 #include "qscriptengineagent.h"
 
-#include <QtCore/QDate>
-#include <QtCore/QDateTime>
-#include <QtCore/QRegExp>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
+#include <QDate>
+#include <QDateTime>
+#include <QRegExp>
+#include <QStringList>
+#include <QVariant>
 
 #ifndef QT_NO_QOBJECT
 #include "qscriptextensioninterface.h"
-#include <QtCore/QDir>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QTextStream>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QPluginLoader>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QTextStream>
+#include <QCoreApplication>
+#include <QPluginLoader>
 #endif
 
 Q_DECLARE_METATYPE(QScriptValue)

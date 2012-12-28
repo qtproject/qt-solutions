@@ -63,12 +63,12 @@
 #include "qscriptengine.h"
 #include "qscriptmemberfwd_p.h"
 
-#include <QtCore/QHash>
-#include <QtCore/QPointer>
-#include <QtCore/QObject>
-#include <QtCore/QVariant>
-#include <QtCore/QVarLengthArray>
-#include <QtCore/QVector>
+#include <QHash>
+#include <QPointer>
+#include <QObject>
+#include <QVariant>
+#include <QVarLengthArray>
+#include <QVector>
 
 QT_BEGIN_NAMESPACE
 

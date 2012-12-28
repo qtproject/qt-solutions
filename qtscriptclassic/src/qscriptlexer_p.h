@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/QString>
+#include <QString>
 
 
 QT_BEGIN_NAMESPACE

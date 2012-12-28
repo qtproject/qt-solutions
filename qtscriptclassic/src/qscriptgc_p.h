@@ -57,10 +57,10 @@
 #  undef m_free
 #endif
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 #include <new>
 
 #include "qscriptmemorypool_p.h"

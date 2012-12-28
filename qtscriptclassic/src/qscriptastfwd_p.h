@@ -42,7 +42,7 @@
 #ifndef QSCRIPTAST_FWD_P_H
 #define QSCRIPTAST_FWD_P_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 //
 //  W A R N I N G

@@ -49,7 +49,7 @@
 #include "qscriptobject_p.h"
 #include "qscriptclassdata_p.h"
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 
 QT_BEGIN_NAMESPACE
 

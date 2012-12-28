@@ -39,8 +39,8 @@
 ****************************************************************************/
 
 #ifndef QT_NO_IMAGEFORMATPLUGIN
-#include <QtGui/QImageIOHandler>
-#include <QtCore/QStringList>
+#include <QImageIOHandler>
+#include <QStringList>
 
 #include "qtjp2imageformatplugin.h"
 #include "qtjp2imagehandler.h"

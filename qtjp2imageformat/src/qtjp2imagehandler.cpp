@@ -39,14 +39,14 @@
 ****************************************************************************/
 
 #include "qtjp2imagehandler.h"
-#include <QtGui/QImage>
-#include <QtCore/QStringList>
-#include <QtCore/QString>
-#include <QtGui/QColor>
-#include <QtCore/QFile>
-#include <QtCore/QIODevice>
-#include <QtGui/QImageIOHandler>
-#include <QtCore/QVariant>
+#include <QImage>
+#include <QStringList>
+#include <QString>
+#include <QColor>
+#include <QFile>
+#include <QIODevice>
+#include <QImageIOHandler>
+#include <QVariant>
 
 #ifdef Q_CC_MSVC
     #define JAS_WIN_MSVC_BUILD

@@ -49,9 +49,9 @@
 #include "qscriptobject_p.h"
 #include "qscriptast_p.h"
 
-#include <QtCore/QString>
-#include <QtCore/QTextStream>
-#include <QtCore/QtDebug>
+#include <QString>
+#include <QTextStream>
+#include <QtDebug>
 
 QT_BEGIN_NAMESPACE
 

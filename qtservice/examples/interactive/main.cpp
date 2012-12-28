@@ -38,11 +38,11 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QLabel>
-#include <QtCore/QDir>
-#include <QtCore/QSettings>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QLabel>
+#include <QDir>
+#include <QSettings>
 #include "qtservice.h"
 
 class InteractiveService : public QtService<QApplication>

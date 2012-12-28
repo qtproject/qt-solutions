@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 #include <QtGui>
-#include <QtGui/QX11EmbedWidget>
+#include <QX11EmbedWidget>
 
 #include "qtbrowserplugin.h"
 #include "qtbrowserplugin_p.h"

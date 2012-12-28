@@ -41,11 +41,11 @@
 #ifndef QTCANVAS_H
 #define QTCANVAS_H
 
-#include <QtGui/qpixmap.h>
-#include <QtGui/qbrush.h>
-#include <QtGui/qpen.h>
-#include <QtGui/qpolygon.h>
-#include <QtGui/qscrollarea.h>
+#include <qpixmap.h>
+#include <qbrush.h>
+#include <qpen.h>
+#include <qpolygon.h>
+#include <qscrollarea.h>
 
 class QtCanvasSprite;
 class QtCanvasPolygonalItem;

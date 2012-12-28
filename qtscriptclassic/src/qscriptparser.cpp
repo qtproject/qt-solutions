@@ -81,7 +81,7 @@
 **
 ****************************************************************************/
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 
 
 #include <string.h>

@@ -42,11 +42,11 @@
 #ifndef QSCRIPTCONTEXTINFO_H
 #define QSCRIPTCONTEXTINFO_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 
-#include <QtCore/qlist.h>
-#include <QtCore/qstringlist.h>
+#include <qlist.h>
+#include <qstringlist.h>
 
 QT_BEGIN_HEADER
 

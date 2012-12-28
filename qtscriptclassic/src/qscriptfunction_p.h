@@ -59,11 +59,11 @@
 #include "qscriptglobals_p.h"
 #include "qscriptnodepool_p.h"
 
-#include <QtCore/QList>
+#include <QList>
 
 #ifndef QT_NO_QOBJECT
-# include <QtCore/QPointer>
-# include <QtCore/QMetaMethod>
+# include <QPointer>
+# include <QMetaMethod>
 #endif
 
 QT_BEGIN_NAMESPACE

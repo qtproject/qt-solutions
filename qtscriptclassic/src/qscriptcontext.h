@@ -42,7 +42,7 @@
 #ifndef QSCRIPTCONTEXT_H
 #define QSCRIPTCONTEXT_H
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
 #include "qscriptvalue.h"
 

@@ -42,15 +42,15 @@
 #ifndef QSCRIPTENGINE_H
 #define QSCRIPTENGINE_H
 
-#include <QtCore/qmetatype.h>
+#include <qmetatype.h>
 
 
-#include <QtCore/qvariant.h>
+#include <qvariant.h>
 
 #ifndef QT_NO_QOBJECT
-#include <QtCore/qobject.h>
+#include <qobject.h>
 #else
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 #endif
 
 #include "qscriptvalue.h"

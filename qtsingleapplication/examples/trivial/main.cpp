@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 #include <qtsingleapplication.h>
-#include <QtGui/QTextEdit>
+#include <QTextEdit>
 
 class TextEdit : public QTextEdit
 {

@@ -45,7 +45,7 @@
     the daily world population estimate, and the list of available
     countries.
 */
-#include <QtGui/QApplication>
+#include <QApplication>
 #include "population.h"
 
 #define USAGE1 QT_TRANSLATE_NOOP("Population::main", "XMethods' interface to a World Population .NET service.")

@@ -51,8 +51,8 @@
 #include "qscriptlexer_p.h"
 #include "qscriptparser_p.h"
 
-#include <QtCore/qstring.h>
-#include <QtCore/qtextstream.h>
+#include <qstring.h>
+#include <qtextstream.h>
 
 QT_BEGIN_NAMESPACE
 

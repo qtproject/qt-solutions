@@ -53,10 +53,10 @@
 // We mean it.
 //
 
-#include <QtCore/QMap>
+#include <QMap>
 
 
-#include <QtCore/QVector>
+#include <QVector>
 
 #include "qscriptastvisitor_p.h"
 #include "qscriptasm_p.h"

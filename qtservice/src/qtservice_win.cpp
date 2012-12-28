@@ -40,23 +40,23 @@
 
 #include "qtservice.h"
 #include "qtservice_p.h"
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDateTime>
-#include <QtCore/QFile>
-#include <QtCore/QLibrary>
-#include <QtCore/QMutex>
-#include <QtCore/QSemaphore>
-#include <QtCore/QProcess>
-#include <QtCore/QSettings>
-#include <QtCore/QTextStream>
+#include <QCoreApplication>
+#include <QDateTime>
+#include <QFile>
+#include <QLibrary>
+#include <QMutex>
+#include <QSemaphore>
+#include <QProcess>
+#include <QSettings>
+#include <QTextStream>
 #include <qt_windows.h>
-#include <QtCore/QWaitCondition>
-#include <QtCore/QAbstractEventDispatcher>
-#include <QtCore/QVector>
-#include <QtCore/QThread>
+#include <QWaitCondition>
+#include <QAbstractEventDispatcher>
+#include <QVector>
+#include <QThread>
 #include <stdio.h>
 #if defined(QTSERVICE_DEBUG)
-#include <QtCore/QDebug>
+#include <QDebug>
 #endif
 
 typedef SERVICE_STATUS_HANDLE(WINAPI*PRegisterServiceCtrlHandler)(const wchar_t*,LPHANDLER_FUNCTION);

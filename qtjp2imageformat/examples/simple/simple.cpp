@@ -38,13 +38,13 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QImage>
-#include <QtGui/QLabel>
-#include <QtGui/QPixmap>
+#include <QApplication>
+#include <QImage>
+#include <QLabel>
+#include <QPixmap>
 
 // If the plugin is built statically, uncomment the following two lines
-//#include <QtCore/QtPlugin>
+//#include <QtPlugin>
 //Q_IMPORT_PLUGIN(qtjp2)
 
 int main(int argc, char *argv[])

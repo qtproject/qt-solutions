@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include "google.h"
 
 int main(int argc, char **argv)

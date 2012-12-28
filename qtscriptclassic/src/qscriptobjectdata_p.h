@@ -42,7 +42,7 @@
 #ifndef QSCRIPTOBJECTDATA_P_H
 #define QSCRIPTOBJECTDATA_P_H
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 
 QT_BEGIN_NAMESPACE

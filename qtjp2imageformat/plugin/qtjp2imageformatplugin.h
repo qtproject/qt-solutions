@@ -40,7 +40,7 @@
 
 #ifndef QTJP2IMAGEFORMATPLUGIN_H
 #define QTJP2IMAGEFORMATPLUGIN_H
-#include <QtGui/QImageIOPlugin>
+#include <QImageIOPlugin>
 
 class QJPeg2Plugin : public QImageIOPlugin
 {

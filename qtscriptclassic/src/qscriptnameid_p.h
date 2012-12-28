@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 QT_BEGIN_NAMESPACE
 

@@ -40,13 +40,13 @@
 
 
 #include "qtbuttonpropertybrowser.h"
-#include <QtCore/QSet>
-#include <QtGui/QGridLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QTimer>
-#include <QtCore/QMap>
-#include <QtGui/QToolButton>
-#include <QtGui/QStyle>
+#include <QSet>
+#include <QGridLayout>
+#include <QLabel>
+#include <QTimer>
+#include <QMap>
+#include <QToolButton>
+#include <QStyle>
 
 #if QT_VERSION >= 0x040400
 QT_BEGIN_NAMESPACE

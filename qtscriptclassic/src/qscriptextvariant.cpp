@@ -48,9 +48,9 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <limits.h>
 

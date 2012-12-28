@@ -43,10 +43,10 @@
 
 #include "childview.h"
 
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QLayout>
-#include <QtGui/QPainter>
+#include <QLabel>
+#include <QLineEdit>
+#include <QLayout>
+#include <QPainter>
 
 /////////////////////////////////////////////////////////////////////////////
 // ChildView

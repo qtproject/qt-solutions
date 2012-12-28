@@ -47,8 +47,8 @@
 
 #include "qscriptvalue.h"
 
-#include <QtCore/qstring.h>
-#include <QtCore/qlist.h>
+#include <qstring.h>
+#include <qlist.h>
 
 QT_BEGIN_NAMESPACE
 

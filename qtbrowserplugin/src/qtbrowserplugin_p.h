@@ -41,9 +41,9 @@
 #ifndef QTBROWSERPLUGIN_P_H
 #define QTBROWSERPLUGIN_P_H
 
-#include <QtCore/QVariant>
-#include <QtCore/QMutexLocker>
-#include <QtGui/QWidget>
+#include <QVariant>
+#include <QMutexLocker>
+#include <QWidget>
 
 #ifdef Q_WS_X11
 #   include <X11/Xlib.h>

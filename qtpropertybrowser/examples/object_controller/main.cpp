@@ -38,21 +38,21 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QSpinBox>
-#include <QtGui/QDialogButtonBox>
-#include <QtGui/QLineEdit>
-#include <QtGui/QDialog>
-#include <QtGui/QComboBox>
-#include <QtGui/QToolButton>
-#include <QtGui/QPushButton>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QAction>
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QTextDocument>
-#include <QtGui/QCalendarWidget>
-#include <QtCore/QTimeLine>
+#include <QApplication>
+#include <QSpinBox>
+#include <QDialogButtonBox>
+#include <QLineEdit>
+#include <QDialog>
+#include <QComboBox>
+#include <QToolButton>
+#include <QPushButton>
+#include <QBoxLayout>
+#include <QTreeWidget>
+#include <QAction>
+#include <QDesktopWidget>
+#include <QTextDocument>
+#include <QCalendarWidget>
+#include <QTimeLine>
 #include "objectcontroller.h"
 
 class MyController : public QDialog

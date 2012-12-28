@@ -38,15 +38,15 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtGui/QMessageBox>
-#include <QtGui/QCursor>
-#include <QtCore/QFile>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QTextBrowser>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
+#include <QApplication>
+#include <QMessageBox>
+#include <QCursor>
+#include <QFile>
+#include <QLabel>
+#include <QLineEdit>
+#include <QTextBrowser>
+#include <QLayout>
+#include <QPushButton>
 #include "google.h"
 
 Google::Google(QWidget *parent)

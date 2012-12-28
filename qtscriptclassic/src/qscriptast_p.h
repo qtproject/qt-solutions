@@ -53,7 +53,7 @@
 // We mean it.
 //
 
-#include <QtCore/QString>
+#include <QString>
 
 
 #include "qscriptastvisitor_p.h"

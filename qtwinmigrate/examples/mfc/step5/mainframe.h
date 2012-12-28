@@ -45,7 +45,7 @@
 #ifndef MAINFRAME_H
 #define MAINFRAME_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 
 class ChildView;
 

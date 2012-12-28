@@ -38,16 +38,16 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
-#include <QtCore/QStringList>
-#include <QtCore/QPointer>
-#include <QtGui/QWidget>
-#include <QtCore/QEvent>
-#include <QtCore/QDebug>
-#include <QtCore/QRect>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QHoverEvent>
-#include <QtGui/QKeyEvent>
+#include <QApplication>
+#include <QStringList>
+#include <QPointer>
+#include <QWidget>
+#include <QEvent>
+#include <QDebug>
+#include <QRect>
+#include <QMouseEvent>
+#include <QHoverEvent>
+#include <QKeyEvent>
 
 #include <Carbon/Carbon.h>
 

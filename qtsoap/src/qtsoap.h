@@ -40,14 +40,14 @@
 
 #ifndef QTSOAP_H
 #define QTSOAP_H
-#include <QtCore/QString>
-#include <QtCore/QVariant>
-#include <QtXml/QtXml>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtCore/QUrl>
-#include <QtCore/QHash>
-#include <QtCore/QLinkedList>
-#include <QtCore/QPointer>
+#include <QString>
+#include <QVariant>
+#include <QtXml>
+#include <QNetworkAccessManager>
+#include <QUrl>
+#include <QHash>
+#include <QLinkedList>
+#include <QPointer>
 
 #if defined(Q_WS_WIN)
 #  if !defined(QT_QTSOAP_EXPORT) && !defined(QT_QTSOAP_IMPORT)

@@ -40,7 +40,7 @@
 
 #ifndef GOOGLE_H_INCLUDED
 #define GOOGLE_H_INCLUDED
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <qtsoap.h>
 
 class QLineEdit;

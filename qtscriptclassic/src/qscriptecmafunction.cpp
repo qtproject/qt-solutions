@@ -48,11 +48,11 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QtDebug>
+#include <QtDebug>
 
 #ifndef QT_NO_QOBJECT
 #   include "qscriptextqobject_p.h"
-#   include <QtCore/QMetaMethod>
+#   include <QMetaMethod>
 #endif
 
 QT_BEGIN_NAMESPACE

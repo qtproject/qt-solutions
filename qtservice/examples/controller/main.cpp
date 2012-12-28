@@ -38,9 +38,9 @@
 **
 ****************************************************************************/
 
-#include <QtCore/QStringList>
-#include <QtCore/QDir>
-#include <QtCore/QSettings>
+#include <QStringList>
+#include <QDir>
+#include <QSettings>
 #include "qtservice.h"
 
 int processArgs(int argc, char **argv)

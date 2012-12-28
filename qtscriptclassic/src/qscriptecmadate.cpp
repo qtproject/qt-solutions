@@ -48,11 +48,11 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QDateTime>
-#include <QtCore/QRegExp>
-#include <QtCore/QtDebug>
-#include <QtCore/QLocale>
-#include <QtCore/qnumeric.h>
+#include <QDateTime>
+#include <QRegExp>
+#include <QtDebug>
+#include <QLocale>
+#include <qnumeric.h>
 
 #include <math.h>
 

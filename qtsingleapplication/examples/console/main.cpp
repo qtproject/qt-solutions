@@ -40,7 +40,7 @@
 
 
 #include "qtsinglecoreapplication.h"
-#include <QtCore/QDebug>
+#include <QDebug>
 
 
 void report(const QString& msg)

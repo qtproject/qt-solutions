@@ -47,15 +47,15 @@
 #endif
 
 
-#include <QtCore/qobjectdefs.h>
+#include <qobjectdefs.h>
 
-#include <QtCore/QHash>
-#include <QtCore/QList>
-#include <QtCore/QRegExp>
-#include <QtCore/QSet>
-#include <QtCore/QStringList>
-#include <QtCore/QTime>
-#include <QtCore/QVector>
+#include <QHash>
+#include <QList>
+#include <QRegExp>
+#include <QSet>
+#include <QStringList>
+#include <QTime>
+#include <QVector>
 
 #include "qscriptengine.h"
 #include "qscriptrepository_p.h"

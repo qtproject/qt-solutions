@@ -48,9 +48,9 @@
 #include "qscriptmember_p.h"
 #include "qscriptobject_p.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QRegExp>
-#include <QtCore/QtDebug>
+#include <QStringList>
+#include <QRegExp>
+#include <QtDebug>
 
 QT_BEGIN_NAMESPACE
 

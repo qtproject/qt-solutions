@@ -39,17 +39,17 @@
 ****************************************************************************/
 
 #include "qtcanvas.h"
-#include <QtGui/QApplication>
-#include <QtGui/QBitmap>
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QImage>
-#include <QtGui/QPainter>
-#include <QtCore/QTimer>
-#include <QtCore/qhash.h>
-#include <QtCore/qset.h>
-#include <QtCore/qalgorithms.h>
-#include <QtGui/qevent.h>
-#include <QtGui/qpainterpath.h>
+#include <QApplication>
+#include <QBitmap>
+#include <QDesktopWidget>
+#include <QImage>
+#include <QPainter>
+#include <QTimer>
+#include <qhash.h>
+#include <qset.h>
+#include <qalgorithms.h>
+#include <qevent.h>
+#include <qpainterpath.h>
 
 #include <stdlib.h>
 using namespace Qt;
@@ -1108,7 +1108,7 @@ void QtCanvas::drawArea(const QRect& clip, QPainter* painter, bool dbuf)
         drawCanvasArea(clip, painter, dbuf);
 }
 
-#include <QtCore/QDebug>
+#include <QDebug>
 /*
   \internal
 */

@@ -53,10 +53,10 @@
 // We mean it.
 //
 
-#include <QtCore/QMap>
+#include <QMap>
 
 
-#include <QtCore/QVector>
+#include <QVector>
 
 #include "qscriptvalueimplfwd_p.h"
 #include "qscriptenginefwd_p.h"

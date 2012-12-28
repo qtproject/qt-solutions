@@ -57,7 +57,7 @@
 #  undef m_flags
 #endif
 
-#include <QtCore/qglobal.h>
+#include <qglobal.h>
 
 QT_BEGIN_NAMESPACE
 

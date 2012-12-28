@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include "population.h"
 
 Population::Population(const QString &country, QObject *parent)

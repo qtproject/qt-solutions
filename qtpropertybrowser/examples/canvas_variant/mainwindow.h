@@ -41,8 +41,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
-#include <QtCore/QMap>
+#include <QMainWindow>
+#include <QMap>
 #include "qtcanvas.h"
 
 class QtVariantProperty;

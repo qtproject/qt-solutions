@@ -58,8 +58,8 @@
 #endif
 
 
-#include <QtCore/qatomic.h>
-#include <QtCore/qstring.h>
+#include <qatomic.h>
+#include <qstring.h>
 
 QT_BEGIN_NAMESPACE
 

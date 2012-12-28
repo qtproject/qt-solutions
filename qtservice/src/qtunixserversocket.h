@@ -41,7 +41,7 @@
 #ifndef QTUNIXSERVERSOCKET_H
 #define QTUNIXSERVERSOCKET_H
 
-#include <QtNetwork/QTcpServer>
+#include <QTcpServer>
 
 class QtUnixServerSocket : public QTcpServer
 {

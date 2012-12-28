@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 #include <stdio.h>
-#include <QtCore/QTextStream>
+#include <QTextStream>
 #include <qtlockedfile.h>
 
 

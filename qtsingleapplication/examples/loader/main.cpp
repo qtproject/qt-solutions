@@ -39,13 +39,13 @@
 ****************************************************************************/
 
 #include <qtsingleapplication.h>
-#include <QtCore/QFile>
-#include <QtGui/QMainWindow>
-#include <QtGui/QPrinter>
-#include <QtGui/QPainter>
-#include <QtGui/QTextEdit>
-#include <QtGui/QMdiArea>
-#include <QtCore/QTextStream>
+#include <QFile>
+#include <QMainWindow>
+#include <QPrinter>
+#include <QPainter>
+#include <QTextEdit>
+#include <QMdiArea>
+#include <QTextStream>
 
 class MainWindow : public QMainWindow
 {

@@ -42,7 +42,7 @@
 #ifndef QSCRIPTSTRING_H
 #define QSCRIPTSTRING_H
 
-#include <QtCore/qstring.h>
+#include <qstring.h>
 
 
 QT_BEGIN_HEADER

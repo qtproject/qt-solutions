@@ -53,8 +53,8 @@
 // We mean it.
 //
 
-#include <QtCore/QHash>
-#include <QtCore/QString>
+#include <QHash>
+#include <QString>
 
 #include "qscriptmemorypool_p.h"
 
