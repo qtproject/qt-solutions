@@ -1351,7 +1351,11 @@ QVariant QtVariantPropertyManager::value(const QtProperty *property) const
     } else if (QtDateTimePropertyManager *dateTimeManager = qobject_cast<QtDateTimePropertyManager *>(manager)) {
         return dateTimeManager->value(internProp);
     } else if (QtKeySequencePropertyManager *keySequenceManager = qobject_cast<QtKeySequencePropertyManager *>(manager)) {
+#if QT_VERSION < 0x050000
         return keySequenceManager->value(internProp);
+#else
+        return QVariant::fromValue(keySequenceManager->value(internProp));
+#endif
     } else if (QtCharPropertyManager *charManager = qobject_cast<QtCharPropertyManager *>(manager)) {
         return charManager->value(internProp);
     } else if (QtLocalePropertyManager *localeManager = qobject_cast<QtLocalePropertyManager *>(manager)) {
