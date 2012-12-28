@@ -1,5 +1,5 @@
 <RCC version="1.0">
-    <qresource prefix="/trolltech/qtpropertybrowser">
+    <qresource prefix="/qt-project.org/qtpropertybrowser">
         <file>images/cursor-arrow.png</file>
         <file>images/cursor-busy.png</file>
         <file>images/cursor-closedhand.png</file>
