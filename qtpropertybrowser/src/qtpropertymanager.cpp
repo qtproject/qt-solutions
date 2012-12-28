@@ -3313,7 +3313,7 @@ void QtSizePropertyManager::setMaximum(QtProperty *property, const QSize &maxVal
     When setting a new range, the current value is adjusted if
     necessary (ensuring that the value remains within the range).
 
-    \sa  setMinimum(), setMaximum(), rangeChanged()
+    \sa setMinimum(), setMaximum(), rangeChanged()
 */
 void QtSizePropertyManager::setRange(QtProperty *property, const QSize &minVal, const QSize &maxVal)
 {
@@ -3711,7 +3711,7 @@ void QtSizeFPropertyManager::setMaximum(QtProperty *property, const QSizeF &maxV
     When setting a new range, the current value is adjusted if
     necessary (ensuring that the value remains within the range).
 
-    \sa  setMinimum(), setMaximum(), rangeChanged()
+    \sa setMinimum(), setMaximum(), rangeChanged()
 */
 void QtSizeFPropertyManager::setRange(QtProperty *property, const QSizeF &minVal, const QSizeF &maxVal)
 {

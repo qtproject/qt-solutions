@@ -823,7 +823,7 @@ QtProperty *QtAbstractPropertyManager::createProperty()
     property is being destroyed so that it can remove the property's
     additional attributes.
 
-    \sa clear(),  propertyDestroyed()
+    \sa clear(), propertyDestroyed()
 */
 void QtAbstractPropertyManager::uninitializeProperty(QtProperty *property)
 {
@@ -884,7 +884,7 @@ void QtAbstractPropertyManager::uninitializeProperty(QtProperty *property)
     which also provides a pure virtual convenience overload of this
     function enabling access to the property's manager.
 
-    \sa  QtAbstractEditorFactory::createEditor()
+    \sa QtAbstractEditorFactory::createEditor()
 */
 
 /*!
