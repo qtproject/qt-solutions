@@ -111,7 +111,7 @@ Editor *EditorFactoryPrivate<Editor>::createEditor(QtProperty *property, QWidget
 template <class Editor>
 void EditorFactoryPrivate<Editor>::initializeEditor(QtProperty *property, Editor *editor)
 {
-    Q_TYPENAME PropertyToEditorListMap::iterator it = m_createdEditors.find(property);
+    typename PropertyToEditorListMap::iterator it = m_createdEditors.find(property);
     if (it == m_createdEditors.end())
         it = m_createdEditors.insert(property, EditorList());
     it.value().append(editor);
@@ -121,12 +121,12 @@ void EditorFactoryPrivate<Editor>::initializeEditor(QtProperty *property, Editor
 template <class Editor>
 void EditorFactoryPrivate<Editor>::slotEditorDestroyed(QObject *object)
 {
-    const Q_TYPENAME EditorToPropertyMap::iterator ecend = m_editorToProperty.end();
-    for (Q_TYPENAME EditorToPropertyMap::iterator itEditor = m_editorToProperty.begin(); itEditor !=  ecend; ++itEditor) {
+    const typename EditorToPropertyMap::iterator ecend = m_editorToProperty.end();
+    for (typename EditorToPropertyMap::iterator itEditor = m_editorToProperty.begin(); itEditor !=  ecend; ++itEditor) {
         if (itEditor.key() == object) {
             Editor *editor = itEditor.key();
             QtProperty *property = itEditor.value();
-            const Q_TYPENAME PropertyToEditorListMap::iterator pit = m_createdEditors.find(property);
+            const typename PropertyToEditorListMap::iterator pit = m_createdEditors.find(property);
             if (pit != m_createdEditors.end()) {
                 pit.value().removeAll(editor);
                 if (pit.value().empty())
