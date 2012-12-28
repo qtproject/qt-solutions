@@ -95,15 +95,23 @@ QtCursorDatabase::QtCursorDatabase()
                         QApplication::UnicodeUTF8), QIcon(QLatin1String(":/trolltech/qtpropertybrowser/images/cursor-busy.png")));
 }
 
+void QtCursorDatabase::clear()
+{
+    m_cursorNames.clear();
+    m_cursorIcons.clear();
+    m_valueToCursorShape.clear();
+    m_cursorShapeToValue.clear();
+}
+
 void QtCursorDatabase::appendCursor(Qt::CursorShape shape, const QString &name, const QIcon &icon)
 {
     if (m_cursorShapeToValue.contains(shape))
         return;
-    int value = m_cursorNames.count();
+    const int value = m_cursorNames.count();
     m_cursorNames.append(name);
-    m_cursorIcons[value] = icon;
-    m_valueToCursorShape[value] = shape;
-    m_cursorShapeToValue[shape] = value;
+    m_cursorIcons.insert(value, icon);
+    m_valueToCursorShape.insert(value, shape);
+    m_cursorShapeToValue.insert(shape, value);
 }
 
 QStringList QtCursorDatabase::cursorShapeNames() const

@@ -1453,15 +1453,53 @@ void QtStringPropertyManager::uninitializeProperty(QtProperty *property)
 }
 
 // QtBoolPropertyManager
+//     Return an icon containing a check box indicator
+static QIcon drawCheckBox(bool value)
+{
+    QStyleOptionButton opt;
+    opt.state |= value ? QStyle::State_On : QStyle::State_Off;
+    opt.state |= QStyle::State_Enabled;
+    const QStyle *style = QApplication::style();
+    // Figure out size of an indicator and make sure it is not scaled down in a list view item
+    // by making the pixmap as big as a list view icon and centering the indicator in it.
+    // (if it is smaller, it can't be helped)
+    const int indicatorWidth = style->pixelMetric(QStyle::PM_IndicatorWidth, &opt);
+    const int indicatorHeight = style->pixelMetric(QStyle::PM_IndicatorHeight, &opt);
+    const int listViewIconSize = indicatorWidth;
+    const int pixmapWidth = indicatorWidth;
+    const int pixmapHeight = qMax(indicatorHeight, listViewIconSize);
+
+    opt.rect = QRect(0, 0, indicatorWidth, indicatorHeight);
+    QPixmap pixmap = QPixmap(pixmapWidth, pixmapHeight);
+    pixmap.fill(Qt::transparent);
+    {
+        // Center?
+        const int xoff = (pixmapWidth  > indicatorWidth)  ? (pixmapWidth  - indicatorWidth)  / 2 : 0;
+        const int yoff = (pixmapHeight > indicatorHeight) ? (pixmapHeight - indicatorHeight) / 2 : 0;
+        QPainter painter(&pixmap);
+        painter.translate(xoff, yoff);
+        style->drawPrimitive(QStyle::PE_IndicatorCheckBox, &opt, &painter);
+    }
+    return QIcon(pixmap);
+}
 
 class QtBoolPropertyManagerPrivate
 {
     QtBoolPropertyManager *q_ptr;
     Q_DECLARE_PUBLIC(QtBoolPropertyManager)
 public:
+    QtBoolPropertyManagerPrivate();
 
     QMap<const QtProperty *, bool> m_values;
+    const QIcon m_checkedIcon;
+    const QIcon m_uncheckedIcon;
 };
+
+QtBoolPropertyManagerPrivate::QtBoolPropertyManagerPrivate() :
+    m_checkedIcon(drawCheckBox(true)),
+    m_uncheckedIcon(drawCheckBox(false))
+{
+}
 
 /*!
     \class QtBoolPropertyManager
@@ -1532,37 +1570,6 @@ QString QtBoolPropertyManager::valueText(const QtProperty *property) const
     return it.value() ? trueText : falseText;
 }
 
-// Return an icon containing a check box indicator
-static QIcon drawCheckBox(bool value)
-{
-    QStyleOptionButton opt;
-    opt.state |= value ? QStyle::State_On : QStyle::State_Off;
-    opt.state |= QStyle::State_Enabled;
-    const QStyle *style = QApplication::style();
-    // Figure out size of an indicator and make sure it is not scaled down in a list view item
-    // by making the pixmap as big as a list view icon and centering the indicator in it.
-    // (if it is smaller, it can't be helped)
-    const int indicatorWidth = style->pixelMetric(QStyle::PM_IndicatorWidth, &opt);
-    const int indicatorHeight = style->pixelMetric(QStyle::PM_IndicatorHeight, &opt);
-    const int listViewIconSize = indicatorWidth;
-    const int pixmapWidth = indicatorWidth;
-    const int pixmapHeight = qMax(indicatorHeight, listViewIconSize);
-
-    opt.rect = QRect(0, 0, indicatorWidth, indicatorHeight);
-    QPixmap pixmap = QPixmap(pixmapWidth, pixmapHeight);
-    pixmap.fill(Qt::transparent);
-    {
-        // Center?
-        const int xoff = (pixmapWidth  > indicatorWidth)  ? (pixmapWidth  - indicatorWidth)  / 2 : 0;
-        const int yoff = (pixmapHeight > indicatorHeight) ? (pixmapHeight - indicatorHeight) / 2 : 0;
-        QPainter painter(&pixmap);
-        painter.translate(xoff, yoff);
-        QCheckBox cb;
-        style->drawPrimitive(QStyle::PE_IndicatorCheckBox, &opt, &painter, &cb);
-    }
-    return QIcon(pixmap);
-}
-
 /*!
     \reimp
 */
@@ -1572,9 +1579,7 @@ QIcon QtBoolPropertyManager::valueIcon(const QtProperty *property) const
     if (it == d_ptr->m_values.constEnd())
         return QIcon();
 
-    static const QIcon checkedIcon = drawCheckBox(true);
-    static const QIcon uncheckedIcon = drawCheckBox(false);
-    return it.value() ? checkedIcon : uncheckedIcon;
+    return it.value() ? d_ptr->m_checkedIcon : d_ptr->m_uncheckedIcon;
 }
 
 /*!
@@ -6327,7 +6332,24 @@ void QtColorPropertyManager::uninitializeProperty(QtProperty *property)
 
 // QtCursorPropertyManager
 
+// Make sure icons are removed as soon as QApplication is destroyed, otherwise,
+// handles are leaked on X11.
+static void clearCursorDatabase();
+namespace {
+struct CursorDatabase : public QtCursorDatabase
+{
+    CursorDatabase()
+    {
+        qAddPostRoutine(clearCursorDatabase);
+    }
+};
+}
 Q_GLOBAL_STATIC(QtCursorDatabase, cursorDatabase)
+
+static void clearCursorDatabase()
+{
+    cursorDatabase()->clear();
+}
 
 class QtCursorPropertyManagerPrivate
 {
