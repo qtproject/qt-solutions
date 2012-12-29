@@ -49,7 +49,7 @@
 #include <QLinkedList>
 #include <QPointer>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #  if !defined(QT_QTSOAP_EXPORT) && !defined(QT_QTSOAP_IMPORT)
 #    define QT_QTSOAP_EXPORT
 #  elif defined(QT_QTSOAP_IMPORT)

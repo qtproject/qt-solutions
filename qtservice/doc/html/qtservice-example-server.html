@@ -140,7 +140,7 @@
 
  int main(int argc, char **argv)
  {
- #if !defined(Q_WS_WIN)
+ #if !defined(Q_OS_WIN)
      <span class="comment">// QtService stores service settings in SystemScope, which normally require root privileges.</span>
      <span class="comment">// To allow testing this example as non-root, we change the directory of the SystemScope settings file.</span>
      QSettings::setPath(QSettings::NativeFormat, QSettings::SystemScope, QDir::tempPath());

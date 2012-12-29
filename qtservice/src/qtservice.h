@@ -43,7 +43,7 @@
 
 #include <QCoreApplication>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #  if !defined(QT_QTSERVICE_EXPORT) && !defined(QT_QTSERVICE_IMPORT)
 #    define QT_QTSERVICE_EXPORT
 #  elif defined(QT_QTSERVICE_IMPORT)

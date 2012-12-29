@@ -56,7 +56,7 @@
 
 #include <math.h>
 
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
 #  include <time.h>
 #  ifndef Q_OS_VXWORKS
 #    include <sys/time.h>
@@ -291,7 +291,7 @@ static inline qsreal MakeDate(qsreal day, qsreal time)
 
 static inline qsreal DaylightSavingTA(double t)
 {
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     long int tt = (long int)(t / msPerSecond);
     struct tm *tmtm = localtime((const time_t*)&tt);
     if (! tmtm)
@@ -316,7 +316,7 @@ static inline qsreal UTC(qsreal t)
 
 static inline qsreal currentTime()
 {
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     struct timeval tv;
 
     gettimeofday(&tv, 0);
@@ -499,7 +499,7 @@ static inline QString ToLocaleTimeString(qsreal t)
 
 static qsreal getLocalTZA()
 {
-#ifndef Q_WS_WIN
+#ifndef Q_OS_WIN
     struct tm* t;
     time_t curr;
     time(&curr);
