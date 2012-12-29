@@ -60,6 +60,10 @@
 
 #include <qt_windows.h>
 
+#if QT_VERSION >= 0x050000
+#define QT_WA(unicode, ansi) unicode
+#endif
+
 /*!
     \class QWinWidget qwinwidget.h
     \brief The QWinWidget class is a Qt widget that can be child of a

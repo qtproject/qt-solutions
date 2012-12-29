@@ -66,6 +66,10 @@ char **QMfcApp::mfc_argv = 0;
 int QMfcApp::mfc_argc = 0;
 #endif
 
+#if QT_VERSION >= 0x050000
+#define QT_WA(unicode, ansi) unicode
+#endif
+
 /*! \class QMfcApp qmfcapp.h
     \brief The QMfcApp class provides merging of the MFC and Qt event loops.
 

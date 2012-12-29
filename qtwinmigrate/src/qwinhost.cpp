@@ -49,6 +49,10 @@
 #include <QEvent>
 #include <qt_windows.h>
 
+#if QT_VERSION >= 0x050000
+#define QT_WA(unicode, ansi) unicode
+#endif
+
 /*!
     \class QWinHost qwinhost.h
     \brief The QWinHost class provides an API to use native Win32

@@ -46,6 +46,10 @@
 #include <windows.h>
 #include "qtnpapi.h"
 
+#if QT_VERSION >= 0x050000
+#define QT_WA(unicode, ansi) unicode
+#endif
+
 static HHOOK hhook = 0;
 static bool ownsqapp = false;
 Q_GUI_EXPORT int qt_translateKeyCode(int);
