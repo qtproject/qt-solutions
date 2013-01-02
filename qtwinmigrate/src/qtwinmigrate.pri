@@ -20,3 +20,4 @@ win32 {
     qtwinmigrate-buildlib:DEFINES += QT_QTWINMIGRATE_EXPORT
     else:qtwinmigrate-uselib:DEFINES += QT_QTWINMIGRATE_IMPORT
 }
+contains(QT_MAJOR_VERSION, 5): QT += widgets gui-private

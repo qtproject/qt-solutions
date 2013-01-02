@@ -38,8 +38,13 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
-
+#include <QApplication>
+#include <QLineEdit>
+#include <QMainWindow>
+#include <QMenuBar>
+#include <QMessageBox>
+#include <QStatusBar>
+#include <QVBoxLayout>
 #include <qwinhost.h>
 
 #include <windows.h>
@@ -48,7 +53,7 @@ class HostWindow : public QWinHost
 {
     Q_OBJECT
 public:
-    HostWindow(QWidget *parent = 0, Qt::WFlags f = 0)
+    HostWindow(QWidget *parent = 0, Qt::WindowFlags f = 0)
 	: QWinHost(parent, f)
     {
         setFocusPolicy(Qt::StrongFocus);
@@ -93,7 +98,7 @@ public slots:
 protected:
     static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
-	QWidget *widget = QWidget::find(GetParent(hWnd));
+        QWidget *widget = QWidget::find((WId)GetParent(hWnd));
 	HostWindow *window = qobject_cast<HostWindow*>(widget);
 
 	if (window) switch (message) {

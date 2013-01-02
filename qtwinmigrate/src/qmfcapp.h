@@ -67,6 +67,17 @@ class CWinApp;
 #  define QT_QTWINMIGRATE_EXPORT
 #endif
 
+#if QT_VERSION >= 0x050000
+#include <QAbstractNativeEventFilter>
+
+class QT_QTWINMIGRATE_EXPORT QMfcAppEventFilter : public QAbstractNativeEventFilter
+{
+public:
+    QMfcAppEventFilter();
+    bool nativeEventFilter(const QByteArray &eventType, void *message, long *result);
+};
+#endif
+
 class QT_QTWINMIGRATE_EXPORT QMfcApp : public QApplication
 {
 public:
@@ -77,6 +88,7 @@ public:
     static QApplication *instance(CWinApp *mfcApp);
     QMfcApp(CWinApp *mfcApp, int &argc, char **argv);
 #endif
+    QMfcApp(int &argc, char **argv);
     ~QMfcApp();
 
     bool winEventFilter(MSG *msg, long *result);

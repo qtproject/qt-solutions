@@ -38,7 +38,11 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QPushButton>
 #include <qwinwidget.h>
 
 #include <windows.h>
@@ -91,7 +95,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_SETFOCUS:
         {
             QString str("Got focus");
-            QWidget *widget = QWidget::find(HWND(wParam));
+            QWidget *widget = QWidget::find((WId)HWND(wParam));
             if (widget)
                 str += QString(" from %1 (%2)").arg(widget->objectName()).arg(widget->metaObject()->className());
             str += "\n";
@@ -102,7 +106,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_KILLFOCUS:
         {
             QString str("Lost focus");
-            QWidget *widget = QWidget::find(HWND(wParam));
+            QWidget *widget = QWidget::find((WId)HWND(wParam));
             if (widget)
                 str += QString(" to %1 (%2)").arg(widget->objectName()).arg(widget->metaObject()->className());
             str += "\n";
@@ -153,7 +157,7 @@ int APIENTRY wWinMain(HINSTANCE hInstance,
     QApplication a(argc, 0);
 
     QWinWidget win(hWnd);
-    winId = win.winId();
+    winId = (HWND)win.winId();
     QHBoxLayout hbox(&win);
     hbox.setSpacing(5);
     hbox.setMargin(0);

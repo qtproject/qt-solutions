@@ -68,6 +68,15 @@ int QMfcApp::mfc_argc = 0;
 
 #if QT_VERSION >= 0x050000
 #define QT_WA(unicode, ansi) unicode
+
+QMfcAppEventFilter::QMfcAppEventFilter() : QAbstractNativeEventFilter()
+{
+}
+
+bool QMfcAppEventFilter::nativeEventFilter(const QByteArray &, void *message, long *result)
+{
+    return static_cast<QMfcApp*>(qApp)->winEventFilter((MSG*)message, result);
+}
 #endif
 
 /*! \class QMfcApp qmfcapp.h
@@ -199,6 +208,10 @@ bool QMfcApp::pluginInstance(Qt::HANDLE plugin)
 
     return TRUE;
 }
+
+#if QT_VERSION >= 0x050000
+Q_GLOBAL_STATIC(QMfcAppEventFilter, qmfcEventFilter);
+#endif
 
 #ifdef QTWINMIGRATE_WITHMFC
 /*!
@@ -349,11 +362,21 @@ QMfcApp::QMfcApp(CWinApp *mfcApp, int &argc, char **argv)
 : QApplication(argc, argv), idleCount(0), doIdle(FALSE)
 {
     mfc_app = mfcApp;
+#if QT_VERSION >= 0x050000
+    QAbstractEventDispatcher::instance()->installNativeEventFilter(qmfcEventFilter());
+#else
     QAbstractEventDispatcher::instance()->setEventFilter(qmfc_eventFilter);
+#endif
     setQuitOnLastWindowClosed(false);
 }
 #endif
 
+QMfcApp::QMfcApp(int &argc, char **argv) : QApplication(argc, argv)
+{
+#if QT_VERSION >= 0x050000
+    QAbstractEventDispatcher::instance()->installNativeEventFilter(qmfcEventFilter());
+#endif
+}
 /*!
     Destroys the QMfcApp object, freeing all allocated resources.
 */
@@ -388,10 +411,10 @@ bool QMfcApp::winEventFilter(MSG *msg, long *result)
 
     recursion = true;
 
-    QWidget *widget = QWidget::find(msg->hwnd);
+    QWidget *widget = QWidget::find((WId)msg->hwnd);
     HWND toplevel = 0;
     if (widget) {
-        HWND parent = widget->winId();
+        HWND parent = (HWND)widget->winId();
         while(parent) {
             toplevel = parent;
             parent = GetParent(parent);
@@ -432,5 +455,10 @@ bool QMfcApp::winEventFilter(MSG *msg, long *result)
 #endif
 
     recursion = false;
+#if QT_VERSION < 0x050000
     return QApplication::winEventFilter(msg, result);
+#else
+    Q_UNUSED(result);
+    return false;
+#endif
 }

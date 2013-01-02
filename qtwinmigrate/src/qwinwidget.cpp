@@ -61,6 +61,8 @@
 #include <qt_windows.h>
 
 #if QT_VERSION >= 0x050000
+#include <QWindow>
+#include <qpa/qplatformnativeinterface.h>
 #define QT_WA(unicode, ansi) unicode
 #endif
 
@@ -88,7 +90,7 @@
     the native Win32 parent. If a \a parent is provided the object is
     owned by that QObject. \a f is passed on to the QWidget constructor.
 */
-QWinWidget::QWinWidget(HWND hParentWnd, QObject *parent, Qt::WFlags f)
+QWinWidget::QWinWidget(HWND hParentWnd, QObject *parent, Qt::WindowFlags f)
 : QWidget(0, f), hParent(hParentWnd), prevFocus(0), reenable_parent(false)
 {
     if (parent)
@@ -105,7 +107,7 @@ QWinWidget::QWinWidget(HWND hParentWnd, QObject *parent, Qt::WFlags f)
     MFC window object. If a \a parent is provided the object is owned
     by that QObject. \a f is passed on to the QWidget constructor.
 */
-QWinWidget::QWinWidget(CWnd *parentWnd, QObject *parent, Qt::WFlags f)
+QWinWidget::QWinWidget(CWnd *parentWnd, QObject *parent, Qt::WindowFlags f)
 : QWidget(0, f), hParent(parentWnd ? parentWnd->m_hWnd : 0), prevFocus(0), reenable_parent(false)
 {
     if (parent)
@@ -123,12 +125,20 @@ void QWinWidget::init()
     if (hParent) {
 	// make the widget window style be WS_CHILD so SetParent will work
 	QT_WA({
-	    SetWindowLong(winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
+        SetWindowLong((HWND)winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
 	}, {
-	    SetWindowLongA(winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
+        SetWindowLongA((HWND)winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
 	})
-	SetParent(winId(), hParent);
-
+#if QT_VERSION >= 0x050000
+        QWindow *window = windowHandle();
+        window->setProperty("_q_embedded_native_parent_handle", (WId)hParent);
+        HWND h = static_cast<HWND>(QGuiApplication::platformNativeInterface()->
+                                nativeResourceForWindow("handle", window));
+        SetParent(h, hParent);
+        window->setFlags(Qt::FramelessWindowHint);
+#else
+        SetParent(winId(), hParent);
+#endif
         QEvent e(QEvent::EmbeddingControl);
         QApplication::sendEvent(this, &e);
     }
@@ -205,7 +215,7 @@ void QWinWidget::show()
 */
 void QWinWidget::center()
 {
-    const QWidget *child = qFindChild<QWidget*>(this);
+    const QWidget *child = findChild<QWidget*>();
     if (child && !child->isWindow()) {
         qWarning("QWinWidget::center: Call this function only for QWinWidgets with toplevel children");
     }
@@ -240,8 +250,15 @@ void QWinWidget::resetFocus()
 
 /*! \reimp
 */
+#if QT_VERSION >= 0x050000
+bool QWinWidget::nativeEvent(const QByteArray &, void *message, long *)
+#else
 bool QWinWidget::winEvent(MSG *msg, long *)
+#endif
 {
+#if QT_VERSION >= 0x050000
+    MSG *msg = (MSG *)message;
+#endif
     if (msg->message == WM_SETFOCUS) {
         Qt::FocusReason reason;
         if (::GetKeyState(VK_SHIFT) < 0)
