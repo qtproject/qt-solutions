@@ -145,8 +145,14 @@ protected:
     {
         QCoreApplication *app = application();
 
+#if QT_VERSION < 0x040100
         quint16 port = (app->argc() > 1) ?
                 QString::fromLocal8Bit(app->argv()[1]).toUShort() : 8080;
+#else
+        const QStringList arguments = QCoreApplication::arguments();
+        quint16 port = (arguments.size() > 1) ?
+                arguments.at(1).toUShort() : 8080;
+#endif
         daemon = new HttpDaemon(port, app);
 
         if (!daemon->isListening()) {

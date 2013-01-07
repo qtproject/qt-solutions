@@ -54,6 +54,9 @@
 #include <QAbstractEventDispatcher>
 #include <QVector>
 #include <QThread>
+#if QT_VERSION >= 0x050000
+#  include <QAbstractNativeEventFilter>
+#endif
 #include <stdio.h>
 #if defined(QTSERVICE_DEBUG)
 #include <QDebug>
@@ -487,7 +490,9 @@ public:
     QStringList serviceArgs;
 
     static QtServiceSysPrivate *instance;
+#if QT_VERSION < 0x050000
     static QCoreApplication::EventFilter nextFilter;
+#endif
 
     QWaitCondition condition;
     QMutex mutex;
@@ -512,7 +517,9 @@ void QtServiceControllerHandler::customEvent(QEvent *e)
 
 
 QtServiceSysPrivate *QtServiceSysPrivate::instance = 0;
+#if QT_VERSION < 0x050000
 QCoreApplication::EventFilter QtServiceSysPrivate::nextFilter = 0;
+#endif
 
 QtServiceSysPrivate::QtServiceSysPrivate()
 {
@@ -716,6 +723,30 @@ protected:
 /*
   Ignore WM_ENDSESSION system events, since they make the Qt kernel quit
 */
+
+#if QT_VERSION >= 0x050000
+
+class QtServiceAppEventFilter : public QAbstractNativeEventFilter
+{
+public:
+    QtServiceAppEventFilter() {}
+    bool nativeEventFilter(const QByteArray &eventType, void *message, long *result);
+};
+
+bool QtServiceAppEventFilter::nativeEventFilter(const QByteArray &, void *message, long *result)
+{
+    MSG *winMessage = (MSG*)message;
+    if (winMessage->message == WM_ENDSESSION && (winMessage->lParam & ENDSESSION_LOGOFF)) {
+        *result = TRUE;
+        return true;
+    }
+    return false;
+}
+
+Q_GLOBAL_STATIC(QtServiceAppEventFilter, qtServiceAppEventFilter)
+
+#else
+
 bool myEventFilter(void* message, long* result)
 {
     MSG* msg = reinterpret_cast<MSG*>(message);
@@ -728,6 +759,8 @@ bool myEventFilter(void* message, long* result)
         *result = TRUE;
     return true;
 }
+
+#endif
 
 /* There are three ways we can be started:
 
@@ -787,7 +820,12 @@ bool QtServiceBasePrivate::start()
     QCoreApplication *app = QCoreApplication::instance();
     if (!app)
         return false;
+
+#if QT_VERSION >= 0x050000
+    QAbstractEventDispatcher::instance()->installNativeEventFilter(qtServiceAppEventFilter());
+#else
     QtServiceSysPrivate::nextFilter = app->setEventFilter(myEventFilter);
+#endif
 
     sys->controllerHandler = new QtServiceControllerHandler(sys);
 
