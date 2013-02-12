@@ -1,4 +1,4 @@
-infile(config.pri, SOLUTIONS_LIBRARY, yes): CONFIG += qtlockedfile-uselib
+exists(config.pri):infile(config.pri, SOLUTIONS_LIBRARY, yes): CONFIG += qtlockedfile-uselib
 TEMPLATE += fakelib
 QTLOCKEDFILE_LIBNAME = $$qtLibraryTarget(QtSolutions_LockedFile-head)
 TEMPLATE -= fakelib

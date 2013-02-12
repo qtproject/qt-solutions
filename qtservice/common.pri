@@ -1,4 +1,4 @@
-infile(config.pri, SOLUTIONS_LIBRARY, yes): CONFIG += qtservice-uselib
+exists(config.pri):infile(config.pri, SOLUTIONS_LIBRARY, yes): CONFIG += qtservice-uselib
 TEMPLATE += fakelib
 QTSERVICE_LIBNAME = QtSolutions_Service-head
 CONFIG(debug, debug|release) {
