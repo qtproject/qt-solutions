@@ -94,14 +94,14 @@ void VariantManager::slotValueChanged(QtProperty *property, const QVariant &valu
     if (xToProperty.contains(property)) {
         QtProperty *pointProperty = xToProperty[property];
         QVariant v = this->value(pointProperty);
-        QPointF p = qVariantValue<QPointF>(v);
-        p.setX(qVariantValue<double>(value));
+        QPointF p = v.value<QPointF>();
+        p.setX(value.value<double>());
         setValue(pointProperty, p);
     } else if (yToProperty.contains(property)) {
         QtProperty *pointProperty = yToProperty[property];
         QVariant v = this->value(pointProperty);
-        QPointF p = qVariantValue<QPointF>(v);
-        p.setY(qVariantValue<double>(value));
+        QPointF p = v.value<QPointF>();
+        p.setY(value.value<double>());
         setValue(pointProperty, p);
     }
 }
@@ -144,7 +144,7 @@ QString VariantManager::valueText(const QtProperty *property) const
 {
     if (propertyToData.contains(property)) {
         QVariant v = propertyToData[property].value;
-        QPointF p = qVariantValue<QPointF>(v);
+        QPointF p = v.value<QPointF>();
         return QString(tr("(%1, %2)").arg(QString::number(p.x()))
                                  .arg(QString::number(p.y())));
     }
@@ -156,7 +156,7 @@ void VariantManager::setValue(QtProperty *property, const QVariant &val)
     if (propertyToData.contains(property)) {
         if (val.type() != QVariant::PointF && !val.canConvert(QVariant::PointF))
             return;
-        QPointF p = qVariantValue<QPointF>(val);
+        QPointF p = val.value<QPointF>();
         Data d = propertyToData[property];
         d.value = p;
         if (d.x)
