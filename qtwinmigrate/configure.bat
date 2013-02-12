@@ -65,6 +65,7 @@ echo run qmake and your make or nmake command.
 echo .
 echo To remove or reconfigure, run make (nmake) distclean.
 echo .
+goto EOF
 
 :PrintUsage
 echo Usage: configure.bat [-library]
