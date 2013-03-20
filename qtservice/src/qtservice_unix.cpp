@@ -451,7 +451,7 @@ void QtServiceBase::logMessage(const QString &message, QtServiceBase::MessageTyp
 	    st = LOG_INFO;
     }
     if (!d_ptr->sysd->ident) {
-	QString tmp = encodeName(serviceName(), TRUE);
+        QString tmp = encodeName(serviceName(), true);
 	int len = tmp.toLocal8Bit().size();
 	d_ptr->sysd->ident = new char[len+1];
 	d_ptr->sysd->ident[len] = '\0';
