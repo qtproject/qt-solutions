@@ -261,7 +261,9 @@ bool QWinWidget::winEvent(MSG *msg, long *)
 #endif
     if (msg->message == WM_SETFOCUS) {
         Qt::FocusReason reason;
-        if (::GetKeyState(VK_SHIFT) < 0)
+        if (::GetKeyState(VK_LBUTTON) < 0 || ::GetKeyState(VK_RBUTTON) < 0)
+            reason = Qt::MouseFocusReason;
+        else if (::GetKeyState(VK_SHIFT) < 0)
             reason = Qt::BacktabFocusReason;
         else
             reason = Qt::TabFocusReason;
