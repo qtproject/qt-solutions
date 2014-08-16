@@ -1,7 +1,7 @@
 include(../common.pri)
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
-
+QT -= gui
 qtlockedfile-uselib:!qtlockedfile-buildlib {
     LIBS += -L$$QTLOCKEDFILE_LIBDIR -l$$QTLOCKEDFILE_LIBNAME
 } else {
