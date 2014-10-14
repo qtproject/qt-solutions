@@ -45,6 +45,8 @@
 #include "qtmfc.h"
 
 #include "mainframe.h"
+#include <string>
+#include <sstream>
 
 #include <qmfcapp.h>
 
@@ -170,20 +172,58 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
+static inline void formatWindowsErrorMessage(DWORD errorCode, std::wostream &str)
+{
+    wchar_t *string = 0;
+    FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER|FORMAT_MESSAGE_FROM_SYSTEM,
+                  NULL, errorCode, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                  (LPWSTR)&string, 0, NULL);
+    if (string)
+        str << string;
+    else
+        str << "Unknown error";
+    LocalFree((HLOCAL)string);
+}
+
+static bool showQtAboutDialog(HWND parentWindow, std::wstring *errorMessage)
+{
+    typedef BOOL(*pShowDialog)(HWND parent);
+
+    const char dllName[] = "qtdialog.dll";
+    const char functionName[] = "showDialog";
+
+    const HMODULE module = LoadLibraryA(dllName);
+    const DWORD errorCode = GetLastError();
+    if (!module) {
+        std::wostringstream str;
+        str << "Unable to load '" << dllName << "': Error #" << errorCode << ": ";
+        formatWindowsErrorMessage(errorCode, str);
+        *errorMessage = str.str();
+        return false;
+    }
+
+    pShowDialog showDialog = (pShowDialog)GetProcAddress(module, functionName);
+    if (!showDialog) {
+        std::wostringstream str;
+        str << "Unable to resolve function '" << functionName << "' in '"
+            << dllName << "'.";
+        *errorMessage = str.str();
+        return false;
+    }
+
+    showDialog(parentWindow);
+    FreeLibrary(module);
+    return true;
+}
+
 // App command to run the dialog
 void WindowsApp::OnAppAbout()
 {
-    HMODULE mod = LoadLibrary( "qtdialog.dll" );
-    if ( mod ) {
-	typedef BOOL(*pShowDialog)(HWND parent);
-	pShowDialog showDialog = (pShowDialog)GetProcAddress( mod, "showDialog" );
-	if ( showDialog )
-	    showDialog( theApp.m_pMainWnd->m_hWnd );
-
-	FreeLibrary( mod );
-    } else {
-	CAboutDlg aboutDlg;
-	aboutDlg.DoModal();
+    const HWND parentWindow = theApp.m_pMainWnd->m_hWnd;
+    std::wstring errorMessage;
+    if (!showQtAboutDialog(parentWindow, &errorMessage)) {
+        MessageBoxW(parentWindow, errorMessage.c_str(), L"QtMfc 1.0 MFC Application",
+                    MB_OK | MB_ICONWARNING);
     }
 }
 
