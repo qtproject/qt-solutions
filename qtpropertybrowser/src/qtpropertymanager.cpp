@@ -1543,7 +1543,7 @@ void QtStringPropertyManager::setReadOnly(QtProperty *property, bool readOnly)
     it.value() = data;
 
     emit propertyChanged(property);
-    emit echoModeChanged(property, data.echoMode);
+    emit readOnlyChanged(property, data.readOnly);
 }
 
 /*!
