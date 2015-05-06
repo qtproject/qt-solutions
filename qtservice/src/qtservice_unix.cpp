@@ -281,7 +281,11 @@ public:
     QtServiceBase::ServiceFlags serviceFlags;
 
 protected:
+#if QT_VERSION >= 0x050000
+    void incomingConnection(qintptr socketDescriptor);
+#else
     void incomingConnection(int socketDescriptor);
+#endif
 
 private slots:
     void slotReady();
@@ -303,7 +307,11 @@ QtServiceSysPrivate::~QtServiceSysPrivate()
 	delete[] ident;
 }
 
+#if QT_VERSION >= 0x050000
+void QtServiceSysPrivate::incomingConnection(qintptr socketDescriptor)
+#else
 void QtServiceSysPrivate::incomingConnection(int socketDescriptor)
+#endif
 {
     QTcpSocket *s = new QTcpSocket(this);
     s->setSocketDescriptor(socketDescriptor);
