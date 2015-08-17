@@ -187,6 +187,9 @@ int main(int argc, char **argv)
     item = variantManager->addProperty(QVariant::Color, QString::number(i++) + QLatin1String(" Color Property"));
     topItem->addSubProperty(item);
 
+    item = variantManager->addProperty(QVariant::Vector3D, QString::number(i++) + QLatin1String(" Vector3D Property"));
+    topItem->addSubProperty(item);
+
     QtVariantEditorFactory *variantFactory = new QtVariantEditorFactory();
 
     QtTreePropertyBrowser *variantEditor = new QtTreePropertyBrowser();

@@ -46,6 +46,7 @@
 #include <QIcon>
 #include <QDate>
 #include <QLocale>
+#include <QVector3D>
 
 #if defined(Q_CC_MSVC)
 #    pragma warning(disable: 4786) /* MS VS 6: truncating debug info after 255 characters */
@@ -1108,6 +1109,22 @@ QtVariantPropertyManager::QtVariantPropertyManager(QObject *parent)
                 this, SLOT(slotPropertyInserted(QtProperty *, QtProperty *, QtProperty *)));
     connect(pointFPropertyManager, SIGNAL(propertyRemoved(QtProperty *, QtProperty *)),
                 this, SLOT(slotPropertyRemoved(QtProperty *, QtProperty *)));
+    // Vector3dPropertyManager
+    QtVector3dPropertyManager *vector3dPropertyManager = new QtVector3dPropertyManager(this);
+    d_ptr->m_typeToPropertyManager[QVariant::Vector3D] = vector3dPropertyManager;
+    d_ptr->m_typeToValueType[QVariant::Vector3D] = QVariant::Vector3D;
+    d_ptr->m_typeToAttributeToAttributeType[QVariant::Vector3D][d_ptr->m_decimalsAttribute] =
+            QVariant::Int;
+    connect(vector3dPropertyManager, SIGNAL(valueChanged(QtProperty *, const Vector3D &)),
+                this, SLOT(slotValueChanged(QtProperty *, const Vector3D &)));
+    connect(vector3dPropertyManager, SIGNAL(decimalsChanged(QtProperty *, int)),
+                this, SLOT(slotDecimalsChanged(QtProperty *, int)));
+    connect(vector3dPropertyManager->subDoublePropertyManager(), SIGNAL(valueChanged(QtProperty *, double)),
+                this, SLOT(slotValueChanged(QtProperty *, double)));
+    connect(vector3dPropertyManager, SIGNAL(propertyInserted(QtProperty *, QtProperty *, QtProperty *)),
+                this, SLOT(slotPropertyInserted(QtProperty *, QtProperty *, QtProperty *)));
+    connect(vector3dPropertyManager, SIGNAL(propertyRemoved(QtProperty *, QtProperty *)),
+                this, SLOT(slotPropertyRemoved(QtProperty *, QtProperty *)));
     // SizePropertyManager
     QtSizePropertyManager *sizePropertyManager = new QtSizePropertyManager(this);
     d_ptr->m_typeToPropertyManager[QVariant::Size] = sizePropertyManager;
@@ -1540,6 +1557,10 @@ QVariant QtVariantPropertyManager::attributeValue(const QtProperty *property, co
         if (attribute == d_ptr->m_decimalsAttribute)
             return pointFManager->decimals(internProp);
         return QVariant();
+    } else if (QtVector3dPropertyManager *vector3dManager = qobject_cast<QtVector3dPropertyManager *>(manager)) {
+      if (attribute == d_ptr->m_decimalsAttribute)
+          return vector3dManager->decimals(internProp);
+      return QVariant();
     } else if (QtSizePropertyManager *sizeManager = qobject_cast<QtSizePropertyManager *>(manager)) {
         if (attribute == d_ptr->m_maximumAttribute)
             return sizeManager->maximum(internProp);
@@ -1794,6 +1815,10 @@ void QtVariantPropertyManager::setAttribute(QtProperty *property,
     } else if (QtPointFPropertyManager *pointFManager = qobject_cast<QtPointFPropertyManager *>(manager)) {
         if (attribute == d_ptr->m_decimalsAttribute)
             pointFManager->setDecimals(internProp, qVariantValue<int>(value));
+        return;
+    } else if (QtVector3dPropertyManager *vector3dManager = qobject_cast<QtVector3dPropertyManager *>(manager)) {
+        if (attribute == d_ptr->m_decimalsAttribute)
+            vector3dManager->setDecimals(internProp, qVariantValue<int>(value));
         return;
     } else if (QtSizePropertyManager *sizeManager = qobject_cast<QtSizePropertyManager *>(manager)) {
         if (attribute == d_ptr->m_maximumAttribute)

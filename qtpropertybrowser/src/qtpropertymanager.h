@@ -433,6 +433,38 @@ private:
     Q_PRIVATE_SLOT(d_func(), void slotPropertyDestroyed(QtProperty *))
 };
 
+class QtVector3dPropertyManagerPrivate;
+
+class QT_QTPROPERTYBROWSER_EXPORT QtVector3dPropertyManager : public QtAbstractPropertyManager
+{
+    Q_OBJECT
+public:
+    QtVector3dPropertyManager(QObject *parent = 0);
+    ~QtVector3dPropertyManager();
+
+    QtDoublePropertyManager *subDoublePropertyManager() const;
+
+    QVector3D value(const QtProperty *property) const;
+    int decimals(const QtProperty *property) const;
+
+public Q_SLOTS:
+    void setValue(QtProperty *property, const QVector3D &val);
+    void setDecimals(QtProperty *property, int prec);
+Q_SIGNALS:
+    void valueChanged(QtProperty *property, const QVector3D &val);
+    void decimalsChanged(QtProperty *property, int prec);
+protected:
+    QString valueText(const QtProperty *property) const;
+    virtual void initializeProperty(QtProperty *property);
+    virtual void uninitializeProperty(QtProperty *property);
+private:
+    QtVector3dPropertyManagerPrivate *d_ptr;
+    Q_DECLARE_PRIVATE(QtVector3dPropertyManager)
+    Q_DISABLE_COPY(QtVector3dPropertyManager)
+    Q_PRIVATE_SLOT(d_func(), void slotDoubleChanged(QtProperty *, double))
+    Q_PRIVATE_SLOT(d_func(), void slotPropertyDestroyed(QtProperty *))
+};
+
 class QtSizePropertyManagerPrivate;
 
 class QT_QTPROPERTYBROWSER_EXPORT QtSizePropertyManager : public QtAbstractPropertyManager
