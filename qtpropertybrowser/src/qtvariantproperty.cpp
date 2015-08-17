@@ -327,6 +327,7 @@ public:
     void slotValueChanged(QtProperty *property, const QLocale &val);
     void slotValueChanged(QtProperty *property, const QPoint &val);
     void slotValueChanged(QtProperty *property, const QPointF &val);
+    void slotValueChanged(QtProperty *property, const QVector3D &val);
     void slotValueChanged(QtProperty *property, const QSize &val);
     void slotRangeChanged(QtProperty *property, const QSize &min, const QSize &max);
     void slotValueChanged(QtProperty *property, const QSizeF &val);
@@ -612,6 +613,11 @@ void QtVariantPropertyManagerPrivate::slotValueChanged(QtProperty *property, con
 }
 
 void QtVariantPropertyManagerPrivate::slotValueChanged(QtProperty *property, const QPointF &val)
+{
+    valueChanged(property, QVariant(val));
+}
+
+void QtVariantPropertyManagerPrivate::slotValueChanged(QtProperty *property, const QVector3D &val)
 {
     valueChanged(property, QVariant(val));
 }
@@ -1115,8 +1121,8 @@ QtVariantPropertyManager::QtVariantPropertyManager(QObject *parent)
     d_ptr->m_typeToValueType[QVariant::Vector3D] = QVariant::Vector3D;
     d_ptr->m_typeToAttributeToAttributeType[QVariant::Vector3D][d_ptr->m_decimalsAttribute] =
             QVariant::Int;
-    connect(vector3dPropertyManager, SIGNAL(valueChanged(QtProperty *, const Vector3D &)),
-                this, SLOT(slotValueChanged(QtProperty *, const Vector3D &)));
+    connect(vector3dPropertyManager, SIGNAL(valueChanged(QtProperty *, const QVector3D &)),
+                this, SLOT(slotValueChanged(QtProperty *, const QVector3D &)));
     connect(vector3dPropertyManager, SIGNAL(decimalsChanged(QtProperty *, int)),
                 this, SLOT(slotDecimalsChanged(QtProperty *, int)));
     connect(vector3dPropertyManager->subDoublePropertyManager(), SIGNAL(valueChanged(QtProperty *, double)),
@@ -1419,6 +1425,8 @@ QVariant QtVariantPropertyManager::value(const QtProperty *property) const
         return pointManager->value(internProp);
     } else if (QtPointFPropertyManager *pointFManager = qobject_cast<QtPointFPropertyManager *>(manager)) {
         return pointFManager->value(internProp);
+    } else if (QtVector3dPropertyManager *vector3dManager = qobject_cast<QtVector3dPropertyManager *>(manager)) {
+        return vector3dManager->value(internProp);
     } else if (QtSizePropertyManager *sizeManager = qobject_cast<QtSizePropertyManager *>(manager)) {
         return sizeManager->value(internProp);
     } else if (QtSizeFPropertyManager *sizeFManager = qobject_cast<QtSizeFPropertyManager *>(manager)) {
@@ -1704,6 +1712,9 @@ void QtVariantPropertyManager::setValue(QtProperty *property, const QVariant &va
         return;
     } else if (QtPointFPropertyManager *pointFManager = qobject_cast<QtPointFPropertyManager *>(manager)) {
         pointFManager->setValue(internProp, qVariantValue<QPointF>(val));
+        return;
+    } else if (QtVector3dPropertyManager *vector3dManager = qobject_cast<QtVector3dPropertyManager *>(manager)) {
+        vector3dManager->setValue(internProp, qVariantValue<QVector3D>(val));
         return;
     } else if (QtSizePropertyManager *sizeManager = qobject_cast<QtSizePropertyManager *>(manager)) {
         sizeManager->setValue(internProp, qVariantValue<QSize>(val));
