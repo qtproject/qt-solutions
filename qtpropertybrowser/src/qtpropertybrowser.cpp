@@ -1732,6 +1732,27 @@ QtAbstractPropertyBrowser::QtAbstractPropertyBrowser(QWidget *parent)
 */
 QtAbstractPropertyBrowser::~QtAbstractPropertyBrowser()
 {
+	//perform clean ups
+	Map1::iterator mf = (*m_viewToManagerToFactory()).find(this);
+	if (mf != (*m_viewToManagerToFactory()).end())
+	{
+		for (Map1::mapped_type::iterator f = mf->begin(); f != mf->end(); ++f)
+		{
+			Map2::iterator fv = (*m_managerToFactoryToViews).find(f.key());
+			if (fv != (*m_managerToFactoryToViews).end())
+			{
+				Map2::mapped_type::iterator v = fv->find(*f);
+				v->removeAll(this);
+				if (v->empty())
+					fv->erase(v);
+
+				if (fv->empty())
+					(*m_managerToFactoryToViews).erase(fv);
+			}
+		}
+		(*m_viewToManagerToFactory()).erase(mf);
+	}
+	
     QList<QtBrowserItem *> indexes = topLevelItems();
     QListIterator<QtBrowserItem *> itItem(indexes);
     while (itItem.hasNext())
