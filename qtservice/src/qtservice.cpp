@@ -840,6 +840,8 @@ int QtServiceBase::exec()
                    "\t-u(ninstall)\t: Uninstall the service.\n"
                    "\t-e(xec)\t\t: Run as a regular application. Useful for debugging.\n"
                    "\t-t(erminate)\t: Stop the service.\n"
+                   "\t-p(ause)\t: Pause the service.\n"
+                   "\t-r(esume)\t: Resume the service.\n"
                    "\t-c(ommand) num\t: Send command code num to the service.\n"
                    "\t-v(ersion)\t: Print version and status information.\n"
                    "\t-h(elp)   \t: Show this help\n"
