@@ -835,11 +835,13 @@ int QtServiceBase::exec()
             d_ptr->controller.sendCommand(code);
             return 0;
         } else  if (a == QLatin1String("-h") || a == QLatin1String("-help")) {
-            printf("\n%s -[i|u|e|s|v|h]\n"
+            printf("\n%s -[i|u|e|t|p|r|c|v|h]\n"
                    "\t-i(nstall) [account] [password]\t: Install the service, optionally using given account and password\n"
                    "\t-u(ninstall)\t: Uninstall the service.\n"
                    "\t-e(xec)\t\t: Run as a regular application. Useful for debugging.\n"
                    "\t-t(erminate)\t: Stop the service.\n"
+                   "\t-p(ause)\t: Pause the service.\n"
+                   "\t-r(esume)\t: Resume a paused service.\n"
                    "\t-c(ommand) num\t: Send command code num to the service.\n"
                    "\t-v(ersion)\t: Print version and status information.\n"
                    "\t-h(elp)   \t: Show this help\n"
@@ -1125,6 +1127,3 @@ void QtServiceBase::processCommand(int /*code*/)
 
     \reimp
 */
-
-
-
