@@ -892,6 +892,11 @@ QtServiceBase *QtServiceBase::instance()
     return QtServiceBasePrivate::instance;
 }
 
+QString QtServiceBase::filePath()
+{
+    return d_ptr->filePath();
+}
+
 /*!
     \fn void QtServiceBase::start()
 
@@ -947,6 +952,11 @@ void QtServiceBase::pause()
 */
 void QtServiceBase::resume()
 {
+}
+
+void QtServiceBase::processExEvent(QEvent *e)
+{
+    Q_UNUSED(e)
 }
 
 /*!

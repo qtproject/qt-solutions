@@ -54,6 +54,7 @@
 #include <QAbstractEventDispatcher>
 #include <QVector>
 #include <QThread>
+#include "qhandleexevent.h"
 #if QT_VERSION >= 0x050000
 #  include <QAbstractNativeEventFilter>
 #endif
@@ -610,6 +611,10 @@ void QtServiceSysPrivate::handleCustomEvent(QEvent *e)
     case SERVICE_CONTROL_CONTINUE:
         QtServiceBase::instance()->resume();
         break;
+    case SERVICE_CONTROL_POWEREVENT:
+    case SERVICE_CONTROL_SESSIONCHANGE:
+        QtServiceBase::instance()->processExEvent(e);
+        break;
     default:
         if (code >= 128 && code <= 255)
             QtServiceBase::instance()->processCommand(code - 128);
@@ -727,12 +732,18 @@ DWORD WINAPI QtServiceSysPrivate::handlerEx( DWORD code, DWORD dwEventType, LPVO
         break;
 
     case SERVICE_CONTROL_POWEREVENT:
-        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_POWEREVENT)));
+        QCoreApplication::postEvent(instance->controllerHandler, new QHandleExEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_POWEREVENT)
+                                                                                    , dwEventType
+                                                                                    , lpEventData
+                                                                                    , lpContext));
         instance->condition.wait(&instance->mutex);
         break;
 
     case SERVICE_CONTROL_SESSIONCHANGE:
-        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_SESSIONCHANGE)));
+        QCoreApplication::postEvent(instance->controllerHandler, new QHandleExEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_SESSIONCHANGE)
+                                                                                    , dwEventType
+                                                                                    , lpEventData
+                                                                                    , lpContext));
         instance->condition.wait(&instance->mutex);
         break;
 
