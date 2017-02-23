@@ -60,7 +60,7 @@ public:
         listen(QHostAddress::Any, port);
     }
 
-    void incomingConnection(int socket)
+    void incomingConnection(qintptr socket)
     {
         if (disabled)
             return;
