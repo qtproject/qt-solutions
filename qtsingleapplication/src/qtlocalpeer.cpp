@@ -177,7 +177,7 @@ void QtLocalPeer::receiveConnection()
         return;
 
     while (true) {
-        if (socket->state() == QAbstractSocket::UnconnectedState) {
+        if (socket->state() == QLocalSocket::UnconnectedState) {
             qWarning("QtLocalPeer: Peer disconnected");
             delete socket;
             return;
