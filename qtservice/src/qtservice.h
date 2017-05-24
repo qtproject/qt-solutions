@@ -68,7 +68,7 @@ class QT_QTSERVICE_EXPORT QtServiceController
 public:
     enum StartupType
     {
-	    AutoStartup = 0, ManualStartup
+        AutoStartup = 0, ManualStartup
     };
 
     QtServiceController(const QString &name);
@@ -83,7 +83,7 @@ public:
     QString serviceFilePath() const;
 
     static bool install(const QString &serviceFilePath, const QString &account = QString(),
-                const QString &password = QString());
+                        const QString &password = QString());
     bool uninstall();
 
     bool start(const QStringList &arguments);
@@ -106,7 +106,7 @@ public:
 
     enum MessageType
     {
-	Success = 0, Error, Warning, Information
+        Success = 0, Error, Warning, Information
     };
 
     enum ServiceFlag
@@ -136,9 +136,11 @@ public:
     int exec();
 
     void logMessage(const QString &message, MessageType type = Success,
-                int id = 0, uint category = 0, const QByteArray &data = QByteArray());
+                    int id = 0, uint category = 0, const QByteArray &data = QByteArray());
 
     static QtServiceBase *instance();
+
+    QString filePath();
 
 protected:
 
@@ -146,6 +148,7 @@ protected:
     virtual void stop();
     virtual void pause();
     virtual void resume();
+    virtual void processExEvent(QEvent *e);
     virtual void processCommand(int code);
 
     virtual void createApplication(int &argc, char **argv) = 0;

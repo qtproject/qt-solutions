@@ -54,6 +54,7 @@
 #include <QAbstractEventDispatcher>
 #include <QVector>
 #include <QThread>
+#include "qhandleexevent.h"
 #if QT_VERSION >= 0x050000
 #  include <QAbstractNativeEventFilter>
 #endif
@@ -64,6 +65,8 @@
 
 typedef SERVICE_STATUS_HANDLE(WINAPI*PRegisterServiceCtrlHandler)(const wchar_t*,LPHANDLER_FUNCTION);
 static PRegisterServiceCtrlHandler pRegisterServiceCtrlHandler = 0;
+typedef SERVICE_STATUS_HANDLE(WINAPI*PRegisterServiceCtrlHandlerEx)(LPCTSTR,LPHANDLER_FUNCTION_EX,LPVOID);
+static PRegisterServiceCtrlHandlerEx pRegisterServiceCtrlHandlerEx = 0;
 typedef BOOL(WINAPI*PSetServiceStatus)(SERVICE_STATUS_HANDLE,LPSERVICE_STATUS);
 static PSetServiceStatus pSetServiceStatus = 0;
 typedef BOOL(WINAPI*PChangeServiceConfig2)(SC_HANDLE,DWORD,LPVOID);
@@ -111,6 +114,7 @@ static bool winServiceInit()
 
         // only resolve unicode versions
         RESOLVEW(RegisterServiceCtrlHandler);
+        RESOLVEW(RegisterServiceCtrlHandlerEx);
         RESOLVE(SetServiceStatus);
         RESOLVEW(ChangeServiceConfig2);
         RESOLVE(CloseServiceHandle);
@@ -219,16 +223,16 @@ QString QtServiceController::serviceDescription() const
     if (hSCM) {
         // Try to open the service
         SC_HANDLE hService = pOpenService(hSCM, (wchar_t *)d->serviceName.utf16(),
-             SERVICE_QUERY_CONFIG);
+                                          SERVICE_QUERY_CONFIG);
         if (hService) {
             DWORD dwBytesNeeded;
             char data[8 * 1024];
             if (pQueryServiceConfig2(
-                    hService,
-                    SERVICE_CONFIG_DESCRIPTION,
-                    (unsigned char *)data,
-                    8096,
-                    &dwBytesNeeded)) {
+                        hService,
+                        SERVICE_CONFIG_DESCRIPTION,
+                        (unsigned char *)data,
+                        8096,
+                        &dwBytesNeeded)) {
                 LPSERVICE_DESCRIPTION desc = (LPSERVICE_DESCRIPTION)data;
                 if (desc->lpDescription)
                     result = QString::fromUtf16((const ushort*)desc->lpDescription);
@@ -358,7 +362,7 @@ bool QtServiceController::pause()
     SC_HANDLE hSCM = pOpenSCManager(0, 0, SC_MANAGER_CONNECT);
     if (hSCM) {
         SC_HANDLE hService = pOpenService(hSCM, (wchar_t *)d->serviceName.utf16(),
-                             SERVICE_PAUSE_CONTINUE);
+                                          SERVICE_PAUSE_CONTINUE);
         if (hService) {
             SERVICE_STATUS status;
             if (pControlService(hService, SERVICE_CONTROL_PAUSE, &status))
@@ -380,7 +384,7 @@ bool QtServiceController::resume()
     SC_HANDLE hSCM = pOpenSCManager(0, 0, SC_MANAGER_CONNECT);
     if (hSCM) {
         SC_HANDLE hService = pOpenService(hSCM, (wchar_t *)d->serviceName.utf16(),
-                             SERVICE_PAUSE_CONTINUE);
+                                          SERVICE_PAUSE_CONTINUE);
         if (hService) {
             SERVICE_STATUS status;
             if (pControlService(hService, SERVICE_CONTROL_CONTINUE, &status))
@@ -394,9 +398,9 @@ bool QtServiceController::resume()
 
 bool QtServiceController::sendCommand(int code)
 {
-   Q_D(QtServiceController);
-   bool result = false;
-   if (!winServiceInit())
+    Q_D(QtServiceController);
+    bool result = false;
+    if (!winServiceInit())
         return result;
 
     if (code < 0 || code > 127 || !isRunning())
@@ -426,7 +430,7 @@ extern void qtServiceLogDebug(QtMsgType type, const char* msg);
 #endif
 
 void QtServiceBase::logMessage(const QString &message, MessageType type,
-                           int id, uint category, const QByteArray &data)
+                               int id, uint category, const QByteArray &data)
 {
 #if defined(QTSERVICE_DEBUG)
     QByteArray dbgMsg("[LOGGED ");
@@ -491,9 +495,11 @@ public:
     inline bool available() const;
     static void WINAPI serviceMain( DWORD dwArgc, wchar_t** lpszArgv );
     static void WINAPI handler( DWORD dwOpcode );
+    static DWORD WINAPI handlerEx( DWORD dwOpcode, DWORD dwEventType, LPVOID lpEventData,  LPVOID lpContext );
 
     SERVICE_STATUS status;
     SERVICE_STATUS_HANDLE serviceStatus;
+    bool useHandlerEx;
     QStringList serviceArgs;
 
     static QtServiceSysPrivate *instance;
@@ -552,14 +558,30 @@ void WINAPI QtServiceSysPrivate::serviceMain(DWORD dwArgc, wchar_t** lpszArgv)
 
     instance->startSemaphore.release(); // let the qapp creation start
     instance->startSemaphore2.acquire(); // wait until its done
+
     // Register the control request handler
-    instance->serviceStatus = pRegisterServiceCtrlHandler((TCHAR*)QtServiceBase::instance()->serviceName().utf16(), handler);
+    if(pRegisterServiceCtrlHandlerEx)
+    {
+        instance->useHandlerEx = true;
+        instance->serviceStatus = pRegisterServiceCtrlHandlerEx((TCHAR*)QtServiceBase::instance()->serviceName().utf16(), handlerEx, NULL);
 
-    if (!instance->serviceStatus) // cannot happen - something is utterly wrong
-        return;
+        if (!instance->serviceStatus) // cannot happen - something is utterly wrong
+            return;
 
-    handler(QTSERVICE_STARTUP); // Signal startup to the application -
-                                // causes QtServiceBase::start() to be called in the main thread
+        handlerEx(QTSERVICE_STARTUP, NULL, NULL, NULL); // Signal startup to the application -
+        // causes QtServiceBase::start() to be called in the main thread
+    }
+    else
+    {
+        instance->useHandlerEx = false;
+        instance->serviceStatus = pRegisterServiceCtrlHandler((TCHAR*)QtServiceBase::instance()->serviceName().utf16(), handler);
+
+        if (!instance->serviceStatus) // cannot happen - something is utterly wrong
+            return;
+
+        handler(QTSERVICE_STARTUP); // Signal startup to the application -
+        // causes QtServiceBase::start() to be called in the main thread
+    }
 
     // The MSDN doc says that this thread should just exit - the service is
     // running in the main thread (here, via callbacks in the handler thread).
@@ -589,9 +611,13 @@ void QtServiceSysPrivate::handleCustomEvent(QEvent *e)
     case SERVICE_CONTROL_CONTINUE:
         QtServiceBase::instance()->resume();
         break;
+    case SERVICE_CONTROL_POWEREVENT:
+    case SERVICE_CONTROL_SESSIONCHANGE:
+        QtServiceBase::instance()->processExEvent(e);
+        break;
     default:
-	if (code >= 128 && code <= 255)
-	    QtServiceBase::instance()->processCommand(code - 128);
+        if (code >= 128 && code <= 255)
+            QtServiceBase::instance()->processCommand(code - 128);
         break;
     }
 
@@ -659,10 +685,89 @@ void WINAPI QtServiceSysPrivate::handler( DWORD code )
         pSetServiceStatus(instance->serviceStatus, &instance->status);
 }
 
+DWORD WINAPI QtServiceSysPrivate::handlerEx( DWORD code, DWORD dwEventType, LPVOID lpEventData,  LPVOID lpContext )
+{
+    DWORD dwRet = NO_ERROR;
+
+    if (!instance)
+        return dwRet;
+
+    instance->mutex.lock();
+    switch (code) {
+    case QTSERVICE_STARTUP: // QtService startup (called from WinMain when started)
+        instance->setStatus(SERVICE_START_PENDING);
+        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + code)));
+        instance->condition.wait(&instance->mutex);
+        instance->setStatus(SERVICE_RUNNING);
+        break;
+    case SERVICE_CONTROL_STOP: // 1
+        instance->setStatus(SERVICE_STOP_PENDING);
+        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + code)));
+        instance->condition.wait(&instance->mutex);
+        // status will be reported as stopped by start() when qapp::exec returns
+        break;
+
+    case SERVICE_CONTROL_PAUSE: // 2
+        instance->setStatus(SERVICE_PAUSE_PENDING);
+        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + code)));
+        instance->condition.wait(&instance->mutex);
+        instance->setStatus(SERVICE_PAUSED);
+        break;
+
+    case SERVICE_CONTROL_CONTINUE: // 3
+        instance->setStatus(SERVICE_CONTINUE_PENDING);
+        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + code)));
+        instance->condition.wait(&instance->mutex);
+        instance->setStatus(SERVICE_RUNNING);
+        break;
+
+    case SERVICE_CONTROL_INTERROGATE: // 4
+        break;
+
+    case SERVICE_CONTROL_SHUTDOWN: // 5
+        // Don't waste time with reporting stop pending, just do it
+        QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_STOP)));
+        instance->condition.wait(&instance->mutex);
+        // status will be reported as stopped by start() when qapp::exec returns
+        break;
+
+    case SERVICE_CONTROL_POWEREVENT:
+        QCoreApplication::postEvent(instance->controllerHandler, new QHandleExEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_POWEREVENT)
+                                                                                    , dwEventType
+                                                                                    , lpEventData
+                                                                                    , lpContext));
+        instance->condition.wait(&instance->mutex);
+        break;
+
+    case SERVICE_CONTROL_SESSIONCHANGE:
+        QCoreApplication::postEvent(instance->controllerHandler, new QHandleExEvent(QEvent::Type(QEvent::User + SERVICE_CONTROL_SESSIONCHANGE)
+                                                                                    , dwEventType
+                                                                                    , lpEventData
+                                                                                    , lpContext));
+        instance->condition.wait(&instance->mutex);
+        break;
+
+    default:
+        if ( code >= 128 && code <= 255 ) {
+            QCoreApplication::postEvent(instance->controllerHandler, new QEvent(QEvent::Type(QEvent::User + code)));
+            instance->condition.wait(&instance->mutex);
+        }
+        break;
+    }
+
+    instance->mutex.unlock();
+
+    // Report current status
+    if (instance->available() && instance->status.dwCurrentState != SERVICE_STOPPED)
+        pSetServiceStatus(instance->serviceStatus, &instance->status);
+
+    return dwRet;
+}
+
 void QtServiceSysPrivate::setStatus(DWORD state)
 {
     if (!available())
-	return;
+        return;
     status.dwCurrentState = state;
     pSetServiceStatus(serviceStatus, &status);
 }
@@ -696,7 +801,7 @@ class HandlerThread : public QThread
 public:
     HandlerThread()
         : success(true), console(false), QThread()
-        {}
+    {}
 
     bool calledOk() { return success; }
     bool runningAsConsole() { return console; }
@@ -704,27 +809,27 @@ public:
 protected:
     bool success, console;
     void run()
-        {
-            SERVICE_TABLE_ENTRYW st [2];
-            st[0].lpServiceName = (wchar_t*)QtServiceBase::instance()->serviceName().utf16();
-            st[0].lpServiceProc = QtServiceSysPrivate::serviceMain;
-            st[1].lpServiceName = 0;
-            st[1].lpServiceProc = 0;
+    {
+        SERVICE_TABLE_ENTRYW st [2];
+        st[0].lpServiceName = (wchar_t*)QtServiceBase::instance()->serviceName().utf16();
+        st[0].lpServiceProc = QtServiceSysPrivate::serviceMain;
+        st[1].lpServiceName = 0;
+        st[1].lpServiceProc = 0;
 
-            success = (pStartServiceCtrlDispatcher(st) != 0); // should block
+        success = (pStartServiceCtrlDispatcher(st) != 0); // should block
 
-            if (!success) {
-                if (GetLastError() == ERROR_FAILED_SERVICE_CONTROLLER_CONNECT) {
-                    // Means we're started from console, not from service mgr
-                    // start() will ask the mgr to start another instance of us as a service instead
-                    console = true;
-                }
-                else {
-                    QtServiceBase::instance()->logMessage(QString("The Service failed to start [%1]").arg(qt_error_string(GetLastError())), QtServiceBase::Error);
-                }
-                QtServiceSysPrivate::instance->startSemaphore.release();  // let start() continue, since serviceMain won't be doing it
+        if (!success) {
+            if (GetLastError() == ERROR_FAILED_SERVICE_CONTROLLER_CONNECT) {
+                // Means we're started from console, not from service mgr
+                // start() will ask the mgr to start another instance of us as a service instead
+                console = true;
             }
+            else {
+                QtServiceBase::instance()->logMessage(QString("The Service failed to start [%1]").arg(qt_error_string(GetLastError())), QtServiceBase::Error);
+            }
+            QtServiceSysPrivate::instance->startSemaphore.release();  // let start() continue, since serviceMain won't be doing it
         }
+    }
 };
 
 /*
@@ -919,6 +1024,11 @@ bool QtServiceBasePrivate::sysInit()
     sysd->status.dwServiceType		    = SERVICE_WIN32_OWN_PROCESS|SERVICE_INTERACTIVE_PROCESS;
     sysd->status.dwCurrentState		    = SERVICE_STOPPED;
     sysd->status.dwControlsAccepted         = sysd->serviceFlags(serviceFlags);
+    if(sysd->useHandlerEx)
+    {
+        sysd->status.dwControlsAccepted |= SERVICE_ACCEPT_POWEREVENT;
+        sysd->status.dwControlsAccepted |= SERVICE_ACCEPT_SESSIONCHANGE;
+    }
     sysd->status.dwWin32ExitCode	    = NO_ERROR;
     sysd->status.dwServiceSpecificExitCode  = 0;
     sysd->status.dwCheckPoint		    = 0;
