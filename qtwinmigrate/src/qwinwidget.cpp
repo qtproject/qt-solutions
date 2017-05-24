@@ -125,9 +125,9 @@ void QWinWidget::init()
     if (hParent) {
 	// make the widget window style be WS_CHILD so SetParent will work
 	QT_WA({
-        SetWindowLong((HWND)winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
+		SetWindowLong((HWND) winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_TABSTOP);
 	}, {
-        SetWindowLongA((HWND)winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
+		SetWindowLongA((HWND) winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_TABSTOP);
 	})
 #if QT_VERSION >= 0x050000
         QWindow *window = windowHandle();
@@ -251,9 +251,9 @@ void QWinWidget::resetFocus()
 /*! \reimp
 */
 #if QT_VERSION >= 0x050000
-bool QWinWidget::nativeEvent(const QByteArray &, void *message, long *)
+bool QWinWidget::nativeEvent(const QByteArray &, void *message, long *result)
 #else
-bool QWinWidget::winEvent(MSG *msg, long *)
+bool QWinWidget::winEvent(MSG *msg, long *result)
 #endif
 {
 #if QT_VERSION >= 0x050000
@@ -270,6 +270,10 @@ bool QWinWidget::winEvent(MSG *msg, long *)
         QFocusEvent e(QEvent::FocusIn, reason);
         QApplication::sendEvent(this, &e);
     }
+	else if (msg->message == WM_GETDLGCODE) {
+		*result = DLGC_WANTARROWS | DLGC_WANTTAB;
+		return true;
+	}
 
     return false;
 }
