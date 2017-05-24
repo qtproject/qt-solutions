@@ -357,36 +357,41 @@ void QWinWidget::focusInEvent(QFocusEvent *e)
 bool QWinWidget::focusNextPrevChild(bool next)
 {
     QWidget *curFocus = focusWidget();
-    if (!next) {
-        if (!curFocus->isWindow()) {
-            QWidget *nextFocus = curFocus->nextInFocusChain();
-            QWidget *prevFocus = 0;
-            QWidget *topLevel = 0;
-            while (nextFocus != curFocus) {
-                if (nextFocus->focusPolicy() & Qt::TabFocus) {
-                    prevFocus = nextFocus;
-                    topLevel = 0;
-                } else if (nextFocus->isWindow()) {
-                    topLevel = nextFocus;
-                }
-                nextFocus = nextFocus->nextInFocusChain();
-            }
+	if (curFocus != NULL)
+	{
+		if (!next) {
+			if (!curFocus->isWindow()) {
+				QWidget *nextFocus = curFocus->nextInFocusChain();
+				QWidget *prevFocus = 0;
+				QWidget *topLevel = 0;
+				while (nextFocus != curFocus) {
+					if (nextFocus->focusPolicy() & Qt::TabFocus) {
+						prevFocus = nextFocus;
+						topLevel = 0;
+					}
+					else if (nextFocus->isWindow()) {
+						topLevel = nextFocus;
+					}
+					nextFocus = nextFocus->nextInFocusChain();
+				}
 
-            if (!topLevel) {
-                return QWidget::focusNextPrevChild(false);
-            }
-        }
-    } else {
-        QWidget *nextFocus = curFocus;
-        while (1) {
-            nextFocus = nextFocus->nextInFocusChain();
-            if (nextFocus->isWindow())
-                break;
-            if (nextFocus->focusPolicy() & Qt::TabFocus) {
-                return QWidget::focusNextPrevChild(true);
-            }
-        }
-    }
+				if (!topLevel) {
+					return QWidget::focusNextPrevChild( false );
+				}
+			}
+		}
+		else {
+			QWidget *nextFocus = curFocus;
+			while (1) {
+				nextFocus = nextFocus->nextInFocusChain();
+				if (nextFocus->isWindow())
+					break;
+				if (nextFocus->focusPolicy() & Qt::TabFocus) {
+					return QWidget::focusNextPrevChild( true );
+				}
+			}
+		}
+	}
 
     ::SetFocus(hParent);
 
