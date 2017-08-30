@@ -64,6 +64,8 @@ public:
     int valueType() const;
     int propertyType() const;
 
+    virtual bool compare(QtProperty* otherProperty)const;
+
     void setValue(const QVariant &value);
     void setAttribute(const QString &attribute, const QVariant &value);
 protected:
@@ -83,6 +85,8 @@ public:
     ~QtVariantPropertyManager();
 
     virtual QtVariantProperty *addProperty(int propertyType, const QString &name = QString());
+
+    void setProperties(QSet<QtProperty *> properties);
 
     int propertyType(const QtProperty *property) const;
     int valueType(const QtProperty *property) const;
@@ -172,6 +176,7 @@ protected:
     void connectPropertyManager(QtVariantPropertyManager *manager);
     QWidget *createEditor(QtVariantPropertyManager *manager, QtProperty *property,
                 QWidget *parent);
+    QWidget *createEditor(QtProperty *property, QWidget *parent);
     void disconnectPropertyManager(QtVariantPropertyManager *manager);
 private:
     QtVariantEditorFactoryPrivate *d_ptr;
