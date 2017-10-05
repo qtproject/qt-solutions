@@ -407,50 +407,71 @@ bool QMfcApp::winEventFilter(MSG *msg, long *result)
 {
     static bool recursion = false;
     if (recursion)
-        return false;
+	{
+		return false;
+	}
 
     recursion = true;
 
     QWidget *widget = QWidget::find((WId)msg->hwnd);
-    HWND toplevel = 0;
-    if (widget) {
-        HWND parent = (HWND)widget->winId();
-        while(parent) {
-            toplevel = parent;
-            parent = GetParent(parent);
-        }
-        HMENU menu = toplevel ? GetMenu(toplevel) : 0;
-        if (menu && GetFocus() == msg->hwnd) {
-            if (msg->message == WM_SYSKEYUP && msg->wParam == VK_MENU) {
-                // activate menubar on Alt-up and move focus away
-                SetFocus(toplevel);
-                SendMessage(toplevel, msg->message, msg->wParam, msg->lParam);
-                widget->setFocus();
-                recursion = false;
-                return TRUE;
-            } else if (msg->message == WM_SYSKEYDOWN && msg->wParam != VK_MENU) {
-                SendMessage(toplevel, msg->message, msg->wParam, msg->lParam);
-                SendMessage(toplevel, WM_SYSKEYUP, VK_MENU, msg->lParam);
-                recursion = false;
-                return TRUE;
-            }
-        }
+    if (widget) 
+	{
+		if ((msg->message == WM_SYSKEYUP && msg->wParam == VK_MENU
+			|| msg->message == WM_SYSKEYDOWN && msg->wParam != VK_MENU)
+			&& GetFocus() == msg->hwnd)
+		{
+			HWND toplevel = 0;
+			HWND parent = (HWND)widget->winId();
+			while (parent) 
+			{
+				toplevel = parent;
+				parent = GetParent(parent);
+			}
+
+			HMENU menu = toplevel ? GetMenu(toplevel) : 0;
+			if (menu)
+			{
+				if (msg->message == WM_SYSKEYUP) 
+				{
+					// activate menubar on Alt-up and move focus away
+					SetFocus(toplevel);
+					SendMessage(toplevel, msg->message, msg->wParam, msg->lParam);
+					widget->setFocus();
+					recursion = false;
+					return TRUE;
+				}
+				else 
+				{
+					SendMessage(toplevel, msg->message, msg->wParam, msg->lParam);
+					SendMessage(toplevel, WM_SYSKEYUP, VK_MENU, msg->lParam);
+					recursion = false;
+					return TRUE;
+				}
+			}
+		}
     }
 #ifdef QTWINMIGRATE_WITHMFC
-    else if (mfc_app) {
+    else if (mfc_app) 
+	{
         MSG tmp;
-        while (doIdle && !PeekMessage(&tmp, 0, 0, 0, PM_NOREMOVE)) {
+        while (doIdle && !PeekMessage(&tmp, 0, 0, 0, PM_NOREMOVE)) 
+		{
             if (!mfc_app->OnIdle(idleCount++))
-                doIdle = FALSE;
+			{
+				doIdle = FALSE;
+			}
         }
-        if (mfc_app->IsIdleMessage(msg)) {
+        if (mfc_app->IsIdleMessage(msg)) 
+		{
             doIdle = TRUE;
             idleCount = 0;
         }
     }
-    if (mfc_app && mfc_app->PreTranslateMessage(msg)) {
+
+    if (mfc_app && mfc_app->PreTranslateMessage(msg)) 
+	{
         recursion = false;
-	return TRUE;
+		return TRUE;
     }
 #endif
 
