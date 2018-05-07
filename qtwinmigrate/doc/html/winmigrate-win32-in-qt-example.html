@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- winhost.qdoc -->
 <head>
   <title>Qt Application using Win32 Windows</title>
@@ -66,7 +66,7 @@
      {
          QWidget *widget = QWidget::find(GetParent(hWnd));
          HostWindow *window = qobject_cast&lt;HostWindow*&gt;(widget);</pre>
-<p>The static <tt>WndProc</tt> function implements the message handling of the Win32 window. Since the method is static we have to use <a href="http://qt.nokia.com/doc/4.6/qwidget.html#find">QWidget::find</a>() to get the <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a> object for the window handle. Since we want to use the signal of the HostWindow class, which is the parent window of the native Win32 window, we have to cast the <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a> pointer to HostWindow, which is safe when using <a href="http://qt.nokia.com/doc/4.6/qobject.html#qobject_cast">qobject_cast</a>().</p>
+<p>The static <tt>WndProc</tt> function implements the message handling of the Win32 window. Since the method is static we have to use <a href="https://doc.qt.io/archives/4.6/qwidget.html#find">QWidget::find</a>() to get the <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a> object for the window handle. Since we want to use the signal of the HostWindow class, which is the parent window of the native Win32 window, we have to cast the <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a> pointer to HostWindow, which is safe when using <a href="https://doc.qt.io/archives/4.6/qobject.html#qobject_cast">qobject_cast</a>().</p>
 <pre>         if (window) switch (message) {
          case WM_SETFOCUS:
              window-&gt;message(&quot;SetFocus for Win32 window!&quot;, 1000);
@@ -112,11 +112,11 @@
      mw.show();
      return a.exec();
  }</pre>
-<p>The <tt>main</tt> function creates a standard Qt user interface using <a href="http://qt.nokia.com/doc/4.6/qmainwindow.html">QMainWindow</a>. The main window's central widget contains a <a href="http://qt.nokia.com/doc/4.6/qlineedit.html">QLineEdit</a> as well as the HostWindow. Messages sent by the HostWindow object are displayed in the main window's default statusbar.</p>
+<p>The <tt>main</tt> function creates a standard Qt user interface using <a href="https://doc.qt.io/archives/4.6/qmainwindow.html">QMainWindow</a>. The main window's central widget contains a <a href="https://doc.qt.io/archives/4.6/qlineedit.html">QLineEdit</a> as well as the HostWindow. Messages sent by the HostWindow object are displayed in the main window's default statusbar.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

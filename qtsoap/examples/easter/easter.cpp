@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -50,11 +50,11 @@ Easter::Easter(short year, QObject *parent)
 
     QtSoapMessage request;
     request.setMethod("GetEaster",
-		      "http://www.27seconds.com/Holidays/US/Dates/");
+		      "https://www.27seconds.com/Holidays/US/Dates/");
     request.addMethodArgument("year", "", year);
 
     http.setHost("www.27seconds.com");
-    http.setAction("http://www.27seconds.com/Holidays/US/Dates/GetEaster");
+    http.setAction("https://www.27seconds.com/Holidays/US/Dates/GetEaster");
     http.submitRequest(request, "/Holidays/US/Dates/USHolidayDates.asmx");
 
     qDebug("Looking up the date of easter in %i...", year);

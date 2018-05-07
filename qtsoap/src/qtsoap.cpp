@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -157,7 +157,7 @@ namespace {
     \code
     QtSoapMessage message;
 
-    message.setMethod(QtSoapQName("sendMessage", "http://messenging.example.com/"));
+    message.setMethod(QtSoapQName("sendMessage", "https://messenging.example.com/"));
     message.addMethodArgument(QtSoapSimpleType(QtSoapQName("a"), 15));
     \endcode
 */
@@ -421,7 +421,7 @@ bool operator <(const QtSoapQName &s1, const QtSoapQName &s2)
 /*! \enum QtSoapType::Type
 
     SOAP supports the types described in XML Schema Part 2: Datatypes
-    listed at \l http://www.w3.org/TR/xmlschema-2/. The following
+    listed at \l https://www.w3.org/TR/xmlschema-2/. The following
     values are represented using QtSoapSimpleType, except where noted.
 
     \value AnyURI
@@ -2280,7 +2280,7 @@ QVariant QtSoapSimpleType::value() const
     \code
     QtSoapMessage message;
 
-    message.setMethod("getTemperature", "http://weather.example.com/temperature");
+    message.setMethod("getTemperature", "https://weather.example.com/temperature");
     message.addMethodArgument("city", "Oslo");
 
     // Get the SOAP message as an XML string.
@@ -2288,7 +2288,7 @@ QVariant QtSoapSimpleType::value() const
     \endcode
 
     QtSoap provides a partial implementation of version 1.1 of the
-    SOAP protocol as defined in \l http://www.w3.org/TR/SOAP/.
+    SOAP protocol as defined in \l https://www.w3.org/TR/SOAP/.
 
     \list
     \i Server side SOAP is not supported.
@@ -3038,7 +3038,7 @@ QString QtSoapTypeFactory::errorString() const
     void WeatherFetcher::findTemperature(const QString &city)
     {
         QtSoapMessage message;
-        message.setMethod("getTemperature", "http://weather.example.com/temperature");
+        message.setMethod("getTemperature", "https://weather.example.com/temperature");
         message.setMethodArgument("city", "", city);
 
         // transport is a private member of WeatherFetcher, of type QtSoapHttpTransport
@@ -3257,8 +3257,8 @@ void QtSoapHttpTransport::readResponse(QNetworkReply *reply)
     \code
     QtSoapNamespaces &registry = QtSoapNamespaces::instance();
 
-    registry.register("pre", "http://www.example.com/");
-    QString prefix = registry.prefixFor("http://www.example.com/"); // returns "pre"
+    registry.register("pre", "https://www.example.com/");
+    QString prefix = registry.prefixFor("https://www.example.com/"); // returns "pre"
     \endcode
 
     \sa QtSoapMessage

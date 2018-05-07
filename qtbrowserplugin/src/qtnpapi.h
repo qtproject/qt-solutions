@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -38,7 +38,7 @@
 **
 ****************************************************************************/
 
-// see http://www.mozilla.org/projects/plugins/ for details regarding the structs and API prototypes
+// see https://developer.mozilla.org/en-US/docs/Archive/Plugins for details regarding the structs and API prototypes
 
 #ifndef QTNPAPI_H
 #define QTNPAPI_H

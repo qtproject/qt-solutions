@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- loader.qdoc -->
 <head>
   <title>Loading Documents</title>
@@ -18,7 +18,7 @@
 <pre><span class="comment"> /****************************************************************************
  **
  ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
- ** Contact: http://www.qt-project.org/legal
+ ** Contact: https://www1.qt.io/terms-conditions
  **
  ** This file is part of the Qt Solutions component.
  **
@@ -76,14 +76,14 @@
  private:
      QMdiArea *workspace;
  };</pre>
-<p>The user interface in this application is a <a href="http://qt.nokia.com/doc/4.6/qmainwindow.html">QMainWindow</a> subclass with a <a href="http://qt.nokia.com/doc/4.6/qmdiarea.html">QMdiArea</a> as the central widget. It implements a slot <tt>handleMessage()</tt> that will be connected to the messageReceived() signal of the <a href="qtsingleapplication.html">QtSingleApplication</a> class.</p>
+<p>The user interface in this application is a <a href="https://doc.qt.io/archives/4.6/qmainwindow.html">QMainWindow</a> subclass with a <a href="https://doc.qt.io/archives/4.6/qmdiarea.html">QMdiArea</a> as the central widget. It implements a slot <tt>handleMessage()</tt> that will be connected to the messageReceived() signal of the <a href="qtsingleapplication.html">QtSingleApplication</a> class.</p>
 <pre> MainWindow::MainWindow()
  {
      workspace = new QMdiArea(this);
 
      setCentralWidget(workspace);
  }</pre>
-<p>The <a href="http://qt.nokia.com/doc/4.6/designer-to-know.html">MainWindow</a> constructor creates a minimal user interface.</p>
+<p>The <a href="https://doc.qt.io/archives/4.6/designer-to-know.html">MainWindow</a> constructor creates a minimal user interface.</p>
 <pre> void MainWindow::handleMessage(const QString&amp; message)
  {
      enum Action {
@@ -169,7 +169,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- winwidget.qdoc -->
 <head>
   <title>Qt widgets in Win32</title>
@@ -34,7 +34,7 @@
              Q_UNUSED(result);
          }
          break;</pre>
-<p>When the left button is clicked a modal message box is opened. The <a href="qwinwidget.html">QWinWidget</a> class is used to provide a bridge between the Win32 window and the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a>, and ensures that the Win32 window is modally blocked by the message box.</p>
+<p>When the left button is clicked a modal message box is opened. The <a href="qwinwidget.html">QWinWidget</a> class is used to provide a bridge between the Win32 window and the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a>, and ensures that the Win32 window is modally blocked by the message box.</p>
 <pre>     case WM_RBUTTONUP:
          {
              QWinWidget *w = new QWinWidget(hWnd, 0, 0);
@@ -50,7 +50,7 @@
              mb-&gt;show();
          }
          break;</pre>
-<p>When the right button is clicked a modeless message box is opened. The <a href="qwinwidget.html">QWinWidget</a> class is used again to provide proper placement and stacking of the message box. Note that this time both the <a href="qwinwidget.html">QWinWidget</a> and the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> are created on the heap using operator new. Since the <tt>WDestructiveClose</tt> flag is passed to the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> constructor it is however not necessary to delete either of those objects.</p>
+<p>When the right button is clicked a modeless message box is opened. The <a href="qwinwidget.html">QWinWidget</a> class is used again to provide proper placement and stacking of the message box. Note that this time both the <a href="qwinwidget.html">QWinWidget</a> and the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> are created on the heap using operator new. Since the <tt>WDestructiveClose</tt> flag is passed to the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> constructor it is however not necessary to delete either of those objects.</p>
 <pre>     case WM_KEYDOWN:
          if (wParam != VK_TAB)
              return DefWindowProc(hWnd, message, wParam, lParam);
@@ -122,7 +122,7 @@
 <p>The application's entry point function <tt>wWinMain</tt> registers a window class and creates a window using the CreateWindow API. Note that the UNICODE versions of all Win32 APIs are used.</p>
 <pre>     int argc = 0;
      QApplication a(argc, 0);</pre>
-<p>Before the Qt based user interface can be created a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object must exist. The translation of the command line arguments is omitted for brevity.</p>
+<p>Before the Qt based user interface can be created a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object must exist. The translation of the command line arguments is omitted for brevity.</p>
 <pre>     QWinWidget win(hWnd);
      winId = win.winId();
      QHBoxLayout hbox(&amp;win);
@@ -145,7 +145,7 @@
      hbox.addWidget(le3);
 
      win.move(0, 0);</pre>
-<p>The <a href="qwinwidget.html">QWinWidget</a> class is once again used as a bridge between the Win32 window and a Qt widget, <a href="http://qt.nokia.com/doc/4.6/qpushbutton.html">QPushButton</a> this time. Since the <a href="qwinwidget.html">QWinWidget</a> is a proper <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a> it can be layouted and positioned like any other <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a>.</p>
+<p>The <a href="qwinwidget.html">QWinWidget</a> class is once again used as a bridge between the Win32 window and a Qt widget, <a href="https://doc.qt.io/archives/4.6/n.html">QPushButton</a> this time. Since the <a href="qwinwidget.html">QWinWidget</a> is a proper <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a> it can be layouted and positioned like any other <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a>.</p>
 <pre>     win.show();
 
      ShowWindow(hWnd, nCmdShow);
@@ -153,11 +153,11 @@
 
      return a.exec();
  }</pre>
-<p>Finally the Win32 user interface is displayed, and control is passed to the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> event loop. Since Windows doesn't show child windows recoursively the Qt widget has to be shown explicitly.</p>
+<p>Finally the Win32 user interface is displayed, and control is passed to the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> event loop. Since Windows doesn't show child windows recoursively the Qt widget has to be shown explicitly.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

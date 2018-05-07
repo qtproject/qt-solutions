@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -1407,7 +1407,7 @@ QString QtNPBindable::userAgent() const
     Extracts the version of the plugin API used by this plugin into \a major
     and \a minor.
 
-    See http://devedge-temp.mozilla.org/library/manuals/2002/plugin/1.0/
+    See https://developer.mozilla.org/en-US/docs/Plugins/Guide
     for an explanation of those values.
 
     \sa getBrowserVersion() userAgent()
@@ -1422,7 +1422,7 @@ void QtNPBindable::getNppVersion(int *major, int *minor) const
 /*!
     Extracts the version of the browser into \a major and \a minor.
 
-    See http://devedge-temp.mozilla.org/library/manuals/2002/plugin/1.0/
+    See https://developer.mozilla.org/en-US/docs/Plugins/Guide
     for an explanation of those values.
 
     \sa getNppVersion() userAgent()
@@ -1461,7 +1461,7 @@ QString QtNPBindable::mimeType() const
 
     The instance returned is only valid as long as this object is.
 
-    See http://devedge-temp.mozilla.org/library/manuals/2002/plugin/1.0/
+    See https://developer.mozilla.org/en-US/docs/Plugins/Guide
     for documentation of the \c NPP type.
 */
 NPP QtNPBindable::instance() const
@@ -1498,7 +1498,7 @@ bool QtNPBindable::readData(QIODevice *source, const QString &format)
     \code
     void MyPlugin::aboutQtSoftware()
     {
-        openUrl("http://qt.nokia.com");
+        openUrl("https://www.qt.io");
     }
     \endcode
 

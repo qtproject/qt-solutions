@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapQName Class Reference</title>
@@ -43,19 +43,19 @@
 <p>The QtSoapQName can be empty. It can also have just a name with no URI. Special handling is often applied to a QtSoapQName that has no URI. Typically, if a QName with no namespace is used in an element in a SOAP document that already has a default namespace defined, then that namespace will be applied to the QName.</p>
 <pre> QtSoapMessage message;
 
- message.setMethod(QtSoapQName(&quot;sendMessage&quot;, &quot;http:<span class="comment">//messenging.example.com/&quot;));</span>
+ message.setMethod(QtSoapQName(&quot;sendMessage&quot;, &quot;https:<span class="comment">//messenging.example.com/&quot;));</span>
  message.addMethodArgument(QtSoapSimpleType(QtSoapQName(&quot;a&quot;), 15));</pre>
 <hr />
 <h2>Member Function Documentation</h2>
-<h3 class="fn"><a name="QtSoapQName"></a>QtSoapQName::QtSoapQName ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i> = QString::null, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i> = QString::null )</h3>
+<h3 class="fn"><a name="QtSoapQName"></a>QtSoapQName::QtSoapQName ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i> = QString::null, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i> = QString::null )</h3>
 <p>Constructs a QName. Sets the QName name to <i>name</i> and the URI to <i>uri</i>.</p>
 <h3 class="fn"><a name="dtor.QtSoapQName"></a>QtSoapQName::~QtSoapQName ()</h3>
 <p>Destructs the <a href="qtsoapqname.html">QtSoapQName</a>.</p>
-<h3 class="fn"><a name="name"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapQName::name () const</h3>
+<h3 class="fn"><a name="name"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapQName::name () const</h3>
 <p>Returns QName's name.</p>
-<h3 class="fn"><a name="uri"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapQName::uri () const</h3>
+<h3 class="fn"><a name="uri"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapQName::uri () const</h3>
 <p>Returns the QName's URI.</p>
-<h3 class="fn"><a name="operator-eq"></a>QtSoapQName &amp; QtSoapQName::operator= ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>s</i> )</h3>
+<h3 class="fn"><a name="operator-eq"></a>QtSoapQName &amp; QtSoapQName::operator= ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>s</i> )</h3>
 <p>Sets the QName's name to <i>s</i>, and sets the URI to an empty string.</p>
 <hr />
 <h2>Related Non-Members</h2>
@@ -70,7 +70,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

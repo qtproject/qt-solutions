@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapMessage Class Reference</title>
@@ -76,15 +76,15 @@
 <p>Use <a href="qtsoapmessage.html#setMethod">setMethod</a>() and <a href="qtsoapmessage.html#addMethodArgument">addMethodArgument</a>() to construct a method request. The return value of a method response is available from <a href="qtsoapmessage.html#returnValue">returnValue</a>().</p>
 <p>Use <a href="qtsoapmessage.html#setFaultCode">setFaultCode</a>(), <a href="qtsoapmessage.html#setFaultString">setFaultString</a>() and <a href="qtsoapmessage.html#addFaultDetail">addFaultDetail</a>() to construct a Fault message. To inspect a Fault message, use <a href="qtsoapmessage.html#faultCode">faultCode</a>(), <a href="qtsoapmessage.html#faultString">faultString</a>() and <a href="qtsoapmessage.html#faultDetail">faultDetail</a>().</p>
 <p>To add items to the body part of the SOAP message, use <a href="qtsoapmessage.html#addBodyItem">addBodyItem</a>(). To add items to the header, use <a href="qtsoapmessage.html#addHeaderItem">addHeaderItem</a>().</p>
-<p><a href="qtsoapmessage.html#toXmlString">toXmlString</a>() returns a <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> XML representation of the SOAP message. <a href="qtsoapmessage.html#clear">clear</a>() resets all content in the message, creating an empty SOAP message.</p>
+<p><a href="qtsoapmessage.html#toXmlString">toXmlString</a>() returns a <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> XML representation of the SOAP message. <a href="qtsoapmessage.html#clear">clear</a>() resets all content in the message, creating an empty SOAP message.</p>
 <pre> QtSoapMessage message;
 
- message.setMethod(&quot;getTemperature&quot;, &quot;http:<span class="comment">//weather.example.com/temperature&quot;);</span>
+ message.setMethod(&quot;getTemperature&quot;, &quot;https:<span class="comment">//weather.example.com/temperature&quot;);</span>
  message.addMethodArgument(&quot;city&quot;, &quot;Oslo&quot;);
 
 <span class="comment"> // Get the SOAP message as an XML string.</span>
  QString xml = message.toXmlString();</pre>
-<p>QtSoap provides a partial implementation of version 1.1 of the SOAP protocol as defined in <a href="http://www.w3.org/TR/SOAP/">http://www.w3.org/TR/SOAP/</a>.</p>
+<p>QtSoap provides a partial implementation of version 1.1 of the SOAP protocol as defined in <a href="https://www.w3.org/TR/SOAP/">https://www.w3.org/TR/SOAP/</a>.</p>
 <ul>
 <li>Server side SOAP is not supported.</li>
 <li>References to values (id and href attributes) are not supported.</li>
@@ -131,21 +131,21 @@
 <h3 class="fn"><a name="addMethodArgument"></a>void QtSoapMessage::addMethodArgument ( <a href="qtsoaptype.html">QtSoapType</a> * <i>arg</i> )</h3>
 <p>Adds argument <i>arg</i> to the list of arguments that are passed in a SOAP method request.</p>
 <p><b>Warning:</b> <a href="qtsoapmessage.html#setMethod">setMethod</a>() must be called before calling this function.</p>
-<h3 class="fn"><a name="addMethodArgument-2"></a>void QtSoapMessage::addMethodArgument ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>value</i> )</h3>
+<h3 class="fn"><a name="addMethodArgument-2"></a>void QtSoapMessage::addMethodArgument ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>value</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Adds an argument called <i>name</i> with a uri of <i>uri</i>. The type of the argument is <a href="qtsoaptype.html#Type-enum">QtSoapType::String</a> and its value is <i>value</i>.</p>
-<h3 class="fn"><a name="addMethodArgument-3"></a>void QtSoapMessage::addMethodArgument ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i>, bool <i>value</i>, int <i>dummy</i> )</h3>
+<h3 class="fn"><a name="addMethodArgument-3"></a>void QtSoapMessage::addMethodArgument ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i>, bool <i>value</i>, int <i>dummy</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Adds an argument called <i>name</i> with a uri of <i>uri</i>. The type of the argument is <a href="qtsoaptype.html#Type-enum">QtSoapType::Boolean</a> and its value is <i>value</i>.</p>
 <p>The <i>dummy</i> argument is used to distinguish this function from the overload which takes an int.</p>
-<h3 class="fn"><a name="addMethodArgument-4"></a>void QtSoapMessage::addMethodArgument ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i>, int <i>value</i> )</h3>
+<h3 class="fn"><a name="addMethodArgument-4"></a>void QtSoapMessage::addMethodArgument ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i>, int <i>value</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Adds an argument called <i>name</i> with a uri of <i>uri</i>. The type of the argument is <a href="qtsoaptype.html#Type-enum">QtSoapType::Integer</a> and its value is <i>value</i>.</p>
 <h3 class="fn"><a name="body"></a><a href="qtsoapstruct.html">QtSoapStruct</a> &amp; QtSoapMessage::body () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
 <p>Returns a reference to the body of the SOAP message.</p>
 <h3 class="fn"><a name="clear"></a>void QtSoapMessage::clear ()</h3>
 <p>Clears the content of the SOAP message.</p>
-<h3 class="fn"><a name="errorString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapMessage::errorString () const</h3>
+<h3 class="fn"><a name="errorString"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapMessage::errorString () const</h3>
 <p>Returns a human readable explanation of the most recent error that occurred in the <a href="qtsoapmessage.html">QtSoapMessage</a>.</p>
 <h3 class="fn"><a name="faultCode"></a><a href="qtsoapmessage.html#FaultCode-enum">FaultCode</a> QtSoapMessage::faultCode () const</h3>
 <p>Returns the Fault faultcode element of a SOAP Fault message.</p>
@@ -159,18 +159,18 @@
 <p>Returns a reference to the header of the SOAP message.</p>
 <h3 class="fn"><a name="isFault"></a>bool QtSoapMessage::isFault () const</h3>
 <p>Returns true if the message is a SOAP Fault message; otherwise returns false.</p>
-<h3 class="fn"><a name="isValidSoapMessage"></a>bool QtSoapMessage::isValidSoapMessage ( const <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> &amp; <i>candidate</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
-<p>Validates the <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>candidate</i> using some simple heuristics. Returns true if the document is a valid SOAP message; otherwise returns false.</p>
+<h3 class="fn"><a name="isValidSoapMessage"></a>bool QtSoapMessage::isValidSoapMessage ( const <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> &amp; <i>candidate</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Validates the <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>candidate</i> using some simple heuristics. Returns true if the document is a valid SOAP message; otherwise returns false.</p>
 <h3 class="fn"><a name="method"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapMessage::method () const</h3>
 <p>Returns the method of a SOAP method request or response as a <a href="qtsoaptype.html">QtSoapType</a>.</p>
 <p>See also <a href="qtsoapmessage.html#setMethod">setMethod</a>().</p>
 <h3 class="fn"><a name="returnValue"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapMessage::returnValue () const</h3>
 <p>Returns the return value of a SOAP method response as a <a href="qtsoaptype.html">QtSoapType</a>.</p>
-<h3 class="fn"><a name="setContent"></a>bool QtSoapMessage::setContent ( <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> &amp; <i>d</i> )</h3>
-<p>Imports the <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>d</i> if it validates as a SOAP message. Any existing message content is replaced.</p>
+<h3 class="fn"><a name="setContent"></a>bool QtSoapMessage::setContent ( <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> &amp; <i>d</i> )</h3>
+<p>Imports the <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>d</i> if it validates as a SOAP message. Any existing message content is replaced.</p>
 <p>If the import fails, this message becomes a Fault message.</p>
 <p>Returns true if the import succeeds, otherwise false.</p>
-<h3 class="fn"><a name="setContent-2"></a>bool QtSoapMessage::setContent ( const <a href="http://qt.nokia.com/doc/4.6/qbytearray.html">QByteArray</a> &amp; <i>buffer</i> )</h3>
+<h3 class="fn"><a name="setContent-2"></a>bool QtSoapMessage::setContent ( const <a href="https://doc.qt.io/archives/4.6/qbytearray.html">QByteArray</a> &amp; <i>buffer</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Parses the XML document in <i>buffer</i>. Imports the document if it validates as a SOAP message. Any existing message content is replaced.</p>
 <p>If the import fails, this message becomes a Fault message.</p>
@@ -178,24 +178,24 @@
 <h3 class="fn"><a name="setFaultCode"></a>void QtSoapMessage::setFaultCode ( <a href="qtsoapmessage.html#FaultCode-enum">FaultCode</a> <i>code</i> )</h3>
 <p>Sets the fault code of the SOAP Fault message to <i>code</i>.</p>
 <p>See also <a href="qtsoapmessage.html#faultCode">faultCode</a>().</p>
-<h3 class="fn"><a name="setFaultString"></a>void QtSoapMessage::setFaultString ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>s</i> )</h3>
+<h3 class="fn"><a name="setFaultString"></a>void QtSoapMessage::setFaultString ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>s</i> )</h3>
 <p>Sets the Fault faultstring of the SOAP Fault message to <i>s</i>.</p>
 <p>See also <a href="qtsoapmessage.html#faultString">faultString</a>().</p>
 <h3 class="fn"><a name="setMethod"></a>void QtSoapMessage::setMethod ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>meth</i> )</h3>
 <p>Sets the QName (qualified name) of the method to call in a SOAP method request to <i>meth</i>.</p>
 <p>This function <i>must</i> be called before calling <a href="qtsoapmessage.html#addMethodArgument">addMethodArgument</a>().</p>
 <p>See also <a href="qtsoapmessage.html#method">method</a>().</p>
-<h3 class="fn"><a name="setMethod-2"></a>void QtSoapMessage::setMethod ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i> = QString::null )</h3>
+<h3 class="fn"><a name="setMethod-2"></a>void QtSoapMessage::setMethod ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i> = QString::null )</h3>
 <p>This is an overloaded function.</p>
 <p>Sets the method name to <i>name</i> and uri to <i>uri</i>.</p>
-<h3 class="fn"><a name="toXmlString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapMessage::toXmlString ( int <i>indent</i> = 0 ) const</h3>
-<p>Returns the XML representation of the SOAP message as a <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>, optionally indenting using <i>indent</i> spaces.</p>
+<h3 class="fn"><a name="toXmlString"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapMessage::toXmlString ( int <i>indent</i> = 0 ) const</h3>
+<p>Returns the XML representation of the SOAP message as a <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a>, optionally indenting using <i>indent</i> spaces.</p>
 <h3 class="fn"><a name="operator-eq"></a>QtSoapMessage &amp; QtSoapMessage::operator= ( const QtSoapMessage &amp; <i>copy</i> )</h3>
 <p>Makes this message a copy of <i>copy</i>.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

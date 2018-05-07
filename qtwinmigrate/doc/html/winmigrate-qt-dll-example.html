@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtdll.qdoc -->
 <head>
   <title>Qt based Application Extension</title>
@@ -15,11 +15,11 @@
 </tr></table><h1 class="title">Qt based Application Extension<br /><span class="subtitle"></span>
 </h1>
 <p>This examples shows how to use the <a href="qwinwidget.html">QWinWidget</a> and <a href="qmfcapp.html">QMfcApp</a> classes to implement a Qt based user interface in a plugin DLL.</p>
-<p>The plugin implements and exports a <tt>C</tt> function <tt>showDialog</tt> that can be called by any Windows application to display a modal Qt dialog. Before a Qt based user interface can be created a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object must exist, and the calling application's event loop and the Qt event loop must run together.</p>
+<p>The plugin implements and exports a <tt>C</tt> function <tt>showDialog</tt> that can be called by any Windows application to display a modal Qt dialog. Before a Qt based user interface can be created a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object must exist, and the calling application's event loop and the Qt event loop must run together.</p>
 <pre><span class="comment"> /****************************************************************************
  **
  ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
- ** Contact: http://www.qt-project.org/legal
+ ** Contact: https://www1.qt.io/terms-conditions
  **
  ** This file is part of the Qt Solutions component.
  **
@@ -70,7 +70,7 @@
 
      return TRUE;
  }</pre>
-<p>The DLL entry point function <tt>DllMain</tt> uses the QMfcApp::pluginInstance function to make sure that exactly one instance of <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> exists in the process, and that the DLL owning that instance stays loaded in memory.</p>
+<p>The DLL entry point function <tt>DllMain</tt> uses the QMfcApp::pluginInstance function to make sure that exactly one instance of <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> exists in the process, and that the DLL owning that instance stays loaded in memory.</p>
 <pre> extern &quot;C&quot; __declspec(dllexport) bool showDialog( HWND parent )
  {
      QWinWidget win( parent );
@@ -79,11 +79,11 @@
 
      return TRUE;
  }</pre>
-<p>The <tt>C</tt> function <tt>showDialog</tt> is exported from the DLL and uses the <a href="qwinwidget.html">QWinWidget</a> class to provide proper stacking and modality between the native Win32 window and the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a>.</p>
+<p>The <tt>C</tt> function <tt>showDialog</tt> is exported from the DLL and uses the <a href="qwinwidget.html">QWinWidget</a> class to provide proper stacking and modality between the native Win32 window and the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a>.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

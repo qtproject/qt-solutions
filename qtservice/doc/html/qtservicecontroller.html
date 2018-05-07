@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtservice.cpp -->
 <head>
   <title>QtServiceController Class Reference</title>
@@ -89,22 +89,22 @@
 <p>See also <a href="qtservicecontroller.html#startupType">startupType</a>().</p>
 <hr />
 <h2>Member Function Documentation</h2>
-<h3 class="fn"><a name="QtServiceController"></a>QtServiceController::QtServiceController ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<h3 class="fn"><a name="QtServiceController"></a>QtServiceController::QtServiceController ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
 <p>Creates a controller object for the service with the given <i>name</i>.</p>
 <h3 class="fn"><a name="dtor.QtServiceController"></a>QtServiceController::~QtServiceController ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Destroys the service controller. This neither stops nor uninstalls the controlled service.</p>
 <p>To stop a service the <a href="qtservicecontroller.html#stop">stop</a>() function must be called explicitly. To uninstall a service, you can use the <a href="qtservicecontroller.html#uninstall">uninstall</a>() function.</p>
 <p>See also <a href="qtservicecontroller.html#stop">stop</a>() and <a href="qtservicecontroller.html#uninstall">QtServiceController::uninstall</a>().</p>
-<h3 class="fn"><a name="install"></a>bool QtServiceController::install ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>serviceFilePath</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>account</i> = QString(), const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>password</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="install"></a>bool QtServiceController::install ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>serviceFilePath</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>account</i> = QString(), const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>password</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
 <p>Installs the service with the given <i>serviceFilePath</i> and returns true if the service is installed successfully; otherwise returns false.</p>
 <p>On Windows service is installed in the system's service control manager with the given <i>account</i> and <i>password</i>.</p>
-<p>On Unix service configuration is written to <a href="http://qt.nokia.com/doc/4.6/qsettings.html#Scope-enum">QSettings::SystemScope</a> using &quot;QtSoftware&quot; as organization name. <i>account</i> and <i>password</i> arguments are ignored.</p>
+<p>On Unix service configuration is written to <a href="https://doc.qt.io/archives/4.6/s.html#Scope-enum">QSettings::SystemScope</a> using &quot;QtSoftware&quot; as organization name. <i>account</i> and <i>password</i> arguments are ignored.</p>
 <p><b>Warning:</b> Due to the different implementations of how services (daemons) are installed on various UNIX-like systems, this method doesn't integrate the service into the system's startup scripts.</p>
 <p>See also <a href="qtservicecontroller.html#uninstall">uninstall</a>() and <a href="qtservicecontroller.html#start">start</a>().</p>
 <h3 class="fn"><a name="isInstalled"></a>bool QtServiceController::isInstalled () const</h3>
 <p>Returns true if the service is installed; otherwise returns false.</p>
 <p>On Windows it uses the system's service control manager.</p>
-<p>On Unix it checks configuration written to <a href="http://qt.nokia.com/doc/4.6/qsettings.html#Scope-enum">QSettings::SystemScope</a> using &quot;QtSoftware&quot; as organization name.</p>
+<p>On Unix it checks configuration written to <a href="https://doc.qt.io/archives/4.6/s.html#Scope-enum">QSettings::SystemScope</a> using &quot;QtSoftware&quot; as organization name.</p>
 <p>See also <a href="qtservicecontroller.html#install">install</a>().</p>
 <h3 class="fn"><a name="isRunning"></a>bool QtServiceController::isRunning () const</h3>
 <p>Returns true if the service is running; otherwise returns false. A service must be installed before it can be run using a controller.</p>
@@ -121,16 +121,16 @@
 <p>Sends the user command <i>code</i> to the service. The service will call the <a href="qtservicebase.html#processCommand">QtServiceBase::processCommand</a>() implementation. This function does nothing if the service is not running.</p>
 <p>Returns true if the request was sent to a running service; otherwise returns false.</p>
 <p>See also <a href="qtservicebase.html#processCommand">QtServiceBase::processCommand</a>().</p>
-<h3 class="fn"><a name="serviceDescription"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtServiceController::serviceDescription () const</h3>
+<h3 class="fn"><a name="serviceDescription"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtServiceController::serviceDescription () const</h3>
 <p>Returns the description of the controlled service.</p>
 <p>See also <a href="qtservicecontroller.html#install">install</a>() and <a href="qtservicecontroller.html#serviceName">serviceName</a>().</p>
-<h3 class="fn"><a name="serviceFilePath"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtServiceController::serviceFilePath () const</h3>
+<h3 class="fn"><a name="serviceFilePath"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtServiceController::serviceFilePath () const</h3>
 <p>Returns the file path to the controlled service.</p>
 <p>See also <a href="qtservicecontroller.html#install">install</a>() and <a href="qtservicecontroller.html#serviceName">serviceName</a>().</p>
-<h3 class="fn"><a name="serviceName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtServiceController::serviceName () const</h3>
+<h3 class="fn"><a name="serviceName"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtServiceController::serviceName () const</h3>
 <p>Returns the name of the controlled service.</p>
 <p>See also <a href="qtservicecontroller.html#QtServiceController">QtServiceController</a>() and <a href="qtservicecontroller.html#serviceDescription">serviceDescription</a>().</p>
-<h3 class="fn"><a name="start"></a>bool QtServiceController::start ( const <a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> &amp; <i>arguments</i> )</h3>
+<h3 class="fn"><a name="start"></a>bool QtServiceController::start ( const <a href="https://doc.qt.io/archives/4.6/qstringlist.html">QStringList</a> &amp; <i>arguments</i> )</h3>
 <p>Starts the installed service passing the given <i>arguments</i> to the service. A service must be installed before a controller can run it.</p>
 <p>Returns true if the service could be started; otherwise returns false.</p>
 <p>See also <a href="qtservicecontroller.html#install">install</a>() and <a href="qtservicecontroller.html#stop">stop</a>().</p>
@@ -147,12 +147,12 @@
 <h3 class="fn"><a name="uninstall"></a>bool QtServiceController::uninstall ()</h3>
 <p>Uninstalls the service and returns true if successful; otherwise returns false.</p>
 <p>On Windows service is uninstalled using the system's service control manager.</p>
-<p>On Unix service configuration is cleared using <a href="http://qt.nokia.com/doc/4.6/qsettings.html#Scope-enum">QSettings::SystemScope</a> with &quot;QtSoftware&quot; as organization name.</p>
+<p>On Unix service configuration is cleared using <a href="https://doc.qt.io/archives/4.6/s.html#Scope-enum">QSettings::SystemScope</a> with &quot;QtSoftware&quot; as organization name.</p>
 <p>See also <a href="qtservicecontroller.html#install">install</a>().</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

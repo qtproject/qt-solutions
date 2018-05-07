@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -69,9 +69,9 @@
 #define SOAPv11_ENCODING    "http://schemas.xmlsoap.org/soap/encoding/"
 #define SOAPv11_ACTORNEXT   "http://schemas.xmlsoap.org/soap/actor/next"
 
-#define XML_SCHEMA          "http://www.w3.org/1999/XMLSchema"
-#define XML_SCHEMA_INSTANCE "http://www.w3.org/1999/XMLSchema-instance"
-#define XML_NAMESPACE       "http://www.w3.org/XML/1998/namespace"
+#define XML_SCHEMA          "https://www.w3.org/1999/XMLSchema"
+#define XML_SCHEMA_INSTANCE "https://www.w3.org/1999/XMLSchema-instance"
+#define XML_NAMESPACE       "https://www.w3.org/XML/1998/namespace"
 
 template <class T>
 class QtSmartPtr
