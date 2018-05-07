@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapSimpleType Class Reference</title>
@@ -72,7 +72,7 @@
 <p>This is an overloaded function.</p>
 <p>Constructs a <a href="qtsoapsimpletype.html">QtSoapSimpleType</a> of type Boolean. Sets its <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) to <i>name</i> and its value to <i>n</i>.</p>
 <p><i>dummy</i> is an unused variable that should be set to 0; it is needed for older compilers that cannot distinguish between bool and int.</p>
-<h3 class="fn"><a name="QtSoapSimpleType-6"></a>QtSoapSimpleType::QtSoapSimpleType ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>name</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>n</i> )</h3>
+<h3 class="fn"><a name="QtSoapSimpleType-6"></a>QtSoapSimpleType::QtSoapSimpleType ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>name</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>n</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Constructs a <a href="qtsoapsimpletype.html">QtSoapSimpleType</a> of type String. Sets its <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) to <i>name</i> and its value to <i>n</i>.</p>
 <h3 class="fn"><a name="dtor.QtSoapSimpleType"></a>QtSoapSimpleType::~QtSoapSimpleType ()</h3>
@@ -82,30 +82,30 @@
 <p>Erases the value of this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>.</p>
 <h3 class="fn"><a name="isValid"></a>bool QtSoapSimpleType::isValid () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#isValid">QtSoapType::isValid</a>().</p>
-<h3 class="fn"><a name="parse"></a>bool QtSoapSimpleType::parse ( <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="parse"></a>bool QtSoapSimpleType::parse ( <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#parse">QtSoapType::parse</a>().</p>
 <p>Inspects <i>node</i> and constructs the <a href="qtsoapsimpletype.html">QtSoapSimpleType</a> content if <i>node</i> qualifies as a SOAP simple type. Returns true if it does; otherwise returns false.</p>
 <h3 class="fn"><a name="toBool"></a>bool QtSoapSimpleType::toBool () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toBool">QtSoapType::toBool</a>().</p>
 <p>Returns the value of the simple type as a bool.</p>
-<h3 class="fn"><a name="toDomElement"></a><a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> QtSoapSimpleType::toDomElement ( <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="toDomElement"></a><a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> QtSoapSimpleType::toDomElement ( <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toDomElement">QtSoapType::toDomElement</a>().</p>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>. The returned <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>. The returned <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
 <h3 class="fn"><a name="toInt"></a>int QtSoapSimpleType::toInt () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toInt">QtSoapType::toInt</a>().</p>
 <p>Returns the value of the simple type as an int.</p>
-<h3 class="fn"><a name="toString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapSimpleType::toString () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="toString"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapSimpleType::toString () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toString">QtSoapType::toString</a>().</p>
-<p>Returns the value of the simple type as a <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a>.</p>
-<h3 class="fn"><a name="value"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QtSoapSimpleType::value () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the value of the simple type as a <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a>.</p>
+<h3 class="fn"><a name="value"></a><a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> QtSoapSimpleType::value () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#value">QtSoapType::value</a>().</p>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> value of this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>.</p>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> value of this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>.</p>
 <h3 class="fn"><a name="operator-eq"></a>QtSoapSimpleType &amp; QtSoapSimpleType::operator= ( const QtSoapSimpleType &amp; <i>copy</i> )</h3>
 <p>Makes this <a href="qtsoapsimpletype.html">QtSoapSimpleType</a> a copy of <i>copy</i>.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -219,7 +219,7 @@ QString Graph::dataSourceUrl() const
 
 void Graph::aboutPlugin()
 {
-    openUrl("http://qt.nokia.com/products/appdev/add-on-products/catalog/4/Utilities/qtbrowserplugin/");
+    openUrl("https://web.archive.org/web/20090902141130/qt.nokia.com/products/appdev/add-on-products/catalog/4/Utilities/qtbrowserplugin/");
 }
 
 void Graph::aboutData()
@@ -264,7 +264,7 @@ void Graph::aboutQt()
 
 void Graph::aboutQtDevelopmentFrameworks()
 {
-    lastReqId = openUrl("http://qt.nokia.com");
+    lastReqId = openUrl("https://www.qt.io");
 }
 
 void Graph::stylePie()

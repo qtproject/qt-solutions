@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- walkthrough.qdoc -->
 <head>
   <title>MFC to Qt Migration - Walkthrough</title>
@@ -68,10 +68,10 @@
 <p>If the DLL can be loaded and exports the <tt>showDialog</tt> symbol the exported function is called, otherwise a default MFC about dialog is displayed.</p>
 <a name="plugin-extension"></a>
 <h3>Plugin extension</h3>
-<p>The project in the <tt>qtdll</tt> example directory implements the plugin interface using the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> class. To use this class a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object must exist in the current process, and the Qt events must be processed in addition to the standard event dispatching performed by the running MFC application.</p>
-<p>The DLL also has to make sure that it can be loaded together with other Qt based DLLs in the same process (in which case a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object will probably exist already), and that the DLL that creates the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object remains loaded in memory to avoid other DLLs using memory that is no longer available to the process.</p>
-<p>All these issues are handled by the <a href="qmfcapp.html#pluginInstance">QMfcApp::pluginInstance</a>() function. This function creates a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object and installs a message hook that merges the Qt event loop with the existing standard Win32 message pump of MFC. If an instance to the DLL is passed as a parameter the function will also increase the DLL's reference count so that it is not unloaded before the process exits.</p>
-<p>This function can be used in an implementation of the <tt>DllMain</tt> entry point function when the DLL is loaded. A static bool variable is used to remember whether this DLL is responsible for the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object, and when the DLL is unloaded the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object, accessible through the global <tt>qApp</tt> pointer, can be deleted.</p>
+<p>The project in the <tt>qtdll</tt> example directory implements the plugin interface using the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> class. To use this class a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object must exist in the current process, and the Qt events must be processed in addition to the standard event dispatching performed by the running MFC application.</p>
+<p>The DLL also has to make sure that it can be loaded together with other Qt based DLLs in the same process (in which case a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object will probably exist already), and that the DLL that creates the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object remains loaded in memory to avoid other DLLs using memory that is no longer available to the process.</p>
+<p>All these issues are handled by the <a href="qmfcapp.html#pluginInstance">QMfcApp::pluginInstance</a>() function. This function creates a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object and installs a message hook that merges the Qt event loop with the existing standard Win32 message pump of MFC. If an instance to the DLL is passed as a parameter the function will also increase the DLL's reference count so that it is not unloaded before the process exits.</p>
+<p>This function can be used in an implementation of the <tt>DllMain</tt> entry point function when the DLL is loaded. A static bool variable is used to remember whether this DLL is responsible for the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object, and when the DLL is unloaded the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object, accessible through the global <tt>qApp</tt> pointer, can be deleted.</p>
 <p>To use the function and the other Qt classes involved we also need to include a few header files.</p>
 <pre> #include &lt;qmfcapp.h&gt;
  #include &lt;qwinwidget.h&gt;
@@ -105,7 +105,7 @@
 <p>The <tt>step2</tt> directory includes a <tt>.pro</tt> file that generates a proper <tt>.dsp</tt> file that has all the required settings. Run c{qmake -tp vc} in the directory to generate that <tt>.dsp</tt> file, and check the settings necessary in case you want to modify the Visual Studio project manually.</p>
 <a name="replacing-the-mfc-event-loop"></a>
 <h3>Replacing the MFC event loop</h3>
-<p>To be able to use Qt, we need to create a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object. The <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> class controls the event delivery and display management for all Qt objects and widgets.</p>
+<p>To be able to use Qt, we need to create a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object. The <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> class controls the event delivery and display management for all Qt objects and widgets.</p>
 <p>In the original MFC project the wizard generated <tt>WindowsApp</tt> class, a subclass of <tt>CWinApp</tt>, runs the event loop in the default implementation of <tt>Run()</tt>. The MFC event loop is a standard Win32 event loop, but uses the CWinApp API <tt>PreTranslateMessage()</tt> to activate accelerators.</p>
 <p>In order to keep MFC accelerators working we must use the <tt>QApplication</tt> subclass <tt>QMfcApp</tt> that is provided by the Windows Migration framework and which merges the Qt and the MFC event loops.</p>
 <p>The first step of the Qt migration is to reimplement the <tt>Run()</tt> function in the <tt>WindowsApp</tt> class. We can either use the wizard to add a reimplementation of Run(), or add the reimplementation ourselves to the class declaration in the <tt>qtmfc.h</tt> header file:</p>
@@ -142,11 +142,11 @@
  {
      return QMfcApp::run( this );
  }</pre>
-<p>The implementation uses the static run() function of the <a href="qmfcapp.html">QMfcApp</a> class to implicitly instantiate a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object, and run the event loops for both Qt and MFC:</p>
-<p>The code in the plugin DLL does not need to be modified: Since we have a <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object created in the application itself the pluginInstance() function will do nothing, and the DLL will open the message box in the exported function just like before.</p>
+<p>The implementation uses the static run() function of the <a href="qmfcapp.html">QMfcApp</a> class to implicitly instantiate a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object, and run the event loops for both Qt and MFC:</p>
+<p>The code in the plugin DLL does not need to be modified: Since we have a <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object created in the application itself the pluginInstance() function will do nothing, and the DLL will open the message box in the exported function just like before.</p>
 <a name="replacing-a-dialog"></a>
 <h3>Replacing a Dialog</h3>
-<p>Instead of using the Qt plugin DLL we will now replace the MFC About Dialog directly in the application source code. Using the Visual Studio integration toolbar we could quickly create a new <a href="http://qt.nokia.com/doc/4.6/qdialog.html">QDialog</a> with <i>Qt Designer</i> from scratch. Or convert the existing dialogs from Microsoft resource files into <i>Qt Designer</i> <tt>.ui</tt> files by using a conversion tool such as <a href="http://www.kdab.net/?page=products&sub=knut">KDAB's KNUT</a> tool. But for a basic dialog as the one in this example, it is even easier to use the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html#about">QMessageBox::about</a>() function as we did in the plugin code shown earlier.</p>
+<p>Instead of using the Qt plugin DLL we will now replace the MFC About Dialog directly in the application source code. Using the Visual Studio integration toolbar we could quickly create a new <a href="https://doc.qt.io/archives/4.6/g.html">QDialog</a> with <i>Qt Designer</i> from scratch. Or convert the existing dialogs from Microsoft resource files into <i>Qt Designer</i> <tt>.ui</tt> files by using a conversion tool such as <a href="https://www.kdab.net/?page=products&sub=knut">KDAB's KNUT</a> tool. But for a basic dialog as the one in this example, it is even easier to use the <a href="https://doc.qt.io/archives/4.6/x.html#about">QMessageBox::about</a>() function as we did in the plugin code shown earlier.</p>
 <pre> #include &quot;stdafx.h&quot;
  #include &quot;qtmfc.h&quot;
 
@@ -155,7 +155,7 @@
  #include &lt;qmfcapp.h&gt;
  #include &lt;qwinwidget.h&gt;
  #include &lt;QtGui/QMessageBox&gt;</pre>
-<p>To use the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> API we must include the appropriate header. Since we need to create the <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> as a child of the MFC based main window we also need to use the <tt>QWinWidget</tt> class again and include that header as well.</p>
+<p>To use the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> API we must include the appropriate header. Since we need to create the <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> as a child of the MFC based main window we also need to use the <tt>QWinWidget</tt> class again and include that header as well.</p>
 <pre><span class="comment"> // WindowsApp message handlers</span>
 
 <span class="comment"> // App command to run the dialog</span>
@@ -165,14 +165,14 @@
      win.showCentered();
      QMessageBox::about( &amp;win, &quot;About QtMfc&quot;, &quot;QtMfc Version 1.0\nCopyright (C) 2003&quot; );
  }</pre>
-<p>We can remove the class declaration and implementation of the CAboutDlg class from the source file, and use the <a href="qwinwidget.html">QWinWidget</a> and <a href="http://qt.nokia.com/doc/4.6/qmessagebox.html">QMessageBox</a> API in the implementation of the <tt>WindowsApp::OnAppAbout()</tt> command handler.</p>
+<p>We can remove the class declaration and implementation of the CAboutDlg class from the source file, and use the <a href="qwinwidget.html">QWinWidget</a> and <a href="https://doc.qt.io/archives/4.6/x.html">QMessageBox</a> API in the implementation of the <tt>WindowsApp::OnAppAbout()</tt> command handler.</p>
 <p>A <a href="qwinwidget.html">QWinWidget</a> object is created on the stack, using the MFC application's main window as the parent window. The showCentered() API is used to make sure that the Qt message box, which uses the <a href="qwinwidget.html">QWinWidget</a> object as its parent, will open centered over the main window.</p>
 <a name="new-functionality-with-qt"></a>
 <h2>New Functionality with Qt</h2>
 <p>We can now add new functionality to the MFC application using Qt. We will add a Qt based user interface to the MFC child view, and add an additional modeless options dialog created with <i>Qt Designer</i>.</p>
 <a name="creating-qt-widgets"></a>
 <h3>Creating Qt widgets</h3>
-<p>To be able to create Qt widgets in the initialization of the MFC application we must first create an instance of <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a>. The current use of the static <tt>QMfcApp::run()</tt> API creates the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object in the <tt>Run()</tt> reimplementation of the CWinApp subclass, while the GUI is already being created in the <tt>InitInstance</tt> reimplementation.</p>
+<p>To be able to create Qt widgets in the initialization of the MFC application we must first create an instance of <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a>. The current use of the static <tt>QMfcApp::run()</tt> API creates the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object in the <tt>Run()</tt> reimplementation of the CWinApp subclass, while the GUI is already being created in the <tt>InitInstance</tt> reimplementation.</p>
 <pre> BOOL WindowsApp::InitInstance()
  {
          <span class="comment">// Standard initialization</span>
@@ -194,7 +194,7 @@
          MainFrame* pFrame = new MainFrame;
          return true;
  }</pre>
-<p>To create the <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> object in the <tt>InitInstance</tt> implementation we must use the static function <tt>QMfcApp::instance()</tt>.</p>
+<p>To create the <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> object in the <tt>InitInstance</tt> implementation we must use the static function <tt>QMfcApp::instance()</tt>.</p>
 <pre> BOOL WindowsApp::Run()
  {
      int result = QMfcApp::run(this);
@@ -266,7 +266,7 @@
 
      return 0;
  }</pre>
-<p>Now we can create the <a href="qwinwidget.html">QWinWidget</a> instance with <tt>this</tt> CWnd instance as a parent window, and use that instance as a parent to the QWidgets we want to use to create the user interface. Since <a href="qwinwidget.html">QWinWidget</a> is a proper <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a> it can be laid out, and we move the Qt GUI to the upper left corner of the MFC child and show() the user interface immediately.</p>
+<p>Now we can create the <a href="qwinwidget.html">QWinWidget</a> instance with <tt>this</tt> CWnd instance as a parent window, and use that instance as a parent to the QWidgets we want to use to create the user interface. Since <a href="qwinwidget.html">QWinWidget</a> is a proper <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a> it can be laid out, and we move the Qt GUI to the upper left corner of the MFC child and show() the user interface immediately.</p>
 <pre> BOOL ChildView::PreCreateWindow(CREATESTRUCT&amp; cs)
  {
          if (!CWnd::PreCreateWindow(cs))
@@ -363,7 +363,7 @@
 <p>Running <tt>qmake -tp vc</tt> on the <tt>.pro</tt> file will generate a new <tt>.dsp</tt> file that we can use in Visual Studio to compile and link the application.</p>
 <a name="replacing-the-childview"></a>
 <h3>Replacing the ChildView</h3>
-<p>The first MFC class we will move over to Qt is the ChildView class. We replace the old class declaration with the declaration of a <a href="http://qt.nokia.com/doc/4.6/qwidget.html">QWidget</a> subclass.</p>
+<p>The first MFC class we will move over to Qt is the ChildView class. We replace the old class declaration with the declaration of a <a href="https://doc.qt.io/archives/4.6/qwidget.html">QWidget</a> subclass.</p>
 <pre> #ifndef CHILDVIEW_H
  #define CHILDVIEW_H
 
@@ -502,7 +502,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

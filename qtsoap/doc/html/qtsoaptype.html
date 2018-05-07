@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapType Class Reference</title>
@@ -80,7 +80,7 @@
 <hr />
 <h2>Member Type Documentation</h2>
 <h3 class="fn"><a name="Type-enum"></a>enum QtSoapType::Type</h3>
-<p>SOAP supports the types described in XML Schema Part 2: Datatypes listed at <a href="http://www.w3.org/TR/xmlschema-2/">http://www.w3.org/TR/xmlschema-2/</a>. The following values are represented using <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>, except where noted.</p>
+<p>SOAP supports the types described in XML Schema Part 2: Datatypes listed at <a href="https://www.w3.org/TR/xmlschema-2/">https://www.w3.org/TR/xmlschema-2/</a>. The following values are represented using <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>, except where noted.</p>
 <p><table class="valuelist" border="1" cellpadding="2" cellspacing="1" width="100%">
 <tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
 <tr><td valign="top"><tt>QtSoapType::AnyURI</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">&nbsp;</td></tr>
@@ -142,12 +142,12 @@
 <p>Clears any contents. In this base implementation, clear() does nothing.</p>
 <h3 class="fn"><a name="count"></a>int QtSoapType::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the number of child items in this <a href="qtsoaptype.html">QtSoapType</a>. In the base implementation, this returns 0.</p>
-<h3 class="fn"><a name="errorString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::errorString () const</h3>
+<h3 class="fn"><a name="errorString"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::errorString () const</h3>
 <p>Returns a human readable explanation of the most recent error.</p>
-<h3 class="fn"><a name="href"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::href () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="href"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::href () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the href attribute of this <a href="qtsoaptype.html">QtSoapType</a>.</p>
 <p>See also <a href="qtsoaptype.html#setHref">setHref</a>().</p>
-<h3 class="fn"><a name="id"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::id () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="id"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::id () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the ID of this <a href="qtsoaptype.html">QtSoapType</a>.</p>
 <p>See also <a href="qtsoaptype.html#setId">setId</a>().</p>
 <h3 class="fn"><a name="isValid"></a>bool QtSoapType::isValid () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
@@ -155,14 +155,14 @@
 <h3 class="fn"><a name="name"></a><a href="qtsoapqname.html">QtSoapQName</a> QtSoapType::name () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) of this <a href="qtsoaptype.html">QtSoapType</a>.</p>
 <p>See also <a href="qtsoaptype.html#setName">setName</a>().</p>
-<h3 class="fn"><a name="nameToType"></a><a href="qtsoaptype.html#Type-enum">Type</a> QtSoapType::nameToType ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="nameToType"></a><a href="qtsoaptype.html#Type-enum">Type</a> QtSoapType::nameToType ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
 <p>Returns the <a href="qtsoaptype.html#Type-enum">QtSoapType::Type</a> called <i>name</i>.</p>
-<h3 class="fn"><a name="parse"></a>bool QtSoapType::parse ( <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="parse"></a>bool QtSoapType::parse ( <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Attempts to interpret <i>node</i> as a <a href="qtsoaptype.html">QtSoapType</a>, and returns true if successful. This base implementation always returns false.</p>
-<h3 class="fn"><a name="setHref"></a>void QtSoapType::setHref ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>h</i> )</h3>
+<h3 class="fn"><a name="setHref"></a>void QtSoapType::setHref ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>h</i> )</h3>
 <p>Sets the href attribute of this <a href="qtsoaptype.html">QtSoapType</a> to <i>h</i>.</p>
 <p>See also <a href="qtsoaptype.html#href">href</a>().</p>
-<h3 class="fn"><a name="setId"></a>void QtSoapType::setId ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>i</i> )</h3>
+<h3 class="fn"><a name="setId"></a>void QtSoapType::setId ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>i</i> )</h3>
 <p>Sets the ID of this <a href="qtsoaptype.html">QtSoapType</a> to <i>i</i>.</p>
 <p>See also <a href="qtsoaptype.html#id">id</a>().</p>
 <h3 class="fn"><a name="setName"></a>void QtSoapType::setName ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>name</i> )</h3>
@@ -170,20 +170,20 @@
 <p>See also <a href="qtsoaptype.html#name">name</a>().</p>
 <h3 class="fn"><a name="toBool"></a>bool QtSoapType::toBool () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns false.</p>
-<h3 class="fn"><a name="toDomElement"></a><a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> QtSoapType::toDomElement ( <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>document</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoaptype.html">QtSoapType</a> as a child of <i>document</i>.</p>
+<h3 class="fn"><a name="toDomElement"></a><a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> QtSoapType::toDomElement ( <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>document</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoaptype.html">QtSoapType</a> as a child of <i>document</i>.</p>
 <h3 class="fn"><a name="toInt"></a>int QtSoapType::toInt () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns 0.</p>
-<h3 class="fn"><a name="toString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::toString () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
-<p>Returns <a href="http://qt.nokia.com/doc/4.6/qstring.html#null-var">QString::null</a>.</p>
+<h3 class="fn"><a name="toString"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::toString () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns <a href="https://doc.qt.io/archives/4.6/qstring.html#null-var">QString::null</a>.</p>
 <h3 class="fn"><a name="type"></a><a href="qtsoaptype.html#Type-enum">Type</a> QtSoapType::type () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the type as a <a href="qtsoaptype.html#Type-enum">QtSoapType::Type</a>.</p>
-<h3 class="fn"><a name="typeName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::typeName () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> representation of this <a href="qtsoaptype.html">QtSoapType</a>'s type.</p>
-<h3 class="fn"><a name="typeToName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapType::typeToName ( <a href="qtsoaptype.html#Type-enum">QtSoapType::Type</a> <i>t</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> equivalent of type <i>t</i>.</p>
-<h3 class="fn"><a name="value"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QtSoapType::value () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
-<p>Returns the value of this <a href="qtsoaptype.html">QtSoapType</a>. In the base implementation, an invalid <a href="http://qt.nokia.com/doc/4.6/porting4.html">QVariant</a>() is returned.</p>
+<h3 class="fn"><a name="typeName"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::typeName () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> representation of this <a href="qtsoaptype.html">QtSoapType</a>'s type.</p>
+<h3 class="fn"><a name="typeToName"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapType::typeToName ( <a href="qtsoaptype.html#Type-enum">QtSoapType::Type</a> <i>t</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> equivalent of type <i>t</i>.</p>
+<h3 class="fn"><a name="value"></a><a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> QtSoapType::value () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the value of this <a href="qtsoaptype.html">QtSoapType</a>. In the base implementation, an invalid <a href="https://doc.qt.io/archives/4.6/porting4.html">QVariant</a>() is returned.</p>
 <h3 class="fn"><a name="operator-eq"></a>QtSoapType &amp; QtSoapType::operator= ( const QtSoapType &amp; <i>copy</i> )</h3>
 <p>Makes this <a href="qtsoaptype.html">QtSoapType</a> equal to <i>copy</i>.</p>
 <h3 class="fn"><a name="operator-5b-5d"></a>QtSoapType &amp; QtSoapType::operator[] ( int <i>pos</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
@@ -191,7 +191,7 @@
 <h3 class="fn"><a name="operator-5b-5d-2"></a>QtSoapType &amp; QtSoapType::operator[] ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>. If no item exists with this key an empty <a href="qtsoaptype.html">QtSoapType</a> is returned.</p>
-<h3 class="fn"><a name="operator-5b-5d-3"></a>QtSoapType &amp; QtSoapType::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-3"></a>QtSoapType &amp; QtSoapType::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>, regardless of the qualified name's URI. If no item exists with this key, an empty <a href="qtsoaptype.html">QtSoapType</a> is returned.</p>
 <h3 class="fn"><a name="operator-5b-5d-4"></a>const QtSoapType &amp; QtSoapType::operator[] ( int <i>pos</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
@@ -200,13 +200,13 @@
 <h3 class="fn"><a name="operator-5b-5d-5"></a>const QtSoapType &amp; QtSoapType::operator[] ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>key</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>. If no item exists with this key, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
-<h3 class="fn"><a name="operator-5b-5d-6"></a>const QtSoapType &amp; QtSoapType::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-6"></a>const QtSoapType &amp; QtSoapType::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>key</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>, regardless of the qualified name's URI. If no item exists with this key, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

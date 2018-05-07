@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapNamespaces Class Reference</title>
@@ -39,21 +39,21 @@
 <p>To access the QtSoapNamespaces registry, call <a href="qtsoapnamespaces.html#instance">QtSoapNamespaces::instance</a>().</p>
 <pre> QtSoapNamespaces &amp;registry = QtSoapNamespaces::instance();
 
- registry.register(&quot;pre&quot;, &quot;http:<span class="comment">//www.example.com/&quot;);</span>
- QString prefix = registry.prefixFor(&quot;http:<span class="comment">//www.example.com/&quot;); // returns &quot;pre&quot;</span></pre>
+ registry.register(&quot;pre&quot;, &quot;https:<span class="comment">//www.example.com/&quot;);</span>
+ QString prefix = registry.prefixFor(&quot;https:<span class="comment">//www.example.com/&quot;); // returns &quot;pre&quot;</span></pre>
 <p>See also <a href="qtsoapmessage.html">QtSoapMessage</a>.</p>
 <hr />
 <h2>Member Function Documentation</h2>
 <h3 class="fn"><a name="instance"></a>QtSoapNamespaces &amp; QtSoapNamespaces::instance ()&nbsp;&nbsp;<tt> [static]</tt></h3>
 <p>Returns a reference to the <a href="qtsoapnamespaces.html">QtSoapNamespaces</a> singleton.</p>
-<h3 class="fn"><a name="prefixFor"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtSoapNamespaces::prefixFor ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i> )</h3>
+<h3 class="fn"><a name="prefixFor"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtSoapNamespaces::prefixFor ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i> )</h3>
 <p>Returns the prefix for the namespace <i>uri</i>, or an empty string if no prefix has been registered for <i>uri</i>.</p>
-<h3 class="fn"><a name="registerNamespace"></a>void QtSoapNamespaces::registerNamespace ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>prefix</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>uri</i> )</h3>
+<h3 class="fn"><a name="registerNamespace"></a>void QtSoapNamespaces::registerNamespace ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>prefix</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>uri</i> )</h3>
 <p>Registers the namespace <i>uri</i> with the prefix <i>prefix</i>.</p>
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

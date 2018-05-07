@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- google.qdoc -->
 <head>
   <title>Using SOAP with the Google API</title>
@@ -15,13 +15,13 @@
 </tr></table><h1 class="title">Using SOAP with the Google API<br /><span class="subtitle"></span>
 </h1>
 <p>This example shows how to use the SOAP component to submit searches via the Google SOAP API.</p>
-<p>Testing this example requires a valid license key, which is available for free from http://api.google.com/.</p>
+<p>Testing this example requires a valid license key, which is available for free from https://api.google.com/.</p>
     <hr>
     <p>examples/google/google.h:</p>
 <pre><span class="comment"> /****************************************************************************
  **
  ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
- ** Contact: http://www.qt-project.org/legal
+ ** Contact: https://www1.qt.io/terms-conditions
  **
  ** This file is part of the Qt Solutions component.
  **
@@ -91,7 +91,7 @@
 <pre><span class="comment"> /****************************************************************************
  **
  ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
- ** Contact: http://www.qt-project.org/legal
+ ** Contact: https://www1.qt.io/terms-conditions
  **
  ** This file is part of the Qt Solutions component.
  **
@@ -186,7 +186,7 @@
          QMessageBox::warning(this, tr(&quot;Missing license key&quot;),
                               tr(&quot;Please enter your Google Web APIs license key.&quot;
                                  &quot; If you do not have one, you can visit&lt;br&gt;&quot;
-                                 &quot; http:<span class="comment">//api.google.com/ and create a Google&quot;</span>
+                                 &quot; https:<span class="comment">//api.google.com/ and create a Google&quot;</span>
                                  &quot; account to obtain a license key.&quot;));
          return;
      }
@@ -200,7 +200,7 @@
      }
 
      <span class="comment">// Generate request. Details about how to generate a proper</span>
-     <span class="comment">// request are available from http://api.google.com/. The results</span>
+     <span class="comment">// request are available from https://api.google.com/. The results</span>
      <span class="comment">// are always fetched as latin1 in this example, but this can be</span>
      <span class="comment">// easily changed (see the &quot;ie&quot; and &quot;oe&quot; arguments below).</span>
      QtSoapMessage request;
@@ -248,7 +248,7 @@
      }
 
      <span class="comment">// Generate resultView output. Make it resemble the actual web</span>
-     <span class="comment">// output from http://www.google.com/.</span>
+     <span class="comment">// output from https://www.google.com/.</span>
      QString header(tr(&quot;Searched the web for &lt;b&gt;%1&lt;/b&gt;, results %2 - %3 &quot;
                        &quot;of about %4. Search took %5 seconds.&lt;br&gt;&lt;hr&gt;&quot;)
                     .arg(res[&quot;searchQuery&quot;].toString())
@@ -309,7 +309,7 @@
 <pre><span class="comment"> /****************************************************************************
  **
  ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
- ** Contact: http://www.qt-project.org/legal
+ ** Contact: https://www1.qt.io/terms-conditions
  **
  ** This file is part of the Qt Solutions component.
  **
@@ -369,7 +369,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

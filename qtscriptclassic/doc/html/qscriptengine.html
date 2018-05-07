@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qscriptengine.cpp -->
 <head>
   <title>QScriptEngine Class Reference</title>
@@ -12,12 +12,12 @@
 <tr>
 <td align="left" valign="top" width="32"><img src="images/qt-logo.png" align="left" width="57" height="67" border="0" /></td>
 <td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a></td>
-</tr></table><h1 class="title">QScriptEngine Class Reference<br /><span class="small-subtitle">[<a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> module]</span>
+</tr></table><h1 class="title">QScriptEngine Class Reference<br /><span class="small-subtitle">[<a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> module]</span>
 </h1>
 <p>The QScriptEngine class provides an environment for evaluating Qt Script code. <a href="#details">More...</a></p>
 <pre> #include &lt;QScriptEngine&gt;</pre><p><b>This class is not part of the Qt GUI Framework Edition.</b></p>
-<p>Inherits <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>.</p>
-<p><b>Note:</b> All functions in this class are <a href="http://qt.nokia.com/doc/4.6/threads-reentrancy.html">reentrant</a>.</p>
+<p>Inherits <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>.</p>
+<p><b>Note:</b> All functions in this class are <a href="https://doc.qt.io/archives/4.6/y.html">reentrant</a>.</p>
 <p>This class was introduced in qtscriptclassic 4.3.</p>
 <ul>
 <li><a href="qscriptengine-members.html">List of all members, including inherited members</a></li>
@@ -87,7 +87,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">QScriptValue </td><td class="memItemRight" valign="bottom"><b><a href="qscriptengine.html#undefinedValue">undefinedValue</a></b> ()</td></tr>
 </table>
 <ul>
-<li><div bar="2" class="fn"></div>29 public functions inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-functions">QObject</a></li>
+<li><div bar="2" class="fn"></div>29 public functions inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#public-functions">QObject</a></li>
 </ul>
 <hr />
 <a name="signals"></a>
@@ -96,7 +96,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qscriptengine.html#signalHandlerException">signalHandlerException</a></b> ( const QScriptValue &amp; <i>exception</i> )</td></tr>
 </table>
 <ul>
-<li><div bar="2" class="fn"></div>1 signal inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#signals">QObject</a></li>
+<li><div bar="2" class="fn"></div>1 signal inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#signals">QObject</a></li>
 </ul>
 <hr />
 <a name="static-public-members"></a>
@@ -105,7 +105,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">QScriptSyntaxCheckResult </td><td class="memItemRight" valign="bottom"><b><a href="qscriptengine.html#checkSyntax">checkSyntax</a></b> ( const QString &amp; <i>program</i> )</td></tr>
 </table>
 <ul>
-<li><div bar="2" class="fn"></div>4 static public members inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#static-public-members">QObject</a></li>
+<li><div bar="2" class="fn"></div>4 static public members inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#static-public-members">QObject</a></li>
 </ul>
 <hr />
 <a name="related-non-members"></a>
@@ -113,15 +113,15 @@
 <table class="alignedsummary" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td class="memItemLeft" align="right" valign="top">typedef </td><td class="memItemRight" valign="bottom"><b><a href="qscriptengine.html#FunctionSignature-typedef">FunctionSignature</a></b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef </td><td class="memItemRight" valign="bottom"><b><a href="qscriptengine.html#FunctionWithArgSignature-typedef">FunctionWithArgSignature</a></b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptConnect">qScriptConnect</a></b> ( QObject * <i>sender</i>, const char * <i>signal</i>, const QScriptValue &amp; <i>receiver</i>, const QScriptValue &amp; <i>function</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptDisconnect">qScriptDisconnect</a></b> ( QObject * <i>sender</i>, const char * <i>signal</i>, const QScriptValue &amp; <i>receiver</i>, const QScriptValue &amp; <i>function</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a></b> ( QScriptEngine * <i>engine</i>, QScriptValue(* ) ( QScriptEngine *, const T &amp; t ) <i>toScriptValue</i>, void(* ) ( const QScriptValue &amp;, T &amp; t ) <i>fromScriptValue</i>, const QScriptValue &amp; <i>prototype</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a></b> ( QScriptEngine * <i>engine</i>, const QScriptValue &amp; <i>prototype</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromQMetaObject">qScriptValueFromQMetaObject</a></b> ( QScriptEngine * <i>engine</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromSequence">qScriptValueFromSequence</a></b> ( QScriptEngine * <i>engine</i>, const Container &amp; <i>container</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromValue">qScriptValueFromValue</a></b> ( QScriptEngine * <i>engine</i>, const T &amp; <i>value</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueToSequence">qScriptValueToSequence</a></b> ( const QScriptValue &amp; <i>value</i>, Container &amp; <i>container</i> )</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueToValue">qScriptValueToValue</a></b> ( const QScriptValue &amp; <i>value</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptConnect">qScriptConnect</a></b> ( QObject * <i>sender</i>, const char * <i>signal</i>, const QScriptValue &amp; <i>receiver</i>, const QScriptValue &amp; <i>function</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptDisconnect">qScriptDisconnect</a></b> ( QObject * <i>sender</i>, const char * <i>signal</i>, const QScriptValue &amp; <i>receiver</i>, const QScriptValue &amp; <i>function</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a></b> ( QScriptEngine * <i>engine</i>, QScriptValue(* ) ( QScriptEngine *, const T &amp; t ) <i>toScriptValue</i>, void(* ) ( const QScriptValue &amp;, T &amp; t ) <i>fromScriptValue</i>, const QScriptValue &amp; <i>prototype</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a></b> ( QScriptEngine * <i>engine</i>, const QScriptValue &amp; <i>prototype</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromQMetaObject">qScriptValueFromQMetaObject</a></b> ( QScriptEngine * <i>engine</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromSequence">qScriptValueFromSequence</a></b> ( QScriptEngine * <i>engine</i>, const Container &amp; <i>container</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromValue">qScriptValueFromValue</a></b> ( QScriptEngine * <i>engine</i>, const T &amp; <i>value</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueToSequence">qScriptValueToSequence</a></b> ( const QScriptValue &amp; <i>value</i>, Container &amp; <i>container</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueToValue">qScriptValueToValue</a></b> ( const QScriptValue &amp; <i>value</i> )</td></tr>
 </table>
 <hr />
 <a name="macros"></a>
@@ -131,17 +131,17 @@
 </table>
 <h3>Additional Inherited Members</h3>
 <ul>
-<li><div class="fn"></div>1 property inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#properties">QObject</a></li>
-<li><div class="fn"></div>1 public slot inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-slots">QObject</a></li>
-<li><div class="fn"></div>1 public type inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#public-variables">QObject</a></li>
-<li><div class="fn"></div>7 protected functions inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#protected-functions">QObject</a></li>
-<li><div class="fn"></div>2 protected variables inherited from <a href="http://qt.nokia.com/doc/4.6/qobject.html#protected-variables">QObject</a></li>
+<li><div class="fn"></div>1 property inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#properties">QObject</a></li>
+<li><div class="fn"></div>1 public slot inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"></div>1 public type inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#public-variables">QObject</a></li>
+<li><div class="fn"></div>7 protected functions inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"></div>2 protected variables inherited from <a href="https://doc.qt.io/archives/4.6/qobject.html#protected-variables">QObject</a></li>
 </ul>
 <a name="details"></a>
 <hr />
 <h2>Detailed Description</h2>
 <p>The QScriptEngine class provides an environment for evaluating Qt Script code.</p>
-<p>See the <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> documentation for information about the Qt Script language, and how to get started with scripting your C++ application.</p>
+<p>See the <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> documentation for information about the Qt Script language, and how to get started with scripting your C++ application.</p>
 <a name="evaluating-scripts"></a>
 <h3>Evaluating Scripts</h3>
 <p>Use <a href="qscriptengine.html#evaluate">evaluate</a>() to evaluate script code; this is the C++ equivalent of the built-in script function <tt>eval()</tt>.</p>
@@ -184,7 +184,7 @@
 <p>Use <a href="qscriptengine.html#newObject">newObject</a>() to create a standard Qt Script object; this is the C++ equivalent of the script statement <tt>new Object()</tt>. You can use the object-specific functionality in <a href="qscriptvalue.html">QScriptValue</a> to manipulate the script object (e.g&#x2e; <a href="qscriptvalue.html#setProperty">QScriptValue::setProperty</a>()). Similarly, use <a href="qscriptengine.html#newArray">newArray</a>() to create a Qt Script array object. Use <a href="qscriptengine.html#newDate">newDate</a>() to create a <tt>Date</tt> object, and <a href="qscriptengine.html#newRegExp">newRegExp</a>() to create a <tt>RegExp</tt> object.</p>
 <a name="qobject-integration"></a>
 <h3>QObject Integration</h3>
-<p>Use <a href="qscriptengine.html#newQObject">newQObject</a>() to wrap a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> (or subclass) pointer. <a href="qscriptengine.html#newQObject">newQObject</a>() returns a proxy script object; properties, children, and signals and slots of the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> are available as properties of the proxy object. No binding code is needed because it is done dynamically using the Qt meta object system.</p>
+<p>Use <a href="qscriptengine.html#newQObject">newQObject</a>() to wrap a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> (or subclass) pointer. <a href="qscriptengine.html#newQObject">newQObject</a>() returns a proxy script object; properties, children, and signals and slots of the <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> are available as properties of the proxy object. No binding code is needed because it is done dynamically using the Qt meta object system.</p>
 <pre> QPushButton button;
  QScriptValue scriptButton = myEngine.newQObject(&amp;button);
  myEngine.globalObject().setProperty(&quot;button&quot;, scriptButton);
@@ -193,13 +193,13 @@
 
  qDebug() &lt;&lt; scriptButton.property(&quot;checkable&quot;).toBoolean();
  scriptButton.property(&quot;show&quot;).call(); <span class="comment">// call the show() slot</span></pre>
-<p>Use <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptConnect">qScriptConnect</a>() to connect a C++ signal to a script function; this is the Qt Script equivalent of <a href="http://qt.nokia.com/doc/4.6/qobject.html#connect">QObject::connect</a>(). When a script function is invoked in response to a C++ signal, it can cause a script exception; you can connect to the <a href="qscriptengine.html#signalHandlerException">signalHandlerException</a>() signal to catch such an exception.</p>
-<p>Use <a href="qscriptengine.html#newQMetaObject">newQMetaObject</a>() to wrap a <a href="http://qt.nokia.com/doc/4.6/qmetaobject.html">QMetaObject</a>; this gives you a &quot;script representation&quot; of a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>-based class. <a href="qscriptengine.html#newQMetaObject">newQMetaObject</a>() returns a proxy script object; enum values of the class are available as properties of the proxy object. You can also specify a function that will be used to construct objects of the class (e.g&#x2e; when the constructor is invoked from a script). For classes that have a &quot;standard&quot; Qt constructor, Qt Script can provide a default script constructor for you; see <a href="qscriptengine.html#scriptValueFromQMetaObject">scriptValueFromQMetaObject</a>().</p>
-<p>See the <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> documentation for more information on the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> integration.</p>
+<p>Use <a href="https://doc.qt.io/archives/4.6/e.html#qScriptConnect">qScriptConnect</a>() to connect a C++ signal to a script function; this is the Qt Script equivalent of <a href="https://doc.qt.io/archives/4.6/qobject.html#connect">QObject::connect</a>(). When a script function is invoked in response to a C++ signal, it can cause a script exception; you can connect to the <a href="qscriptengine.html#signalHandlerException">signalHandlerException</a>() signal to catch such an exception.</p>
+<p>Use <a href="qscriptengine.html#newQMetaObject">newQMetaObject</a>() to wrap a <a href="https://doc.qt.io/archives/4.6/t.html">QMetaObject</a>; this gives you a &quot;script representation&quot; of a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>-based class. <a href="qscriptengine.html#newQMetaObject">newQMetaObject</a>() returns a proxy script object; enum values of the class are available as properties of the proxy object. You can also specify a function that will be used to construct objects of the class (e.g&#x2e; when the constructor is invoked from a script). For classes that have a &quot;standard&quot; Qt constructor, Qt Script can provide a default script constructor for you; see <a href="qscriptengine.html#scriptValueFromQMetaObject">scriptValueFromQMetaObject</a>().</p>
+<p>See the <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> documentation for more information on the <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> integration.</p>
 <a name="support-for-custom-c-types"></a>
 <h3>Support for Custom C++ Types</h3>
-<p>Use <a href="qscriptengine.html#newVariant">newVariant</a>() to wrap a <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>. This can be used to store values of custom (non-<a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>) C++ types that have been registered with the Qt meta-type system. To make such types scriptable, you typically associate a prototype (delegate) object with the C++ type by calling <a href="qscriptengine.html#setDefaultPrototype">setDefaultPrototype</a>(); the prototype object defines the scripting API for the C++ type. Unlike the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> integration, there is no automatic binding possible here; i.e&#x2e; you have to create the scripting API yourself, for example by using the <a href="qscriptable.html">QScriptable</a> class.</p>
-<p>Use <a href="qscriptengine.html#fromScriptValue">fromScriptValue</a>() to cast from a <a href="qscriptvalue.html">QScriptValue</a> to another type, and <a href="qscriptengine.html#toScriptValue">toScriptValue</a>() to create a <a href="qscriptvalue.html">QScriptValue</a> from another value. You can specify how the conversion of C++ types is to be performed with <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>() and <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a>(). By default, Qt Script will use <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> to store values of custom types.</p>
+<p>Use <a href="qscriptengine.html#newVariant">newVariant</a>() to wrap a <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a>. This can be used to store values of custom (non-<a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>) C++ types that have been registered with the Qt meta-type system. To make such types scriptable, you typically associate a prototype (delegate) object with the C++ type by calling <a href="qscriptengine.html#setDefaultPrototype">setDefaultPrototype</a>(); the prototype object defines the scripting API for the C++ type. Unlike the <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> integration, there is no automatic binding possible here; i.e&#x2e; you have to create the scripting API yourself, for example by using the <a href="qscriptable.html">QScriptable</a> class.</p>
+<p>Use <a href="qscriptengine.html#fromScriptValue">fromScriptValue</a>() to cast from a <a href="qscriptvalue.html">QScriptValue</a> to another type, and <a href="qscriptengine.html#toScriptValue">toScriptValue</a>() to create a <a href="qscriptvalue.html">QScriptValue</a> from another value. You can specify how the conversion of C++ types is to be performed with <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>() and <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a>(). By default, Qt Script will use <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> to store values of custom types.</p>
 <a name="importing-extensions"></a>
 <h3>Importing Extensions</h3>
 <p>Use <a href="qscriptengine.html#importExtension">importExtension</a>() to import plugin-based extensions into the engine. Call <a href="qscriptengine.html#availableExtensions">availableExtensions</a>() to obtain a list naming all the available extensions, and <a href="qscriptengine.html#importedExtensions">importedExtensions</a>() to obtain a list naming only those extensions that have been imported.</p>
@@ -234,15 +234,15 @@
 <p>The function signature <tt>QScriptValue f(QScriptContext *, QScriptEngine *, void *)</tt>.</p>
 <p>A function with such a signature can be passed to <a href="qscriptengine.html#newFunction">QScriptEngine::newFunction</a>() to wrap the function.</p>
 <h3 class="flags"><a name="QObjectWrapOption-enum"></a>enum QScriptEngine::QObjectWrapOption<br />flags QScriptEngine::QObjectWrapOptions</h3>
-<p>These flags specify options when wrapping a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> pointer with <a href="qscriptengine.html#newQObject">newQObject</a>().</p>
+<p>These flags specify options when wrapping a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> pointer with <a href="qscriptengine.html#newQObject">newQObject</a>().</p>
 <p><table class="valuelist" border="1" cellpadding="2" cellspacing="1" width="100%">
 <tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
 <tr><td valign="top"><tt>QScriptEngine::ExcludeChildObjects</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">The script object will not expose child objects as properties.</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::ExcludeSuperClassMethods</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">The script object will not expose signals and slots inherited from the superclass.</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::ExcludeSuperClassProperties</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">The script object will not expose properties inherited from the superclass.</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::ExcludeSuperClassContents</tt></td><td align="center" valign="top"><tt>0x0006</tt></td><td valign="top">Shorthand form for ExcludeSuperClassMethods | ExcludeSuperClassProperties</td></tr>
-<tr><td valign="top"><tt>QScriptEngine::ExcludeDeleteLater</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">The script object will not expose the <a href="http://qt.nokia.com/doc/4.6/qobject.html#deleteLater">QObject::deleteLater</a>() slot.</td></tr>
-<tr><td valign="top"><tt>QScriptEngine::AutoCreateDynamicProperties</tt></td><td align="center" valign="top"><tt>0x0100</tt></td><td valign="top">Properties that don't already exist in the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> will be created as dynamic properties of that object, rather than as properties of the script object.</td></tr>
+<tr><td valign="top"><tt>QScriptEngine::ExcludeDeleteLater</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">The script object will not expose the <a href="https://doc.qt.io/archives/4.6/qobject.html#deleteLater">QObject::deleteLater</a>() slot.</td></tr>
+<tr><td valign="top"><tt>QScriptEngine::AutoCreateDynamicProperties</tt></td><td align="center" valign="top"><tt>0x0100</tt></td><td valign="top">Properties that don't already exist in the <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> will be created as dynamic properties of that object, rather than as properties of the script object.</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::PreferExistingWrapperObject</tt></td><td align="center" valign="top"><tt>0x0200</tt></td><td valign="top">If a wrapper object with the requested configuration already exists, return that object.</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::SkipMethodsInEnumeration</tt></td><td align="center" valign="top"><tt>0x0008</tt></td><td valign="top">Don't include methods (signals and slots) when enumerating the object's properties.</td></tr>
 </table></p>
@@ -251,7 +251,7 @@
 <p>This enum specifies the ownership when wrapping a C++ value, e.g&#x2e; by using <a href="qscriptengine.html#newQObject">newQObject</a>().</p>
 <p><table class="valuelist" border="1" cellpadding="2" cellspacing="1" width="100%">
 <tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
-<tr><td valign="top"><tt>QScriptEngine::QtOwnership</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The standard Qt ownership rules apply, i.e&#x2e; the associated object will never be explicitly deleted by the script engine. This is the default. (<a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> ownership is explained in <a href="http://qt.nokia.com/doc/4.6/objecttrees.html">Object Trees and Object Ownership</a>.)</td></tr>
+<tr><td valign="top"><tt>QScriptEngine::QtOwnership</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The standard Qt ownership rules apply, i.e&#x2e; the associated object will never be explicitly deleted by the script engine. This is the default. (<a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> ownership is explained in <a href="https://doc.qt.io/archives/4.6/s.html">Object Trees and Object Ownership</a>.)</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::ScriptOwnership</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The value is owned by the script environment. The associated data will be deleted when appropriate (i.e&#x2e; after the garbage collector has discovered that there are no more live references to the value).</td></tr>
 <tr><td valign="top"><tt>QScriptEngine::AutoOwnership</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">If the associated object has a parent, the Qt ownership rules apply (QtOwnership); otherwise, the object is owned by the script environment (ScriptOwnership).</td></tr>
 </table></p>
@@ -259,10 +259,10 @@
 <h2>Member Function Documentation</h2>
 <h3 class="fn"><a name="QScriptEngine"></a>QScriptEngine::QScriptEngine ()</h3>
 <p>Constructs a <a href="qscriptengine.html">QScriptEngine</a> object.</p>
-<p>The <a href="qscriptengine.html#globalObject">globalObject</a>() is initialized to have properties as described in <a href="http://qt.nokia.com/doc/4.6/http-www-ecma-international-org-publications-standards-ecma-262-htm.html">ECMA-262</a>, Section 15.1&#x2e;</p>
-<h3 class="fn"><a name="QScriptEngine-2"></a>QScriptEngine::QScriptEngine ( <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>The <a href="qscriptengine.html#globalObject">globalObject</a>() is initialized to have properties as described in <a href="https://doc.qt.io/archives/4.6/m.html">ECMA-262</a>, Section 15.1&#x2e;</p>
+<h3 class="fn"><a name="QScriptEngine-2"></a>QScriptEngine::QScriptEngine ( <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> * <i>parent</i> )</h3>
 <p>Constructs a <a href="qscriptengine.html">QScriptEngine</a> object with the given <i>parent</i>.</p>
-<p>The <a href="qscriptengine.html#globalObject">globalObject</a>() is initialized to have properties as described in <a href="http://qt.nokia.com/doc/4.6/http-www-ecma-international-org-publications-standards-ecma-262-htm.html">ECMA-262</a>, Section 15.1&#x2e;</p>
+<p>The <a href="qscriptengine.html#globalObject">globalObject</a>() is initialized to have properties as described in <a href="https://doc.qt.io/archives/4.6/m.html">ECMA-262</a>, Section 15.1&#x2e;</p>
 <h3 class="fn"><a name="dtor.QScriptEngine"></a>QScriptEngine::~QScriptEngine ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Destroys this <a href="qscriptengine.html">QScriptEngine</a>.</p>
 <h3 class="fn"><a name="abortEvaluation"></a>void QScriptEngine::abortEvaluation ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>result</i> = QScriptValue() )</h3>
@@ -275,11 +275,11 @@
 <p>Returns the agent currently installed on this engine, or 0 if no agent is installed.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
 <p>See also <a href="qscriptengine.html#setAgent">setAgent</a>().</p>
-<h3 class="fn"><a name="availableExtensions"></a><a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> QScriptEngine::availableExtensions () const</h3>
+<h3 class="fn"><a name="availableExtensions"></a><a href="https://doc.qt.io/archives/4.6/qstringlist.html">QStringList</a> QScriptEngine::availableExtensions () const</h3>
 <p>Returns a list naming the available extensions that can be imported using the <a href="qscriptengine.html#importExtension">importExtension</a>() function. This list includes extensions that have been imported.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
 <p>See also <a href="qscriptengine.html#importExtension">importExtension</a>() and <a href="qscriptengine.html#importedExtensions">importedExtensions</a>().</p>
-<h3 class="fn"><a name="checkSyntax"></a><a href="qscriptsyntaxcheckresult.html">QScriptSyntaxCheckResult</a> QScriptEngine::checkSyntax ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>program</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="checkSyntax"></a><a href="qscriptsyntaxcheckresult.html">QScriptSyntaxCheckResult</a> QScriptEngine::checkSyntax ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>program</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
 <p>Checks the syntax of the given <i>program</i>. Returns a <a href="qscriptsyntaxcheckresult.html">QScriptSyntaxCheckResult</a> object that contains the result of the check.</p>
 <p>This function was introduced in qtscriptclassic 4.5.</p>
 <h3 class="fn"><a name="clearExceptions"></a>void QScriptEngine::clearExceptions ()</h3>
@@ -296,7 +296,7 @@
 <h3 class="fn"><a name="defaultPrototype"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::defaultPrototype ( int <i>metaTypeId</i> ) const</h3>
 <p>Returns the default prototype associated with the given <i>metaTypeId</i>, or an invalid <a href="qscriptvalue.html">QScriptValue</a> if no default prototype has been set.</p>
 <p>See also <a href="qscriptengine.html#setDefaultPrototype">setDefaultPrototype</a>().</p>
-<h3 class="fn"><a name="evaluate"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::evaluate ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>program</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>fileName</i> = QString(), int <i>lineNumber</i> = 1 )</h3>
+<h3 class="fn"><a name="evaluate"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::evaluate ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>program</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>fileName</i> = QString(), int <i>lineNumber</i> = 1 )</h3>
 <p>Evaluates <i>program</i>, using <i>lineNumber</i> as the base line number, and returns the result of the evaluation.</p>
 <p>The script code will be evaluated in the current context.</p>
 <p>The evaluation of <i>program</i> can cause an exception in the engine; in this case the return value will be the exception that was thrown (typically an <tt>Error</tt> object). You can call <a href="qscriptengine.html#hasUncaughtException">hasUncaughtException</a>() to determine if an exception occurred in the last call to evaluate().</p>
@@ -305,23 +305,23 @@
 <p>See also <a href="qscriptengine.html#checkSyntax">checkSyntax</a>(), <a href="qscriptengine.html#hasUncaughtException">hasUncaughtException</a>(), <a href="qscriptengine.html#isEvaluating">isEvaluating</a>(), and <a href="qscriptengine.html#abortEvaluation">abortEvaluation</a>().</p>
 <h3 class="fn"><a name="fromScriptValue"></a>T QScriptEngine::fromScriptValue ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i> )</h3>
 <p>Returns the given <i>value</i> converted to the template type <tt>T</tt>.</p>
-<p>Note that <tt>T</tt> must be known to <a href="http://qt.nokia.com/doc/4.6/qmetatype.html">QMetaType</a>.</p>
-<p>See <a href="http://qt.nokia.com/doc/4.6/scripting.html">Conversion Between QtScript and C++ Types</a> for a description of the built-in type conversion provided by <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a>.</p>
-<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueToValue">qScriptValueToValue</a>() or <a href="http://qt.nokia.com/doc/4.6/qscriptvalue.html#qscriptvalue_cast">qscriptvalue_cast</a>() instead if you need to support that version of the compiler.</p>
-<p>See also <a href="qscriptengine.html#toScriptValue">toScriptValue</a>() and <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
+<p>Note that <tt>T</tt> must be known to <a href="https://doc.qt.io/archives/4.6/e.html">QMetaType</a>.</p>
+<p>See <a href="https://doc.qt.io/archives/4.6/g.html">Conversion Between QtScript and C++ Types</a> for a description of the built-in type conversion provided by <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a>.</p>
+<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueToValue">qScriptValueToValue</a>() or <a href="https://doc.qt.io/archives/4.6/e.html#qscriptvalue_cast">qscriptvalue_cast</a>() instead if you need to support that version of the compiler.</p>
+<p>See also <a href="qscriptengine.html#toScriptValue">toScriptValue</a>() and <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
 <h3 class="fn"><a name="globalObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::globalObject () const</h3>
 <p>Returns this engine's Global Object.</p>
-<p>By default, the Global Object contains the built-in objects that are part of <a href="http://qt.nokia.com/doc/4.6/http-www-ecma-international-org-publications-standards-ecma-262-htm.html">ECMA-262</a>, such as Math, Date and String. Additionally, you can set properties of the Global Object to make your own extensions available to all script code. Non-local variables in script code will be created as properties of the Global Object, as well as local variables in global code.</p>
+<p>By default, the Global Object contains the built-in objects that are part of <a href="https://doc.qt.io/archives/4.6/m.html">ECMA-262</a>, such as Math, Date and String. Additionally, you can set properties of the Global Object to make your own extensions available to all script code. Non-local variables in script code will be created as properties of the Global Object, as well as local variables in global code.</p>
 <p>See also <a href="qscriptengine.html#setGlobalObject">setGlobalObject</a>().</p>
 <h3 class="fn"><a name="hasUncaughtException"></a>bool QScriptEngine::hasUncaughtException () const</h3>
 <p>Returns true if the last script evaluation resulted in an uncaught exception; otherwise returns false.</p>
 <p>The exception state is cleared when <a href="qscriptengine.html#evaluate">evaluate</a>() is called.</p>
 <p>See also <a href="qscriptengine.html#uncaughtException">uncaughtException</a>(), <a href="qscriptengine.html#uncaughtExceptionLineNumber">uncaughtExceptionLineNumber</a>(), and <a href="qscriptengine.html#uncaughtExceptionBacktrace">uncaughtExceptionBacktrace</a>().</p>
-<h3 class="fn"><a name="importExtension"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::importExtension ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>extension</i> )</h3>
+<h3 class="fn"><a name="importExtension"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::importExtension ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>extension</i> )</h3>
 <p>Imports the given <i>extension</i> into this <a href="qscriptengine.html">QScriptEngine</a>. Returns <a href="qscriptengine.html#undefinedValue">undefinedValue</a>() if the extension was successfully imported. You can call <a href="qscriptengine.html#hasUncaughtException">hasUncaughtException</a>() to check if an error occurred; in that case, the return value is the value that was thrown by the exception (usually an <tt>Error</tt> object).</p>
 <p><a href="qscriptengine.html">QScriptEngine</a> ensures that a particular extension is only imported once; subsequent calls to importExtension() with the same extension name will do nothing and return <a href="qscriptengine.html#undefinedValue">undefinedValue</a>().</p>
-<p>See also <a href="qscriptengine.html#availableExtensions">availableExtensions</a>(), <a href="qscriptextensionplugin.html">QScriptExtensionPlugin</a>, and <a href="http://qt.nokia.com/doc/4.6/qtscriptextensions.html">Creating QtScript Extensions</a>.</p>
-<h3 class="fn"><a name="importedExtensions"></a><a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> QScriptEngine::importedExtensions () const</h3>
+<p>See also <a href="qscriptengine.html#availableExtensions">availableExtensions</a>(), <a href="qscriptextensionplugin.html">QScriptExtensionPlugin</a>, and <a href="https://doc.qt.io/archives/4.6/s.html">Creating QtScript Extensions</a>.</p>
+<h3 class="fn"><a name="importedExtensions"></a><a href="https://doc.qt.io/archives/4.6/qstringlist.html">QStringList</a> QScriptEngine::importedExtensions () const</h3>
 <p>Returns a list naming the extensions that have been imported using the <a href="qscriptengine.html#importExtension">importExtension</a>() function.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
 <p>See also <a href="qscriptengine.html#availableExtensions">availableExtensions</a>().</p>
@@ -330,30 +330,30 @@
 <p>The relation between Qt Script translator functions and C++ translator functions is described in the following table:</p>
 <p><table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
 <thead><tr valign="top" class="qt-style"><th>Script Function</th><th>Corresponding C++ Function</th></tr></thead>
-<tr valign="top" class="odd"><td>qsTr()</td><td><a href="http://qt.nokia.com/doc/4.6/qobject.html#tr">QObject::tr</a>()</td></tr>
-<tr valign="top" class="even"><td><a href="http://qt.nokia.com/doc/4.6/qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>()</td><td><a href="http://qt.nokia.com/doc/4.6/qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>()</td></tr>
-<tr valign="top" class="odd"><td>qsTranslate()</td><td><a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html#translate">QCoreApplication::translate</a>()</td></tr>
-<tr valign="top" class="even"><td><a href="http://qt.nokia.com/doc/4.6/qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>()</td><td><a href="http://qt.nokia.com/doc/4.6/qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>()</td></tr>
+<tr valign="top" class="odd"><td>qsTr()</td><td><a href="https://doc.qt.io/archives/4.6/qobject.html#tr">QObject::tr</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="https://doc.qt.io/archives/4.6/l.html#QT_TR_NOOP">QT_TR_NOOP</a>()</td><td><a href="https://doc.qt.io/archives/4.6/l.html#QT_TR_NOOP">QT_TR_NOOP</a>()</td></tr>
+<tr valign="top" class="odd"><td>qsTranslate()</td><td><a href="https://doc.qt.io/archives/4.6/qcoreapplication.html#translate">QCoreApplication::translate</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="https://doc.qt.io/archives/4.6/l.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>()</td><td><a href="https://doc.qt.io/archives/4.6/l.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>()</td></tr>
 </table></p>
 <p>This function was introduced in qtscriptclassic 4.5.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/internationalization.html">Internationalization with Qt</a>.</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/n.html">Internationalization with Qt</a>.</p>
 <h3 class="fn"><a name="isEvaluating"></a>bool QScriptEngine::isEvaluating () const</h3>
 <p>Returns true if this engine is currently evaluating a script, otherwise returns false.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
 <p>See also <a href="qscriptengine.html#evaluate">evaluate</a>() and <a href="qscriptengine.html#abortEvaluation">abortEvaluation</a>().</p>
-<h3 class="fn"><a name="newArray"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newArray ( <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> <i>length</i> = 0 )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class Array with the given <i>length</i>.</p>
+<h3 class="fn"><a name="newArray"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newArray ( <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> <i>length</i> = 0 )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class Array with the given <i>length</i>.</p>
 <p>See also <a href="qscriptengine.html#newObject">newObject</a>().</p>
 <h3 class="fn"><a name="newDate"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newDate ( qsreal <i>value</i> )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class Date with the given <i>value</i> (the number of milliseconds since 01 January 1970, UTC).</p>
-<h3 class="fn"><a name="newDate-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newDate ( const <a href="http://qt.nokia.com/doc/4.6/qdatetime.html">QDateTime</a> &amp; <i>value</i> )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class Date from the given <i>value</i>.</p>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class Date with the given <i>value</i> (the number of milliseconds since 01 January 1970, UTC).</p>
+<h3 class="fn"><a name="newDate-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newDate ( const <a href="https://doc.qt.io/archives/4.6/e.html">QDateTime</a> &amp; <i>value</i> )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class Date from the given <i>value</i>.</p>
 <p>See also <a href="qscriptvalue.html#toDateTime">QScriptValue::toDateTime</a>().</p>
 <h3 class="fn"><a name="newFunction"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newFunction ( <a href="qscriptengine.html#FunctionSignature-typedef">FunctionSignature</a> <i>fun</i>, int <i>length</i> = 0 )</h3>
 <p>Creates a <a href="qscriptvalue.html">QScriptValue</a> that wraps a native (C++) function. <i>fun</i> must be a C++ function with signature <a href="qscriptengine.html#FunctionSignature-typedef">QScriptEngine::FunctionSignature</a>. <i>length</i> is the number of arguments that <i>fun</i> expects; this becomes the <tt>length</tt> property of the created <a href="qscriptvalue.html">QScriptValue</a>.</p>
 <p>Note that <i>length</i> only gives an indication of the number of arguments that the function expects; an actual invocation of a function can include any number of arguments. You can check the <a href="qscriptcontext.html#argumentCount">argumentCount()</a> of the <a href="qscriptcontext.html">QScriptContext</a> associated with the invocation to determine the actual number of arguments passed.</p>
 <p>A <tt>prototype</tt> property is automatically created for the resulting function object, to provide for the possibility that the function will be used as a constructor.</p>
-<p>By combining newFunction() and the property flags <a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertyGetter</a> and <a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertySetter</a>, you can create script object properties that behave like normal properties in script code, but are in fact accessed through functions (analogous to how properties work in <a href="http://qt.nokia.com/doc/4.6/properties.html">Qt's Property System</a>). Example:</p>
+<p>By combining newFunction() and the property flags <a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertyGetter</a> and <a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertySetter</a>, you can create script object properties that behave like normal properties in script code, but are in fact accessed through functions (analogous to how properties work in <a href="https://doc.qt.io/archives/4.6/s.html">Qt's Property System</a>). Example:</p>
 <pre> static QScriptValue getSetFoo(QScriptContext *context, QScriptEngine *engine)
  {
      QScriptValue callee = context-&gt;callee();
@@ -428,18 +428,18 @@
  QScriptValue barCtor = engine-&gt;newFunction(constructBar, barProto);
  engine-&gt;globalObject().setProperty(&quot;Bar&quot;, barCtor);</pre>
 <h3 class="fn"><a name="newObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newObject ()</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class Object.</p>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class Object.</p>
 <p>The prototype of the created object will be the Object prototype object.</p>
 <p>See also <a href="qscriptengine.html#newArray">newArray</a>() and <a href="qscriptvalue.html#setProperty">QScriptValue::setProperty</a>().</p>
 <h3 class="fn"><a name="newObject-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newObject ( <a href="qscriptclass.html">QScriptClass</a> * <i>scriptClass</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>data</i> = QScriptValue() )</h3>
 <p>This is an overloaded function.</p>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> Object of the given class, <i>scriptClass</i>.</p>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> Object of the given class, <i>scriptClass</i>.</p>
 <p>The prototype of the created object will be the Object prototype object.</p>
 <p><i>data</i>, if specified, is set as the internal data of the new object (using <a href="qscriptvalue.html#setData">QScriptValue::setData</a>()).</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
 <p>See also <a href="qscriptvalue.html#scriptClass">QScriptValue::scriptClass</a>().</p>
-<h3 class="fn"><a name="newQMetaObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQMetaObject ( const <a href="http://qt.nokia.com/doc/4.6/qmetaobject.html">QMetaObject</a> * <i>metaObject</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>ctor</i> = QScriptValue() )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object that represents a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> class, using the the given <i>metaObject</i> and constructor <i>ctor</i>.</p>
+<h3 class="fn"><a name="newQMetaObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQMetaObject ( const <a href="https://doc.qt.io/archives/4.6/t.html">QMetaObject</a> * <i>metaObject</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>ctor</i> = QScriptValue() )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object that represents a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> class, using the the given <i>metaObject</i> and constructor <i>ctor</i>.</p>
 <p>Enums of <i>metaObject</i> (declared with Q_ENUMS) are available as properties of the created <a href="qscriptvalue.html">QScriptValue</a>. When the class is called as a function, <i>ctor</i> will be called to create a new instance of the class.</p>
 <p>Example:</p>
 <pre> QScriptValue mySpecialQObjectConstructor(QScriptContext *context,
@@ -458,32 +458,32 @@
 
  QScriptValue result = engine.evaluate(&quot;new QObject()&quot;);</pre>
 <p>See also <a href="qscriptengine.html#newQObject">newQObject</a>() and <a href="qscriptengine.html#scriptValueFromQMetaObject">scriptValueFromQMetaObject</a>().</p>
-<h3 class="fn"><a name="newQObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQObject ( <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>object</i>, <a href="qscriptengine.html#ValueOwnership-enum">ValueOwnership</a> <i>ownership</i> = QtOwnership, const <a href="qscriptengine.html#QObjectWrapOption-enum">QObjectWrapOptions</a> &amp; <i>options</i> = 0 )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object that wraps the given <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> <i>object</i>, using the given <i>ownership</i>. The given <i>options</i> control various aspects of the interaction with the resulting script object.</p>
-<p>Signals and slots, properties and children of <i>object</i> are available as properties of the created <a href="qscriptvalue.html">QScriptValue</a>. For more information, see the <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> documentation.</p>
+<h3 class="fn"><a name="newQObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQObject ( <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> * <i>object</i>, <a href="qscriptengine.html#ValueOwnership-enum">ValueOwnership</a> <i>ownership</i> = QtOwnership, const <a href="qscriptengine.html#QObjectWrapOption-enum">QObjectWrapOptions</a> &amp; <i>options</i> = 0 )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object that wraps the given <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> <i>object</i>, using the given <i>ownership</i>. The given <i>options</i> control various aspects of the interaction with the resulting script object.</p>
+<p>Signals and slots, properties and children of <i>object</i> are available as properties of the created <a href="qscriptvalue.html">QScriptValue</a>. For more information, see the <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> documentation.</p>
 <p>If <i>object</i> is a null pointer, this function returns <a href="qscriptengine.html#nullValue">nullValue</a>().</p>
 <p>If a default prototype has been registered for the <i>object</i>'s class (or its superclass, recursively), the prototype of the new script object will be set to be that default prototype.</p>
-<p>If the given <i>object</i> is deleted outside of <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a>'s control, any attempt to access the deleted <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>'s members through the <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> wrapper object (either by script code or C++) will result in a script exception.</p>
+<p>If the given <i>object</i> is deleted outside of <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a>'s control, any attempt to access the deleted <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>'s members through the <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> wrapper object (either by script code or C++) will result in a script exception.</p>
 <p>See also <a href="qscriptvalue.html#toQObject">QScriptValue::toQObject</a>().</p>
-<h3 class="fn"><a name="newQObject-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQObject ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>scriptObject</i>, <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>qtObject</i>, <a href="qscriptengine.html#ValueOwnership-enum">ValueOwnership</a> <i>ownership</i> = QtOwnership, const <a href="qscriptengine.html#QObjectWrapOption-enum">QObjectWrapOptions</a> &amp; <i>options</i> = 0 )</h3>
+<h3 class="fn"><a name="newQObject-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newQObject ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>scriptObject</i>, <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> * <i>qtObject</i>, <a href="qscriptengine.html#ValueOwnership-enum">ValueOwnership</a> <i>ownership</i> = QtOwnership, const <a href="qscriptengine.html#QObjectWrapOption-enum">QObjectWrapOptions</a> &amp; <i>options</i> = 0 )</h3>
 <p>This is an overloaded function.</p>
 <p>Initializes the given <i>scriptObject</i> to hold the given <i>qtObject</i>, and returns the <i>scriptObject</i>.</p>
-<p>This function enables you to &quot;promote&quot; a plain Qt Script object (created by the <a href="qscriptengine.html#newObject">newObject</a>() function) to a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> proxy, or to replace the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> contained inside an object previously created by the <a href="qscriptengine.html#newQObject">newQObject</a>() function.</p>
+<p>This function enables you to &quot;promote&quot; a plain Qt Script object (created by the <a href="qscriptengine.html#newObject">newObject</a>() function) to a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> proxy, or to replace the <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> contained inside an object previously created by the <a href="qscriptengine.html#newQObject">newQObject</a>() function.</p>
 <p>The prototype() of the <i>scriptObject</i> will remain unchanged.</p>
 <p>If <i>scriptObject</i> is not an object, this function behaves like the normal <a href="qscriptengine.html#newQObject">newQObject</a>(), i.e&#x2e; it creates a new script object and returns it.</p>
-<p>This function is useful when you want to provide a script constructor for a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>-based class. If your constructor is invoked in a <tt>new</tt> expression (<a href="qscriptcontext.html#isCalledAsConstructor">QScriptContext::isCalledAsConstructor</a>() returns true), you can pass <a href="qscriptcontext.html#thisObject">QScriptContext::thisObject</a>() (the default constructed script object) to this function to initialize the new object.</p>
+<p>This function is useful when you want to provide a script constructor for a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>-based class. If your constructor is invoked in a <tt>new</tt> expression (<a href="qscriptcontext.html#isCalledAsConstructor">QScriptContext::isCalledAsConstructor</a>() returns true), you can pass <a href="qscriptcontext.html#thisObject">QScriptContext::thisObject</a>() (the default constructed script object) to this function to initialize the new object.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
-<h3 class="fn"><a name="newRegExp"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newRegExp ( const <a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> &amp; <i>regexp</i> )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class RegExp with the given <i>regexp</i>.</p>
+<h3 class="fn"><a name="newRegExp"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newRegExp ( const <a href="https://doc.qt.io/archives/4.6/p.html">QRegExp</a> &amp; <i>regexp</i> )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class RegExp with the given <i>regexp</i>.</p>
 <p>See also <a href="qscriptvalue.html#toRegExp">QScriptValue::toRegExp</a>().</p>
-<h3 class="fn"><a name="newRegExp-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newRegExp ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>pattern</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>flags</i> )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object of class RegExp with the given <i>pattern</i> and <i>flags</i>.</p>
+<h3 class="fn"><a name="newRegExp-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newRegExp ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>pattern</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>flags</i> )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object of class RegExp with the given <i>pattern</i> and <i>flags</i>.</p>
 <p>The legal flags are 'g' (global), 'i' (ignore case), and 'm' (multiline).</p>
-<h3 class="fn"><a name="newVariant"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newVariant ( const <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
-<p>Creates a <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> object holding the given variant <i>value</i>.</p>
+<h3 class="fn"><a name="newVariant"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newVariant ( const <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Creates a <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> object holding the given variant <i>value</i>.</p>
 <p>If a default prototype has been registered with the meta type id of <i>value</i>, then the prototype of the created object will be that prototype; otherwise, the prototype will be the Object prototype object.</p>
 <p>See also <a href="qscriptengine.html#setDefaultPrototype">setDefaultPrototype</a>() and <a href="qscriptvalue.html#toVariant">QScriptValue::toVariant</a>().</p>
-<h3 class="fn"><a name="newVariant-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newVariant ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<h3 class="fn"><a name="newVariant-2"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::newVariant ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
 <p>This is an overloaded function.</p>
 <p>Initializes the given Qt Script <i>object</i> to hold the given variant <i>value</i>, and returns the <i>object</i>.</p>
 <p>This function enables you to &quot;promote&quot; a plain Qt Script object (created by the <a href="qscriptengine.html#newObject">newObject</a>() function) to a variant, or to replace the variant contained inside an object previously created by the <a href="qscriptengine.html#newVariant">newVariant</a>() function.</p>
@@ -498,7 +498,7 @@
 <p>Pops the current execution context and restores the previous one. This function must be used in conjunction with <a href="qscriptengine.html#pushContext">pushContext</a>().</p>
 <p>See also <a href="qscriptengine.html#pushContext">pushContext</a>().</p>
 <h3 class="fn"><a name="processEventsInterval"></a>int QScriptEngine::processEventsInterval () const</h3>
-<p>Returns the interval in milliseconds between calls to <a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html#processEvents">QCoreApplication::processEvents</a>() while the interpreter is running.</p>
+<p>Returns the interval in milliseconds between calls to <a href="https://doc.qt.io/archives/4.6/qcoreapplication.html#processEvents">QCoreApplication::processEvents</a>() while the interpreter is running.</p>
 <p>See also <a href="qscriptengine.html#setProcessEventsInterval">setProcessEventsInterval</a>().</p>
 <h3 class="fn"><a name="pushContext"></a><a href="qscriptcontext.html">QScriptContext</a> * QScriptEngine::pushContext ()</h3>
 <p>Enters a new execution context and returns the associated <a href="qscriptcontext.html">QScriptContext</a> object.</p>
@@ -515,14 +515,14 @@
 <p>See also <a href="qscriptengine.html#popContext">popContext</a>().</p>
 <h3 class="fn"><a name="scriptValueFromQMetaObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::scriptValueFromQMetaObject ()</h3>
 <p>Creates a <a href="qscriptvalue.html">QScriptValue</a> that represents the Qt class <tt>T</tt>.</p>
-<p>This function is used in combination with one of the <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#Q_SCRIPT_DECLARE_QMETAOBJECT">Q_SCRIPT_DECLARE_QMETAOBJECT</a>() macro. Example:</p>
+<p>This function is used in combination with one of the <a href="https://doc.qt.io/archives/4.6/e.html#Q_SCRIPT_DECLARE_QMETAOBJECT">Q_SCRIPT_DECLARE_QMETAOBJECT</a>() macro. Example:</p>
 <pre> Q_SCRIPT_DECLARE_QMETAOBJECT(QLineEdit, QWidget*)
 
  ...
 
  QScriptValue lineEditClass = engine.scriptValueFromQMetaObject&lt;QLineEdit&gt;();
  engine.globalObject().setProperty(&quot;QLineEdit&quot;, lineEditClass);</pre>
-<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromQMetaObject">qScriptValueFromQMetaObject</a>() instead if you need to support that version of the compiler.</p>
+<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromQMetaObject">qScriptValueFromQMetaObject</a>() instead if you need to support that version of the compiler.</p>
 <p>See also <a href="qscriptengine.html#newQMetaObject">QScriptEngine::newQMetaObject</a>().</p>
 <h3 class="fn"><a name="setAgent"></a>void QScriptEngine::setAgent ( <a href="qscriptengineagent.html">QScriptEngineAgent</a> * <i>agent</i> )</h3>
 <p>Installs the given <i>agent</i> on this engine. The agent will be notified of various events pertaining to script execution. This is useful when you want to find out exactly what the engine is doing, e.g&#x2e; when <a href="qscriptengine.html#evaluate">evaluate</a>() is called. The agent interface is the basis of tools like debuggers and profilers.</p>
@@ -533,8 +533,8 @@
 <h3 class="fn"><a name="setDefaultPrototype"></a>void QScriptEngine::setDefaultPrototype ( int <i>metaTypeId</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>prototype</i> )</h3>
 <p>Sets the default prototype of the C++ type identified by the given <i>metaTypeId</i> to <i>prototype</i>.</p>
 <p>The default prototype provides a script interface for values of type <i>metaTypeId</i> when a value of that type is accessed from script code. Whenever the script engine (implicitly or explicitly) creates a <a href="qscriptvalue.html">QScriptValue</a> from a value of type <i>metaTypeId</i>, the default prototype will be set as the <a href="qscriptvalue.html">QScriptValue</a>'s prototype.</p>
-<p>The <i>prototype</i> object itself may be constructed using one of two principal techniques; the simplest is to subclass <a href="qscriptable.html">QScriptable</a>, which enables you to define the scripting API of the type through <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> properties and slots. Another possibility is to create a script object by calling <a href="qscriptengine.html#newObject">newObject</a>(), and populate the object with the desired properties (e.g&#x2e; native functions wrapped with <a href="qscriptengine.html#newFunction">newFunction</a>()).</p>
-<p>See also <a href="qscriptengine.html#defaultPrototype">defaultPrototype</a>(), <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>(), <a href="qscriptable.html">QScriptable</a>, and <a href="http://qt.nokia.com/doc/4.6/script-defaultprototypes.html">Default Prototypes Example</a>.</p>
+<p>The <i>prototype</i> object itself may be constructed using one of two principal techniques; the simplest is to subclass <a href="qscriptable.html">QScriptable</a>, which enables you to define the scripting API of the type through <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> properties and slots. Another possibility is to create a script object by calling <a href="qscriptengine.html#newObject">newObject</a>(), and populate the object with the desired properties (e.g&#x2e; native functions wrapped with <a href="qscriptengine.html#newFunction">newFunction</a>()).</p>
+<p>See also <a href="qscriptengine.html#defaultPrototype">defaultPrototype</a>(), <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>(), <a href="qscriptable.html">QScriptable</a>, and <a href="https://doc.qt.io/archives/4.6/s.html">Default Prototypes Example</a>.</p>
 <h3 class="fn"><a name="setGlobalObject"></a>void QScriptEngine::setGlobalObject ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i> )</h3>
 <p>Sets this engine's Global Object to be the given <i>object</i>. If <i>object</i> is not a valid script object, this function does nothing.</p>
 <p>When setting a custom global object, you may want to use <a href="qscriptvalueiterator.html">QScriptValueIterator</a> to copy the properties of the standard Global Object; alternatively, you can set the internal prototype of your custom object to be the original Global Object.</p>
@@ -542,14 +542,14 @@
 <p>See also <a href="qscriptengine.html#globalObject">globalObject</a>().</p>
 <h3 class="fn"><a name="setProcessEventsInterval"></a>void QScriptEngine::setProcessEventsInterval ( int <i>interval</i> )</h3>
 <p>Sets the interval between calls to QCoreApplication::processEvents to <i>interval</i> milliseconds.</p>
-<p>While the interpreter is running, all event processing is by default blocked. This means for instance that the gui will not be updated and timers will not be fired. To allow event processing during interpreter execution one can specify the processing interval to be a positive value, indicating the number of milliseconds between each time <a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html#processEvents">QCoreApplication::processEvents</a>() is called.</p>
+<p>While the interpreter is running, all event processing is by default blocked. This means for instance that the gui will not be updated and timers will not be fired. To allow event processing during interpreter execution one can specify the processing interval to be a positive value, indicating the number of milliseconds between each time <a href="https://doc.qt.io/archives/4.6/qcoreapplication.html#processEvents">QCoreApplication::processEvents</a>() is called.</p>
 <p>The default value is -1, which disables event processing during interpreter execution.</p>
-<p>You can use <a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html#postEvent">QCoreApplication::postEvent</a>() to post an event that performs custom processing at the next interval. For example, you could keep track of the total running time of the script and call <a href="qscriptengine.html#abortEvaluation">abortEvaluation</a>() when you detect that the script has been running for a long time without completing.</p>
+<p>You can use <a href="https://doc.qt.io/archives/4.6/qcoreapplication.html#postEvent">QCoreApplication::postEvent</a>() to post an event that performs custom processing at the next interval. For example, you could keep track of the total running time of the script and call <a href="qscriptengine.html#abortEvaluation">abortEvaluation</a>() when you detect that the script has been running for a long time without completing.</p>
 <p>See also <a href="qscriptengine.html#processEventsInterval">processEventsInterval</a>().</p>
 <h3 class="fn"><a name="signalHandlerException"></a>void QScriptEngine::signalHandlerException ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>exception</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
 <p>This signal is emitted when a script function connected to a signal causes an <i>exception</i>.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptConnect">qScriptConnect</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptConnect">qScriptConnect</a>().</p>
 <h3 class="fn"><a name="toObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::toObject ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i> )</h3>
 <p>Converts the given <i>value</i> to an object, if such a conversion is possible; otherwise returns an invalid <a href="qscriptvalue.html">QScriptValue</a>. The conversion is performed according to the following table:</p>
 <p><table class="generic" align="center" cellpadding="2" cellspacing="1" border="0">
@@ -565,11 +565,11 @@
 <p>See also <a href="qscriptengine.html#newObject">newObject</a>().</p>
 <h3 class="fn"><a name="toScriptValue"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptEngine::toScriptValue ( const T &amp; <i>value</i> )</h3>
 <p>Creates a <a href="qscriptvalue.html">QScriptValue</a> with the given <i>value</i>.</p>
-<p>Note that the template type <tt>T</tt> must be known to <a href="http://qt.nokia.com/doc/4.6/qmetatype.html">QMetaType</a>.</p>
-<p>See <a href="http://qt.nokia.com/doc/4.6/scripting.html">Conversion Between QtScript and C++ Types</a> for a description of the built-in type conversion provided by <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a>. By default, the types that are not specially handled by <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> are represented as QVariants (e.g&#x2e; the <i>value</i> is passed to <a href="qscriptengine.html#newVariant">newVariant</a>()); you can change this behavior by installing your own type conversion functions with <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
-<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromValue">qScriptValueFromValue</a>() instead if you need to support that version of the compiler.</p>
-<p>See also <a href="qscriptengine.html#fromScriptValue">fromScriptValue</a>() and <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
-<h3 class="fn"><a name="toStringHandle"></a><a href="qscriptstring.html">QScriptString</a> QScriptEngine::toStringHandle ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>str</i> )</h3>
+<p>Note that the template type <tt>T</tt> must be known to <a href="https://doc.qt.io/archives/4.6/e.html">QMetaType</a>.</p>
+<p>See <a href="https://doc.qt.io/archives/4.6/g.html">Conversion Between QtScript and C++ Types</a> for a description of the built-in type conversion provided by <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a>. By default, the types that are not specially handled by <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> are represented as QVariants (e.g&#x2e; the <i>value</i> is passed to <a href="qscriptengine.html#newVariant">newVariant</a>()); you can change this behavior by installing your own type conversion functions with <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
+<p><b>Warning:</b> This function is not available with MSVC 6. Use <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromValue">qScriptValueFromValue</a>() instead if you need to support that version of the compiler.</p>
+<p>See also <a href="qscriptengine.html#fromScriptValue">fromScriptValue</a>() and <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
+<h3 class="fn"><a name="toStringHandle"></a><a href="qscriptstring.html">QScriptString</a> QScriptEngine::toStringHandle ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>str</i> )</h3>
 <p>Returns a handle that represents the given string, <i>str</i>.</p>
 <p><a href="qscriptstring.html">QScriptString</a> can be used to quickly look up properties, and compare property names, of script objects.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
@@ -578,7 +578,7 @@
 <p>Returns the current uncaught exception, or an invalid <a href="qscriptvalue.html">QScriptValue</a> if there is no uncaught exception.</p>
 <p>The exception value is typically an <tt>Error</tt> object; in that case, you can call toString() on the return value to obtain an error message.</p>
 <p>See also <a href="qscriptengine.html#hasUncaughtException">hasUncaughtException</a>(), <a href="qscriptengine.html#uncaughtExceptionLineNumber">uncaughtExceptionLineNumber</a>(), and <a href="qscriptengine.html#uncaughtExceptionBacktrace">uncaughtExceptionBacktrace</a>().</p>
-<h3 class="fn"><a name="uncaughtExceptionBacktrace"></a><a href="http://qt.nokia.com/doc/4.6/qstringlist.html">QStringList</a> QScriptEngine::uncaughtExceptionBacktrace () const</h3>
+<h3 class="fn"><a name="uncaughtExceptionBacktrace"></a><a href="https://doc.qt.io/archives/4.6/qstringlist.html">QStringList</a> QScriptEngine::uncaughtExceptionBacktrace () const</h3>
 <p>Returns a human-readable backtrace of the last uncaught exception.</p>
 <p>Each line is of the form <tt>&lt;function-name&gt;(&lt;arguments&gt;)@&lt;file-name&gt;:&lt;line-number&gt;</tt>.</p>
 <p>See also <a href="qscriptengine.html#uncaughtException">uncaughtException</a>().</p>
@@ -597,27 +597,27 @@
 <h3 class="fn"><a name="FunctionWithArgSignature-typedef"></a>typedef QScriptEngine::FunctionWithArgSignature</h3>
 <p>The function signature <tt>QScriptValue f(QScriptContext *, QScriptEngine *, void *)</tt>.</p>
 <p>A function with such a signature can be passed to <a href="qscriptengine.html#newFunction">QScriptEngine::newFunction</a>() to wrap the function.</p>
-<h3 class="fn"><a name="qScriptConnect"></a>qScriptConnect ( <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>sender</i>, const char * <i>signal</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>receiver</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>function</i> )</h3>
+<h3 class="fn"><a name="qScriptConnect"></a>qScriptConnect ( <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> * <i>sender</i>, const char * <i>signal</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>receiver</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>function</i> )</h3>
 <p>Creates a connection from the <i>signal</i> in the <i>sender</i> to the given <i>function</i>. If <i>receiver</i> is an object, it will act as the `this' object when the signal handler function is invoked. Returns true if the connection succeeds; otherwise returns false.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptDisconnect">qScriptDisconnect</a>() and <a href="qscriptengine.html#signalHandlerException">QScriptEngine::signalHandlerException</a>().</p>
-<h3 class="fn"><a name="qScriptDisconnect"></a>qScriptDisconnect ( <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> * <i>sender</i>, const char * <i>signal</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>receiver</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>function</i> )</h3>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptDisconnect">qScriptDisconnect</a>() and <a href="qscriptengine.html#signalHandlerException">QScriptEngine::signalHandlerException</a>().</p>
+<h3 class="fn"><a name="qScriptDisconnect"></a>qScriptDisconnect ( <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a> * <i>sender</i>, const char * <i>signal</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>receiver</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>function</i> )</h3>
 <p>Disconnects the <i>signal</i> in the <i>sender</i> from the given (<i>receiver</i>, <i>function</i>) pair. Returns true if the connection is successfully broken; otherwise returns false.</p>
 <p>This function was introduced in qtscriptclassic 4.4.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptConnect">qScriptConnect</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptConnect">qScriptConnect</a>().</p>
 <h3 class="fn"><a name="qScriptRegisterMetaType"></a>qScriptRegisterMetaType ( QScriptEngine * <i>engine</i>, <a href="qscriptvalue.html">QScriptValue</a>(* ) ( QScriptEngine *, const T &amp; t ) <i>toScriptValue</i>, void(* ) ( const <a href="qscriptvalue.html">QScriptValue</a> &amp;, T &amp; t ) <i>fromScriptValue</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>prototype</i> )</h3>
 <p>Registers the type <tt>T</tt> in the given <i>engine</i>. <i>toScriptValue</i> must be a function that will convert from a value of type <tt>T</tt> to a <a href="qscriptvalue.html">QScriptValue</a>, and <i>fromScriptValue</i> a function that does the opposite. <i>prototype</i>, if valid, is the prototype that's set on QScriptValues returned by <i>toScriptValue</i>.</p>
-<p>Returns the internal ID used by <a href="http://qt.nokia.com/doc/4.6/qmetatype.html">QMetaType</a>.</p>
-<p>You only need to call this function if you want to provide custom conversion of values of type <tt>T</tt>, i.e&#x2e; if the default <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>-based representation and conversion is not appropriate. (Note that custom <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>-derived types also fall in this category; e.g&#x2e; for a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>-derived class called MyObject, you probably want to define conversion functions for MyObject* that utilize <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>() and <a href="qscriptvalue.html#toQObject">QScriptValue::toQObject</a>().)</p>
+<p>Returns the internal ID used by <a href="https://doc.qt.io/archives/4.6/e.html">QMetaType</a>.</p>
+<p>You only need to call this function if you want to provide custom conversion of values of type <tt>T</tt>, i.e&#x2e; if the default <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a>-based representation and conversion is not appropriate. (Note that custom <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>-derived types also fall in this category; e.g&#x2e; for a <a href="https://doc.qt.io/archives/4.6/qobject.html">QObject</a>-derived class called MyObject, you probably want to define conversion functions for MyObject* that utilize <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>() and <a href="qscriptvalue.html#toQObject">QScriptValue::toQObject</a>().)</p>
 <p>If you only want to define a common script interface for values of type <tt>T</tt>, and don't care how those values are represented (i.e&#x2e; storing them in QVariants is fine), use <a href="qscriptengine.html#setDefaultPrototype">setDefaultPrototype</a>() instead; this will minimize conversion costs.</p>
-<p>You need to declare the custom type first with <a href="http://qt.nokia.com/doc/4.6/qmetatype.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>().</p>
+<p>You need to declare the custom type first with <a href="https://doc.qt.io/archives/4.6/e.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>().</p>
 <p>After a type has been registered, you can convert from a <a href="qscriptvalue.html">QScriptValue</a> to that type using <a href="qscriptengine.html#fromScriptValue">fromScriptValue</a>(), and create a <a href="qscriptvalue.html">QScriptValue</a> from a value of that type using <a href="qscriptengine.html#toScriptValue">toScriptValue</a>(). The engine will take care of calling the proper conversion function when calling C++ slots, and when getting or setting a C++ property; i.e&#x2e; the custom type may be used seamlessly on both the C++ side and the script side.</p>
 <p>The following is an example of how to use this function. We will specify custom conversion of our type <tt>MyStruct</tt>. Here's the C++ type:</p>
 <pre> struct MyStruct {
      int x;
      int y;
  };</pre>
-<p>We must declare it so that the type will be known to <a href="http://qt.nokia.com/doc/4.6/qmetatype.html">QMetaType</a>:</p>
+<p>We must declare it so that the type will be known to <a href="https://doc.qt.io/archives/4.6/e.html">QMetaType</a>:</p>
 <pre> Q_DECLARE_METATYPE(MyStruct)</pre>
 <p>Next, the <tt>MyStruct</tt> conversion functions. We represent the <tt>MyStruct</tt> value as a script object and just copy the properties:</p>
 <pre> QScriptValue toScriptValue(QScriptEngine *engine, const MyStruct &amp;s)
@@ -653,11 +653,11 @@
  ...
  QScriptValue ctor = engine.newFunction(createMyStruct);
  engine.globalObject().setProperty(&quot;MyStruct&quot;, ctor);</pre>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a>() and <a href="http://qt.nokia.com/doc/4.6/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterSequenceMetaType">qScriptRegisterSequenceMetaType</a>() and <a href="https://doc.qt.io/archives/4.6/e.html#qRegisterMetaType">qRegisterMetaType</a>().</p>
 <h3 class="fn"><a name="qScriptRegisterSequenceMetaType"></a>qScriptRegisterSequenceMetaType ( QScriptEngine * <i>engine</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>prototype</i> )</h3>
 <p>Registers the sequence type <tt>T</tt> in the given <i>engine</i>. This function provides conversion functions that convert between <tt>T</tt> and Qt Script <tt>Array</tt> objects. <tt>T</tt> must provide a const_iterator class and begin(), end() and push_back() functions. If <i>prototype</i> is valid, it will be set as the prototype of <tt>Array</tt> objects due to conversion from <tt>T</tt>; otherwise, the standard <tt>Array</tt> prototype will be used.</p>
-<p>Returns the internal ID used by <a href="http://qt.nokia.com/doc/4.6/qmetatype.html">QMetaType</a>.</p>
-<p>You need to declare the container type first with <a href="http://qt.nokia.com/doc/4.6/qmetatype.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>(). If the element type isn't a standard Qt/C++ type, it must be declared using <a href="http://qt.nokia.com/doc/4.6/qmetatype.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>() as well. Example:</p>
+<p>Returns the internal ID used by <a href="https://doc.qt.io/archives/4.6/e.html">QMetaType</a>.</p>
+<p>You need to declare the container type first with <a href="https://doc.qt.io/archives/4.6/e.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>(). If the element type isn't a standard Qt/C++ type, it must be declared using <a href="https://doc.qt.io/archives/4.6/e.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>() as well. Example:</p>
 <pre> Q_DECLARE_METATYPE(QVector&lt;int&gt;)
 
  ...
@@ -668,7 +668,7 @@
  qSort(v.begin(), v.end());
  QScriptValue a = engine-&gt;toScriptValue(v);
  qDebug() &lt;&lt; a.toString(); <span class="comment">// outputs &quot;[1, 2, 3, 5]&quot;</span></pre>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptRegisterMetaType">qScriptRegisterMetaType</a>().</p>
 <h3 class="fn"><a name="qScriptValueFromQMetaObject"></a>qScriptValueFromQMetaObject ( QScriptEngine * <i>engine</i> )</h3>
 <p>Uses <i>engine</i> to create a <a href="qscriptvalue.html">QScriptValue</a> that represents the Qt class <tt>T</tt>.</p>
 <p>This function is equivalent to <a href="qscriptengine.html#scriptValueFromQMetaObject">QScriptEngine::scriptValueFromQMetaObject</a>(). It is provided as a work-around for MSVC 6, which doesn't support member template functions.</p>
@@ -677,25 +677,25 @@
 <h3 class="fn"><a name="qScriptValueFromSequence"></a>qScriptValueFromSequence ( QScriptEngine * <i>engine</i>, const Container &amp; <i>container</i> )</h3>
 <p>Creates an array in the form of a <a href="qscriptvalue.html">QScriptValue</a> using the given <i>engine</i> with the given <i>container</i> of template type <tt>Container</tt>.</p>
 <p>The <tt>Container</tt> type must provide a <tt>const_iterator</tt> class to enable the contents of the container to be copied into the array.</p>
-<p>Additionally, the type of each element in the sequence should be suitable for conversion to a <a href="qscriptvalue.html">QScriptValue</a>. See <a href="http://qt.nokia.com/doc/4.6/qtscript.html">Conversion Between QtScript and C++ Types</a> for more information about the restrictions on types that can be used with <a href="qscriptvalue.html">QScriptValue</a>.</p>
+<p>Additionally, the type of each element in the sequence should be suitable for conversion to a <a href="qscriptvalue.html">QScriptValue</a>. See <a href="https://doc.qt.io/archives/4.6/t.html">Conversion Between QtScript and C++ Types</a> for more information about the restrictions on types that can be used with <a href="qscriptvalue.html">QScriptValue</a>.</p>
 <p>This function was introduced in qtscriptclassic 4.3.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromValue">qScriptValueFromValue</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromValue">qScriptValueFromValue</a>().</p>
 <h3 class="fn"><a name="qScriptValueFromValue"></a>qScriptValueFromValue ( QScriptEngine * <i>engine</i>, const T &amp; <i>value</i> )</h3>
 <p>Creates a <a href="qscriptvalue.html">QScriptValue</a> using the given <i>engine</i> with the given <i>value</i> of template type <tt>T</tt>.</p>
 <p>This function is equivalent to <a href="qscriptengine.html#toScriptValue">QScriptEngine::toScriptValue</a>(). It is provided as a work-around for MSVC 6, which doesn't support member template functions.</p>
 <p>This function was introduced in qtscriptclassic 4.3.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueToValue">qScriptValueToValue</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueToValue">qScriptValueToValue</a>().</p>
 <h3 class="fn"><a name="qScriptValueToSequence"></a>qScriptValueToSequence ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i>, Container &amp; <i>container</i> )</h3>
 <p>Copies the elements in the sequence specified by <i>value</i> to the given <i>container</i> of template type <tt>Container</tt>.</p>
 <p>The <i>value</i> used is typically an array, but any container can be copied as long as it provides a <tt>length</tt> property describing how many elements it contains.</p>
-<p>Additionally, the type of each element in the sequence must be suitable for conversion to a C++ type from a <a href="qscriptvalue.html">QScriptValue</a>. See <a href="http://qt.nokia.com/doc/4.6/qtscript.html">Conversion Between QtScript and C++ Types</a> for more information about the restrictions on types that can be used with <a href="qscriptvalue.html">QScriptValue</a>.</p>
+<p>Additionally, the type of each element in the sequence must be suitable for conversion to a C++ type from a <a href="qscriptvalue.html">QScriptValue</a>. See <a href="https://doc.qt.io/archives/4.6/t.html">Conversion Between QtScript and C++ Types</a> for more information about the restrictions on types that can be used with <a href="qscriptvalue.html">QScriptValue</a>.</p>
 <p>This function was introduced in qtscriptclassic 4.3.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptvalue.html#qscriptvalue_cast">qscriptvalue_cast</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qscriptvalue_cast">qscriptvalue_cast</a>().</p>
 <h3 class="fn"><a name="qScriptValueToValue"></a>qScriptValueToValue ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i> )</h3>
 <p>Returns the given <i>value</i> converted to the template type <tt>T</tt>.</p>
 <p>This function is equivalent to <a href="qscriptengine.html#fromScriptValue">QScriptEngine::fromScriptValue</a>(). It is provided as a work-around for MSVC 6, which doesn't support member template functions.</p>
 <p>This function was introduced in qtscriptclassic 4.3.</p>
-<p>See also <a href="http://qt.nokia.com/doc/4.6/qscriptengine.html#qScriptValueFromValue">qScriptValueFromValue</a>().</p>
+<p>See also <a href="https://doc.qt.io/archives/4.6/e.html#qScriptValueFromValue">qScriptValueFromValue</a>().</p>
 <hr />
 <h2>Macro Documentation</h2>
 <h3 class="fn"><a name="Q_SCRIPT_DECLARE_QMETAOBJECT-2"></a>Q_SCRIPT_DECLARE_QMETAOBJECT (  <i>QMetaObject</i>,  <i>ArgType</i> )</h3>
@@ -704,7 +704,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

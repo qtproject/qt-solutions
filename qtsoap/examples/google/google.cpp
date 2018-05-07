@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -99,7 +99,7 @@ void Google::submitRequest()
 	QMessageBox::warning(this, tr("Missing license key"),
 			     tr("Please enter your Google Web APIs license key."
 				" If you do not have one, you can visit<br>"
-				" http://api.google.com/ and create a Google"
+				" https://api.google.com/ and create a Google"
 				" account to obtain a license key."));
 	return;
     }
@@ -113,7 +113,7 @@ void Google::submitRequest()
     }
 
     // Generate request. Details about how to generate a proper
-    // request are available from http://api.google.com/. The results
+    // request are available from https://api.google.com/. The results
     // are always fetched as latin1 in this example, but this can be
     // easily changed (see the "ie" and "oe" arguments below).
     QtSoapMessage request;
@@ -161,7 +161,7 @@ void Google::getResponse()
     }
 
     // Generate resultView output. Make it resemble the actual web
-    // output from http://www.google.com/.
+    // output from https://www.google.com/.
     QString header(tr("Searched the web for <b>%1</b>, results %2 - %3 "
 		      "of about %4. Search took %5 seconds.<br><hr>")
 		   .arg(res["searchQuery"].toString())

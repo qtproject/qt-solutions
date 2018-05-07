@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -51,12 +51,12 @@ Population::Population(const QString &country, QObject *parent)
     QtSoapMessage request;
 
     // Set the method and add one argument.
-    request.setMethod("getPopulation", "http://www.abundanttech.com/WebServices/Population");
+    request.setMethod("getPopulation", "https://www.abundanttech.com/WebServices/Population");
     request.addMethodArgument("strCountry", "", country);
 
     // Submit the request the the web service.
     http.setHost("www.abundanttech.com");
-    http.setAction("http://www.abundanttech.com/WebServices/Population/getPopulation");
+    http.setAction("https://www.abundanttech.com/WebServices/Population/getPopulation");
     http.submitRequest(request, "/WebServices/Population/population.asmx");
 
     qDebug("Looking up population of %s...", country.toLatin1().constData());

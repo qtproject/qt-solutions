@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapStruct Class Reference</title>
@@ -59,7 +59,7 @@
 <h2>Detailed Description</h2>
 <p>The QtSoapStruct class is an implementation of the SOAP struct type.</p>
 <p>A SOAP struct is a dictionary of QtSoapTypes where entries are looked up by name. Entries in a struct can be of any <a href="qtsoaptype.html">QtSoapType</a> type, such as <a href="qtsoaparray.html">QtSoapArray</a>, QtSoapStruct or <a href="qtsoapsimpletype.html">QtSoapSimpleType</a>.</p>
-<p>The struct can be created in several ways. <a href="qtsoapstruct.html#parse">parse</a>() generates a struct by analyzing a <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a>. <a href="qtsoapstruct.html#insert">insert</a>() is used to add items manually.</p>
+<p>The struct can be created in several ways. <a href="qtsoapstruct.html#parse">parse</a>() generates a struct by analyzing a <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a>. <a href="qtsoapstruct.html#insert">insert</a>() is used to add items manually.</p>
 <pre> QtSoapStruct myStruct(QtSoapQName(&quot;myStruct&quot;));
 
  myStruct.insert(new QtSoapSimpleType(QtSoapQName(&quot;item1&quot;), 5));
@@ -94,12 +94,12 @@
 <p>Inserts the <a href="qtsoaptype.html">QtSoapType</a> <i>item</i> into this struct. Any existing item with the same <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) will be erased.</p>
 <h3 class="fn"><a name="isValid"></a>bool QtSoapStruct::isValid () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#isValid">QtSoapType::isValid</a>().</p>
-<h3 class="fn"><a name="parse"></a>bool QtSoapStruct::parse ( <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="parse"></a>bool QtSoapStruct::parse ( <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#parse">QtSoapType::parse</a>().</p>
 <p>Inspects <i>node</i> and constructs the equivalent <a href="qtsoapstruct.html">QtSoapStruct</a> if <i>node</i> qualifies as a SOAP struct. Returns true if it does; otherwise returns false.</p>
-<h3 class="fn"><a name="toDomElement"></a><a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> QtSoapStruct::toDomElement ( <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="toDomElement"></a><a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> QtSoapStruct::toDomElement ( <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toDomElement">QtSoapType::toDomElement</a>().</p>
-<p>Generates the <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> representation of this struct. The returned <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
+<p>Generates the <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> representation of this struct. The returned <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
 <h3 class="fn"><a name="operator-eq"></a>QtSoapStruct &amp; QtSoapStruct::operator= ( const QtSoapStruct &amp; <i>copy</i> )</h3>
 <p>Makes this struct a copy of <i>copy</i>.</p>
 <h3 class="fn"><a name="operator-5b-5d"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapStruct::operator[] ( const <a href="qtsoapqname.html">QtSoapQName</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
@@ -109,11 +109,11 @@
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-5">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the item in this struct whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>. If no such item exists, an empty <a href="qtsoaptype.html">QtSoapType</a> is returned.</p>
-<h3 class="fn"><a name="operator-5b-5d-3"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapStruct::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-3"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapStruct::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-3">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the item in this struct whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>. If no such item exists, an empty <a href="qtsoaptype.html">QtSoapType</a> is returned.</p>
-<h3 class="fn"><a name="operator-5b-5d-4"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapStruct::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>key</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-4"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapStruct::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>key</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-6">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the item in this struct whose <a href="qtsoaptype.html#Type-enum">QName</a> (qualified name) is <i>key</i>. If no such item exists, an empty <a href="qtsoaptype.html">QtSoapType</a> is returned.</p>
@@ -130,7 +130,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

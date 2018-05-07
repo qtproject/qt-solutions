@@ -1,7 +1,7 @@
 /****************************************************************************
 **
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
+** Contact: https://www1.qt.io/terms-conditions
 **
 ** This file is part of the Qt Solutions component.
 **
@@ -43,7 +43,7 @@
   \title Grapher Plugin
 
   \raw HTML
-  <object type="application/x-graphable" data="http://qt.nokia.com/doc/3.3/graph.g1n" WIDTH=250 HEIGHT=250></object>
+  <object type="application/x-graphable" data="https://doc.qt.io/archives/3.3/graph.g1n" WIDTH=250 HEIGHT=250></object>
   \endraw
 
   Implementation:

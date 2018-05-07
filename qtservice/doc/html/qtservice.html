@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtservice.cpp -->
 <head>
   <title>QtService Class Reference</title>
@@ -54,7 +54,7 @@
 <p>The QtService is a convenient template class that allows you to create a service for a particular application type.</p>
 <p>A Windows service or Unix daemon (a &quot;service&quot;), is a program that runs &quot;in the background&quot; independently of whether a user is logged in or not. A service is often set up to start when the machine boots up, and will typically run continuously as long as the machine is on.</p>
 <p>Services are usually non-interactive console applications. User interaction, if required, is usually implemented in a separate, normal GUI application that communicates with the service through an IPC channel. For simple communication, <a href="qtservicecontroller.html#sendCommand">QtServiceController::sendCommand</a>() and <a href="qtservicebase.html#processCommand">QtService::processCommand</a>() may be used, possibly in combination with a shared settings file. For more complex, interactive communication, a custom IPC channel should be used, e.g&#x2e; based on Qt's networking classes. (In certain circumstances, a service may provide a GUI itself, ref. the &quot;interactive&quot; example documentation).</p>
-<p><b>Note:</b> On Unix systems, this class relies on facilities provided by the <a href="http://qt.nokia.com/doc/4.6/qtnetwork.html">QtNetwork</a> module, provided as part of the Qt Open Source Edition and certain <a href="http://qt.nokia.com/doc/4.6/commercialeditions.html">Qt Commercial Editions</a>.</p>
+<p><b>Note:</b> On Unix systems, this class relies on facilities provided by the <a href="https://doc.qt.io/archives/4.6/k.html">QtNetwork</a> module, provided as part of the Qt Open Source Edition and certain <a href="https://doc.qt.io/archives/4.6/s.html">Qt Commercial Editions</a>.</p>
 <p>The QtService class functionality is inherited from <a href="qtservicebase.html">QtServiceBase</a>, but in addition the QtService class binds an instance of <a href="qtservicebase.html">QtServiceBase</a> with an application type.</p>
 <p>Typically, you will create a service by subclassing the QtService template class. For example:</p>
 <pre> class MyService : public QtService&lt;QApplication&gt;
@@ -70,7 +70,7 @@
      void resume();
      void processCommand(int code);
  };</pre>
-<p>The application type can be <a href="http://qt.nokia.com/doc/4.6/qcoreapplication.html">QCoreApplication</a> for services without GUI, <a href="http://qt.nokia.com/doc/4.6/qapplication.html">QApplication</a> for services with GUI or you can use your own custom application type.</p>
+<p>The application type can be <a href="https://doc.qt.io/archives/4.6/qcoreapplication.html">QCoreApplication</a> for services without GUI, <a href="https://doc.qt.io/archives/4.6/qapplication.html">QApplication</a> for services with GUI or you can use your own custom application type.</p>
 <p>You must reimplement the <a href="qtservicebase.html#start">QtServiceBase::start</a>() function to perform the service's work. Usually you create some main object on the heap which is the heart of your service.</p>
 <p>In addition, you might want to reimplement the <a href="qtservicebase.html#pause">QtServiceBase::pause</a>(), <a href="qtservicebase.html#processCommand">QtServiceBase::processCommand</a>(), <a href="qtservicebase.html#resume">QtServiceBase::resume</a>() and <a href="qtservicebase.html#stop">QtServiceBase::stop</a>() to intervene the service's process on controller requests. You can control any given service using an instance of the <a href="qtservicecontroller.html">QtServiceController</a> class which also allows you to control services from separate applications. The mentioned functions are all virtual and won't do anything unless they are reimplemented.</p>
 <p>Your custom service is typically instantiated in the application's main function. Then the main function will call your service's <a href="qtservicebase.html#exec">exec</a>() function, and return the result of that call. For example:</p>
@@ -84,7 +84,7 @@
 <p>See also <a href="qtservicebase.html">QtServiceBase</a> and <a href="qtservicecontroller.html">QtServiceController</a>.</p>
 <hr />
 <h2>Member Function Documentation</h2>
-<h3 class="fn"><a name="QtService"></a>QtService::QtService ( int <i>argc</i>, char ** <i>argv</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<h3 class="fn"><a name="QtService"></a>QtService::QtService ( int <i>argc</i>, char ** <i>argv</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
 <p>Constructs a <a href="qtservice.html">QtService</a> object called <i>name</i>. The <i>argc</i> and <i>argv</i> parameters are parsed after the <a href="qtservicebase.html#exec">exec</a>() function has been called. Then they are passed to the application's constructor.</p>
 <p>There can only be one <a href="qtservice.html">QtService</a> object in a process.</p>
 <p>See also <a href="qtservicebase.html#QtServiceBase">QtServiceBase</a>().</p>
@@ -100,7 +100,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

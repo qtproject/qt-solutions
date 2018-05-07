@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtservice.cpp -->
 <head>
   <title>QtServiceBase Class Reference</title>
@@ -124,7 +124,7 @@
 <p>The ServiceFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;ServiceFlag&gt;. It stores an OR combination of ServiceFlag values.</p>
 <hr />
 <h2>Member Function Documentation</h2>
-<h3 class="fn"><a name="QtServiceBase"></a>QtServiceBase::QtServiceBase ( int <i>argc</i>, char ** <i>argv</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<h3 class="fn"><a name="QtServiceBase"></a>QtServiceBase::QtServiceBase ( int <i>argc</i>, char ** <i>argv</i>, const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>name</i> )</h3>
 <p>Creates a service instance called <i>name</i>. The <i>argc</i> and <i>argv</i> parameters are parsed after the <a href="qtservicebase.html#exec">exec</a>() function has been called. Then they are passed to the application's constructor. The application type is determined by the <a href="qtservice.html">QtService</a> subclass.</p>
 <p>The service is neither installed nor started. The name must not contain any backslashes or be longer than 255 characters. In addition, the name must be unique in the system's service database.</p>
 <p>See also <a href="qtservicebase.html#exec">exec</a>(), <a href="qtservicebase.html#start">start</a>(), and <a href="qtservicecontroller.html#install">QtServiceController::install</a>().</p>
@@ -149,7 +149,7 @@
 <p>See also <a href="qtservicebase.html#exec">exec</a>() and <a href="qtservicebase.html#createApplication">createApplication</a>().</p>
 <h3 class="fn"><a name="instance"></a>QtServiceBase * QtServiceBase::instance ()&nbsp;&nbsp;<tt> [static]</tt></h3>
 <p>Returns a pointer to the current application's <a href="qtservicebase.html">QtServiceBase</a> instance.</p>
-<h3 class="fn"><a name="logMessage"></a>void QtServiceBase::logMessage ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>message</i>, <a href="qtservicebase.html#MessageType-enum">MessageType</a> <i>type</i> = Success, int <i>id</i> = 0, <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> <i>category</i> = 0, const <a href="http://qt.nokia.com/doc/4.6/qbytearray.html">QByteArray</a> &amp; <i>data</i> = QByteArray() )</h3>
+<h3 class="fn"><a name="logMessage"></a>void QtServiceBase::logMessage ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>message</i>, <a href="qtservicebase.html#MessageType-enum">MessageType</a> <i>type</i> = Success, int <i>id</i> = 0, <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> <i>category</i> = 0, const <a href="https://doc.qt.io/archives/4.6/qbytearray.html">QByteArray</a> &amp; <i>data</i> = QByteArray() )</h3>
 <p>Reports a message of the given <i>type</i> with the given <i>message</i> to the local system event log. The message identifier <i>id</i> and the message <i>category</i> are user defined values. The <i>data</i> parameter can contain arbitrary binary data.</p>
 <p>Message strings for <i>id</i> and <i>category</i> must be provided by a message file, which must be registered in the system registry. Refer to the MSDN for more information about how to do this on Windows.</p>
 <p>See also <a href="qtservicebase.html#MessageType-enum">MessageType</a>.</p>
@@ -165,16 +165,16 @@
 <p>Reimplement this function to continue the service after a call to <a href="qtservicebase.html#pause">pause</a>().</p>
 <p>This function is called in reply to controller requests. The default implementation does nothing.</p>
 <p>See also <a href="qtservicebase.html#pause">pause</a>() and <a href="qtservicecontroller.html#resume">QtServiceController::resume</a>().</p>
-<h3 class="fn"><a name="serviceDescription"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtServiceBase::serviceDescription () const</h3>
+<h3 class="fn"><a name="serviceDescription"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtServiceBase::serviceDescription () const</h3>
 <p>Returns the description of the service.</p>
 <p>See also <a href="qtservicebase.html#setServiceDescription">setServiceDescription</a>() and <a href="qtservicebase.html#serviceName">serviceName</a>().</p>
 <h3 class="fn"><a name="serviceFlags"></a><a href="qtservicebase.html#ServiceFlag-enum">ServiceFlags</a> QtServiceBase::serviceFlags () const</h3>
 <p>Returns the service's state which is decribed using the <a href="qtservicebase.html#ServiceFlag-enum">ServiceFlag</a> enum.</p>
 <p>See also <a href="qtservicebase.html#ServiceFlag-enum">ServiceFlags</a> and <a href="qtservicebase.html#setServiceFlags">setServiceFlags</a>().</p>
-<h3 class="fn"><a name="serviceName"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QtServiceBase::serviceName () const</h3>
+<h3 class="fn"><a name="serviceName"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QtServiceBase::serviceName () const</h3>
 <p>Returns the name of the service.</p>
 <p>See also <a href="qtservicebase.html#QtServiceBase">QtServiceBase</a>() and <a href="qtservicebase.html#serviceDescription">serviceDescription</a>().</p>
-<h3 class="fn"><a name="setServiceDescription"></a>void QtServiceBase::setServiceDescription ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>description</i> )</h3>
+<h3 class="fn"><a name="setServiceDescription"></a>void QtServiceBase::setServiceDescription ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>description</i> )</h3>
 <p>Sets the description of the service to the given <i>description</i>.</p>
 <p>See also <a href="qtservicebase.html#serviceDescription">serviceDescription</a>().</p>
 <h3 class="fn"><a name="setServiceFlags"></a>void QtServiceBase::setServiceFlags ( <a href="qtservicebase.html#ServiceFlag-enum">ServiceFlags</a> <i>flags</i> )</h3>
@@ -198,7 +198,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

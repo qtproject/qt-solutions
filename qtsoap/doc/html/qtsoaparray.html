@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qtsoap.cpp -->
 <head>
   <title>QtSoapArray Class Reference</title>
@@ -73,10 +73,10 @@
 <p>The QtSoapArray class is an implementation of the SOAP array type.</p>
 <p>A SOAP array is a sequence of <a href="qtsoaptype.html">QtSoapType</a> objects such as QtSoapArrays, QtSoapStructs or QtSoapSimpleTypes, and they are accessible through their ordinal position. An array can be consecutive (0, 1, 2, 3, ..&#x2e;) or sparse (1, 5, 6, 10, ..&#x2e;) and they can be multidimensional ((0, 0), (0, 1), ..&#x2e;)&#x2e; QtSoapArray supports arrays of up to 5 dimensions. The size and dimensions of the array are set in the constructor. The default constructor produces a one dimensional array, with an unset size, meaning that the array can grow as required.</p>
 <p>All elements in a SOAP array must be of the same type. Inserting different types will result in a run time error.</p>
-<p>The <a href="qtsoaparray.html#parse">parse</a>() function builds the array by analyzing a <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a> from a SOAP document. <a href="qtsoaparray.html#count">count</a>() returns the number of items in the array.</p>
+<p>The <a href="qtsoaparray.html#parse">parse</a>() function builds the array by analyzing a <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a> from a SOAP document. <a href="qtsoaparray.html#count">count</a>() returns the number of items in the array.</p>
 <p>Retrieve items in the array with <a href="qtsoaparray.html#at">at</a>() or operator[](). Note that operator[]() only works with one dimensional arrays, but there are <a href="qtsoaparray.html#at">at</a>() functions for arrays of up to 5 dimensions. <a href="qtsoaparrayiterator.html">QtSoapArrayIterator</a> lets you iterate through all items in an array.</p>
 <p>Use <a href="qtsoaparray.html#insert">insert</a>() or <a href="qtsoaparray.html#append">append</a>() to insert items into an array manually. <a href="qtsoaparray.html#append">append</a>() only works with one dimensional arrays.</p>
-<p><a href="qtsoaparray.html#toDomElement">toDomElement</a>() returns a <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> representation of the SOAP array.</p>
+<p><a href="qtsoaparray.html#toDomElement">toDomElement</a>() returns a <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> representation of the SOAP array.</p>
 <pre> QtSoapArray array;
 
  array.insert(0, new QtSoapSimpleType(QtSoapQName(&quot;Peter&quot;), &quot;peter&quot;));
@@ -152,18 +152,18 @@
 <h3 class="fn"><a name="isValid"></a>bool QtSoapArray::isValid () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#isValid">QtSoapType::isValid</a>().</p>
 <p>For this class, always returns true.</p>
-<h3 class="fn"><a name="parse"></a>bool QtSoapArray::parse ( <a href="http://qt.nokia.com/doc/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="parse"></a>bool QtSoapArray::parse ( <a href="https://doc.qt.io/archives/4.6/qdomnode.html">QDomNode</a> <i>node</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#parse">QtSoapType::parse</a>().</p>
 <p>Inspects <i>node</i> and builds the content of the <a href="qtsoaparray.html">QtSoapArray</a> if <i>node</i> qualifies as a SOAP array. Returns true if it does; otherwise returns false.</p>
-<h3 class="fn"><a name="toDomElement"></a><a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> QtSoapArray::toDomElement ( <a href="http://qt.nokia.com/doc/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="toDomElement"></a><a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> QtSoapArray::toDomElement ( <a href="https://doc.qt.io/archives/4.6/qdomdocument.html">QDomDocument</a> <i>doc</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#toDomElement">QtSoapType::toDomElement</a>().</p>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoaparray.html">QtSoapArray</a>. The returned <a href="http://qt.nokia.com/doc/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
+<p>Returns the <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> representation of this <a href="qtsoaparray.html">QtSoapArray</a>. The returned <a href="https://doc.qt.io/archives/4.6/qdomelement.html">QDomElement</a> is created using <i>doc</i>.</p>
 <h3 class="fn"><a name="operator-eq"></a>QtSoapArray &amp; QtSoapArray::operator= ( const QtSoapArray &amp; <i>copy</i> )</h3>
 <p>Makes this <a href="qtsoaparray.html">QtSoapArray</a> a copy of <i>copy</i>.</p>
 <h3 class="fn"><a name="operator-5b-5d"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapArray::operator[] ( int <i>pos</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d">QtSoapType::operator[]</a>().</p>
 <p>Returns a reference to the item at ordinal position <i>pos</i>. If there is no item at position <i>pos</i>, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
-<h3 class="fn"><a name="operator-5b-5d-2"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapArray::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-2"></a><a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapArray::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-3">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose local name is <i>s</i>. If there is no item with this local name, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
@@ -175,7 +175,7 @@
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-4">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the item at ordinal position <i>pos</i>. If there is no item at position <i>pos</i>, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
-<h3 class="fn"><a name="operator-5b-5d-5"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapArray::operator[] ( const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>s</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="operator-5b-5d-5"></a>const <a href="qtsoaptype.html">QtSoapType</a> &amp; QtSoapArray::operator[] ( const <a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> &amp; <i>s</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Reimplemented from <a href="qtsoaptype.html#operator-5b-5d-6">QtSoapType::operator[]</a>().</p>
 <p>This is an overloaded function.</p>
 <p>Returns a reference to the child item whose local name is <i>s</i>. If there is no item with this local name, returns an empty <a href="qtsoaptype.html">QtSoapType</a>.</p>
@@ -186,7 +186,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>

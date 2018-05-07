@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <!-- qscriptclass.cpp -->
 <head>
   <title>QScriptClass Class Reference</title>
@@ -12,7 +12,7 @@
 <tr>
 <td align="left" valign="top" width="32"><img src="images/qt-logo.png" align="left" width="57" height="67" border="0" /></td>
 <td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a></td>
-</tr></table><h1 class="title">QScriptClass Class Reference<br /><span class="small-subtitle">[<a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> module]</span>
+</tr></table><h1 class="title">QScriptClass Class Reference<br /><span class="small-subtitle">[<a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> module]</span>
 </h1>
 <p>The QScriptClass class provides an interface for defining custom behavior of (a class of) Qt Script objects. <a href="#details">More...</a></p>
 <pre> #include &lt;QScriptClass&gt;</pre><p><b>This class is not part of the Qt GUI Framework Edition.</b></p>
@@ -58,7 +58,7 @@
 <p>When implementing custom classes of objects, you typically use <a href="qscriptvalue.html#setData">QScriptValue::setData</a>() to store instance-specific data as part of object initialization; the data won't be accessible from scripts directly, but you can access it in e.g&#x2e; your reimplementations of <a href="qscriptclass.html#property">property</a>() and <a href="qscriptclass.html#setProperty">setProperty</a>() (by calling <a href="qscriptvalue.html#data">QScriptValue::data</a>()) to perform custom processing.</p>
 <p>Reimplement <a href="qscriptclass.html#prototype">prototype</a>() to provide a custom prototype object for your script class.</p>
 <p>Reimplement <a href="qscriptclass.html#supportsExtension">supportsExtension</a>() and <a href="qscriptclass.html#extension">extension</a>() if your custom script class supports one or more of the extensions specified by the Extension enum.</p>
-<p>See also <a href="qscriptclasspropertyiterator.html">QScriptClassPropertyIterator</a>, <a href="qscriptengine.html#newObject">QScriptEngine::newObject</a>(), and <a href="http://qt.nokia.com/doc/4.6/script-customclass.html">Custom Script Class Example</a>.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html">QScriptClassPropertyIterator</a>, <a href="qscriptengine.html#newObject">QScriptEngine::newObject</a>(), and <a href="https://doc.qt.io/archives/4.6/s.html">Custom Script Class Example</a>.</p>
 <hr />
 <h2>Member Type Documentation</h2>
 <h3 class="fn"><a name="Extension-enum"></a>enum QScriptClass::Extension</h3>
@@ -88,9 +88,9 @@
 <p>If a <a href="qscriptclass.html">QScriptClass</a> object is deleted before the associated <a href="qscriptclass.html#engine">engine</a>(), any Qt Script objects using the <a href="qscriptclass.html">QScriptClass</a> will be &quot;demoted&quot; to normal Qt Script objects.</p>
 <h3 class="fn"><a name="engine"></a><a href="qscriptengine.html">QScriptEngine</a> * QScriptClass::engine () const</h3>
 <p>Returns the engine that this <a href="qscriptclass.html">QScriptClass</a> is associated with.</p>
-<h3 class="fn"><a name="extension"></a><a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> QScriptClass::extension ( <a href="qscriptclass.html#Extension-enum">Extension</a> <i>extension</i>, const <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> &amp; <i>argument</i> = QVariant() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
-<p>This virtual function can be reimplemented in a <a href="qscriptclass.html">QScriptClass</a> subclass to provide support for extensions. The optional <i>argument</i> can be provided as input to the <i>extension</i>; the result must be returned in the form of a <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>. You can call <a href="qscriptclass.html#supportsExtension">supportsExtension</a>() to check if an extension is supported by the <a href="qscriptclass.html">QScriptClass</a>. By default, no extensions are supported, and this function returns an invalid <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a>.</p>
-<p>If you implement the Callable extension, Qt Script will call this function when an instance of your class is called as a function (e.g&#x2e; from a script or using <a href="qscriptvalue.html#call">QScriptValue::call</a>()). The <i>argument</i> will contain a pointer to the <a href="qscriptcontext.html">QScriptContext</a> that represents the function call, and you should return a <a href="http://qt.nokia.com/doc/4.6/qvariant.html">QVariant</a> that holds the result of the function call. In the following example the sum of the arguments to the script function are added up and returned:</p>
+<h3 class="fn"><a name="extension"></a><a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> QScriptClass::extension ( <a href="qscriptclass.html#Extension-enum">Extension</a> <i>extension</i>, const <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> &amp; <i>argument</i> = QVariant() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function can be reimplemented in a <a href="qscriptclass.html">QScriptClass</a> subclass to provide support for extensions. The optional <i>argument</i> can be provided as input to the <i>extension</i>; the result must be returned in the form of a <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a>. You can call <a href="qscriptclass.html#supportsExtension">supportsExtension</a>() to check if an extension is supported by the <a href="qscriptclass.html">QScriptClass</a>. By default, no extensions are supported, and this function returns an invalid <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a>.</p>
+<p>If you implement the Callable extension, Qt Script will call this function when an instance of your class is called as a function (e.g&#x2e; from a script or using <a href="qscriptvalue.html#call">QScriptValue::call</a>()). The <i>argument</i> will contain a pointer to the <a href="qscriptcontext.html">QScriptContext</a> that represents the function call, and you should return a <a href="https://doc.qt.io/archives/4.6/qvariant.html">QVariant</a> that holds the result of the function call. In the following example the sum of the arguments to the script function are added up and returned:</p>
 <pre> if (extension == Callable) {
      QScriptContext *context = qvariant_cast&lt;QScriptContext*&gt;(argument);
      QScriptEngine *engine = context-&gt;engine();
@@ -101,7 +101,7 @@
  }</pre>
 <p>If you implement the <a href="qscriptclass.html#Extension-enum">HasInstance</a> extension, Qt Script will call this function as part of evaluating the <tt>instanceof</tt> operator, as described in ECMA-262 Section 11.8&#x2e;6&#x2e; The <i>argument</i> is a QScriptValueList containing two items: The first item is the object that <a href="qscriptclass.html#Extension-enum">HasInstance</a> is being applied to (an instance of your class), and the second item can be any value. extension() should return true if the value delegates behavior to the object, false otherwise.</p>
 <p>See also <a href="qscriptclass.html#supportsExtension">supportsExtension</a>().</p>
-<h3 class="fn"><a name="name"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QScriptClass::name () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="name"></a><a href="https://doc.qt.io/archives/4.6/qstring.html">QString</a> QScriptClass::name () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the name of the script class.</p>
 <p>Qt Script uses this name to generate a default string representation of objects in case you do not provide a toString function.</p>
 <p>The default implementation returns a null string.</p>
@@ -111,12 +111,12 @@
 <p>Reimplement this function if objects of your script class can have one or more custom properties (e.g&#x2e; those reported to be handled by <a href="qscriptclass.html#queryProperty">queryProperty</a>()) that you want to appear when an object's properties are enumerated (e.g&#x2e; by a for-in statement in a script).</p>
 <p>Qt Script takes ownership of the new iterator object.</p>
 <p>See also <a href="qscriptvalueiterator.html">QScriptValueIterator</a>.</p>
-<h3 class="fn"><a name="property"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptClass::property ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="property"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptClass::property ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the value of the property with the given <i>name</i> of the given <i>object</i>.</p>
 <p>The <i>id</i> argument is only useful if you assigned a value to it in <a href="qscriptclass.html#queryProperty">queryProperty</a>().</p>
 <p>The default implementation does nothing and returns an invalid <a href="qscriptvalue.html">QScriptValue</a>.</p>
 <p>See also <a href="qscriptclass.html#setProperty">setProperty</a>() and <a href="qscriptclass.html#propertyFlags">propertyFlags</a>().</p>
-<h3 class="fn"><a name="propertyFlags"></a><a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertyFlags</a> QScriptClass::propertyFlags ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="propertyFlags"></a><a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertyFlags</a> QScriptClass::propertyFlags ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Returns the flags of the property with the given <i>name</i> of the given <i>object</i>.</p>
 <p>The <i>id</i> argument is only useful if you assigned a value to it in <a href="qscriptclass.html#queryProperty">queryProperty</a>().</p>
 <p>The default implementation returns 0.</p>
@@ -125,15 +125,15 @@
 <p>Returns the object to be used as the prototype of new instances of this class (created with <a href="qscriptengine.html#newObject">QScriptEngine::newObject</a>()).</p>
 <p>The default implementation returns an invalid <a href="qscriptvalue.html">QScriptValue</a>, meaning that the standard Object prototype will be used. Reimplement this function to provide your own custom prototype.</p>
 <p>Typically you initialize your prototype object in the constructor of your class, then return it in this function.</p>
-<p>See the &quot;Making Use of Prototype-Based Inheritance&quot; section in the <a href="http://qt.nokia.com/doc/4.6/qtscript.html">QtScript</a> documentation for more information on how prototypes are used.</p>
-<h3 class="fn"><a name="queryProperty"></a><a href="qscriptclass.html#QueryFlag-enum">QueryFlags</a> QScriptClass::queryProperty ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="qscriptclass.html#QueryFlag-enum">QueryFlags</a> <i>flags</i>, <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> * <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>See the &quot;Making Use of Prototype-Based Inheritance&quot; section in the <a href="https://doc.qt.io/archives/4.6/t.html">QtScript</a> documentation for more information on how prototypes are used.</p>
+<h3 class="fn"><a name="queryProperty"></a><a href="qscriptclass.html#QueryFlag-enum">QueryFlags</a> QScriptClass::queryProperty ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="qscriptclass.html#QueryFlag-enum">QueryFlags</a> <i>flags</i>, <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> * <i>id</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Queries this script class for how access to the property with the given <i>name</i> of the given <i>object</i> should be handled. The given <i>flags</i> specify the aspects of interest. This function should return a subset of <i>flags</i> to indicate which aspects of property access should be further handled by the script class.</p>
 <p>For example, if the <i>flags</i> contain <a href="qscriptclass.html#QueryFlag-enum">HandlesReadAccess</a>, and you would like your class to handle the reading of the property (through the <a href="qscriptclass.html#property">property</a>() function), the returned flags should include <a href="qscriptclass.html#QueryFlag-enum">HandlesReadAccess</a>. If the returned flags do not contain <a href="qscriptclass.html#QueryFlag-enum">HandlesReadAccess</a>, the property will be handled as a normal script object property.</p>
 <p>You can optionally use the <i>id</i> argument to store a value that will subsequently be passed on to functions such as <a href="qscriptclass.html#property">property</a>() and <a href="qscriptclass.html#setProperty">setProperty</a>().</p>
 <p>The default implementation of this function returns 0.</p>
 <p>Note: This function is only called if the given property isn't already a normal property of the object. For example, say you advertise that you want to handle read access to property <tt>foo</tt>, but not write access; if <tt>foo</tt> is then assigned a value, it will become a normal script object property, and subsequently you will no longer be queried regarding read access to <tt>foo</tt>.</p>
 <p>See also <a href="qscriptclass.html#property">property</a>().</p>
-<h3 class="fn"><a name="setProperty"></a>void QScriptClass::setProperty ( <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="http://qt.nokia.com/doc/4.6/qtglobal.html#uint-typedef">uint</a> <i>id</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="setProperty"></a>void QScriptClass::setProperty ( <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i>, const <a href="qscriptstring.html">QScriptString</a> &amp; <i>name</i>, <a href="https://doc.qt.io/archives/4.6/l.html#uint-typedef">uint</a> <i>id</i>, const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
 <p>Sets the property with the given <i>name</i> of the given <i>object</i> to the given <i>value</i>.</p>
 <p>The <i>id</i> argument is only useful if you assigned a value to it in <a href="qscriptclass.html#queryProperty">queryProperty</a>().</p>
 <p>The default implementation does nothing.</p>
@@ -146,7 +146,7 @@
 <p /><address><hr /><div align="center">
 <table width="100%" cellspacing="0" border="0"><tr class="address">
 <td width="30%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-<td width="40%" align="center"><a href="http://qt.nokia.com/doc/trademarks.html">Trademarks</a></td>
+<td width="40%" align="center"><a href="https://doc.qt.io/archives/4.6/trademarks.html">Trademarks</a></td>
 <td width="30%" align="right"><div align="right">Qt Solutions</div></td>
 </tr></table></div></address></body>
 </html>
