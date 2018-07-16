@@ -123,6 +123,9 @@ void QWinWidget::init()
     Q_ASSERT(hParent);
 
     if (hParent) {
+#if QT_VERSION >= 0x050000
+        setProperty("_q_embedded_native_parent_handle", WId(hParent));
+#endif
 	// make the widget window style be WS_CHILD so SetParent will work
 	QT_WA({
         SetWindowLong((HWND)winId(), GWL_STYLE, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
@@ -131,7 +134,6 @@ void QWinWidget::init()
 	})
 #if QT_VERSION >= 0x050000
         QWindow *window = windowHandle();
-        window->setProperty("_q_embedded_native_parent_handle", (WId)hParent);
         HWND h = static_cast<HWND>(QGuiApplication::platformNativeInterface()->
                                 nativeResourceForWindow("handle", window));
         SetParent(h, hParent);
