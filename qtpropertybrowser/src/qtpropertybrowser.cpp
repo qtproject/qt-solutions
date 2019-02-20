@@ -59,6 +59,7 @@ public:
     QtPropertyPrivate(QtAbstractPropertyManager *manager)
         : m_enabled(true),
           m_modified(false),
+          m_bold(false),
           m_manager(manager) {}
     QtProperty *q_ptr;
 
@@ -71,6 +72,7 @@ public:
     QString m_name;
     bool m_enabled;
     bool m_modified;
+    bool m_bold;
 
     QtAbstractPropertyManager * const m_manager;
 };
@@ -265,6 +267,16 @@ bool QtProperty::isModified() const
 }
 
 /*!
+    Returns whether the property is bold.
+
+    \sa setBold()
+*/
+bool QtProperty::isBold() const
+{
+    return d_ptr->m_bold;
+}
+
+/*!
     Returns whether the property has a value.
 
     \sa QtAbstractPropertyManager::hasValue()
@@ -396,6 +408,20 @@ void QtProperty::setModified(bool modified)
         return;
 
     d_ptr->m_modified = modified;
+    propertyChanged();
+}
+
+/*!
+    Sets the property's bold state according to the passed \a bold value.
+
+    \sa isBold()
+*/
+void QtProperty::setBold(bool bold)
+{
+    if (d_ptr->m_bold == bold)
+        return;
+
+    d_ptr->m_bold = bold;
     propertyChanged();
 }
 
