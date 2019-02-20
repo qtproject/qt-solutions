@@ -108,6 +108,8 @@ public:
 
     void editItem(QtBrowserItem *item);
 
+    void resizeToContent() const;
+
 Q_SIGNALS:
 
     void collapsed(QtBrowserItem *item);

@@ -1071,6 +1071,17 @@ void QtTreePropertyBrowser::editItem(QtBrowserItem *item)
     d_ptr->editItem(item);
 }
 
+/*!
+Ensure that the column width fits the current content size. Useful to ensure that
+as much as possible is visible for the user based on the current content, while still
+allowing for the overall resize mode to be QHeaderView::Interactive for the
+user to adjust individually as needed.
+*/
+void QtTreePropertyBrowser::resizeToContent() const
+{
+    d_ptr->m_treeWidget->header()->resizeSections(QHeaderView::ResizeToContents);
+}
+
 #if QT_VERSION >= 0x040400
 QT_END_NAMESPACE
 #endif
