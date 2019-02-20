@@ -508,7 +508,7 @@ QtMetaEnumProvider::QtMetaEnumProvider()
                 QtMetaEnumWrapper::staticMetaObject.propertyOffset() + 0);
     m_policyEnum = p.enumerator();
     const int keyCount = m_policyEnum.keyCount();
-    for (int i = 0; i < keyCount; i++)
+    for (int i = 0; i < keyCount; ++i)
         m_policyEnumNames << QLatin1String(m_policyEnum.key(i));
 
     initLocale();
@@ -522,7 +522,7 @@ QSizePolicy::Policy QtMetaEnumProvider::indexToSizePolicy(int index) const
 int QtMetaEnumProvider::sizePolicyToIndex(QSizePolicy::Policy policy) const
 {
      const int keyCount = m_policyEnum.keyCount();
-    for (int i = 0; i < keyCount; i++)
+    for (int i = 0; i < keyCount; ++i)
         if (indexToSizePolicy(i) == policy)
             return i;
     return -1;
@@ -891,7 +891,7 @@ void QtIntPropertyManager::setSingleStep(QtProperty *property, int step)
 /*!
     Sets read-only status of the property.
 
-    \sa QtIntPropertyManager::setReadOnly
+    \sa QtIntPropertyManager::isReadOnly
 */
 void QtIntPropertyManager::setReadOnly(QtProperty *property, bool readOnly)
 {
@@ -1165,7 +1165,7 @@ void QtDoublePropertyManager::setSingleStep(QtProperty *property, double step)
 /*!
     Sets read-only status of the property.
 
-    \sa QtDoublePropertyManager::setReadOnly
+    \sa QtDoublePropertyManager::isReadOnly
 */
 void QtDoublePropertyManager::setReadOnly(QtProperty *property, bool readOnly)
 {
@@ -1526,7 +1526,7 @@ void QtStringPropertyManager::setEchoMode(QtProperty *property, EchoMode echoMod
 /*!
     Sets read-only status of the property.
 
-    \sa QtStringPropertyManager::setReadOnly
+    \sa QtStringPropertyManager::isReadOnly
 */
 void QtStringPropertyManager::setReadOnly(QtProperty *property, bool readOnly)
 {
@@ -1543,7 +1543,7 @@ void QtStringPropertyManager::setReadOnly(QtProperty *property, bool readOnly)
     it.value() = data;
 
     emit propertyChanged(property);
-    emit readOnlyChanged(property, data.readOnly);
+    emit readOnlyChanged(property, data.echoMode);
 }
 
 /*!
@@ -4821,6 +4821,7 @@ public:
     {
         Data() : val(-1) {}
         int val;
+        bool readOnly;
         QStringList enumNames;
         QMap<int, QIcon> enumIcons;
     };
@@ -5060,6 +5061,41 @@ void QtEnumPropertyManager::setEnumIcons(QtProperty *property, const QMap<int, Q
     emit enumIconsChanged(property, it.value().enumIcons);
 
     emit propertyChanged(property);
+}
+
+/*!
+    Returns read-only status of the property.
+
+    When property is read-only it's value can be selected and copied from editor but not modified.
+
+    \sa QtEnumPropertyManager::setReadOnly
+*/
+bool QtEnumPropertyManager::isReadOnly(const QtProperty *property) const
+{
+    return getData<bool>(d_ptr->m_values, &QtEnumPropertyManagerPrivate::Data::readOnly, property, false);
+}
+
+/*!
+    Sets read-only status of the property.
+
+    \sa QtEnumPropertyManager::isReadOnly
+*/
+void QtEnumPropertyManager::setReadOnly(QtProperty *property, bool readOnly)
+{
+    const QtEnumPropertyManagerPrivate::PropertyValueMap::iterator it = d_ptr->m_values.find(property);
+    if (it == d_ptr->m_values.end())
+        return;
+
+    QtEnumPropertyManagerPrivate::Data data = it.value();
+
+    if (data.readOnly == readOnly)
+        return;
+
+    data.readOnly = readOnly;
+    it.value() = data;
+
+    emit propertyChanged(property);
+    emit readOnlyChanged(property, data.readOnly);
 }
 
 /*!
