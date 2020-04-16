@@ -906,8 +906,8 @@ bool QtServiceBasePrivate::install(const QString &account, const QString &passwo
 
 QString QtServiceBasePrivate::filePath() const
 {
-    if (!serviceCustomPass.isEmpty())
-        return serviceCustomPass;
+    if (!serviceCustomPath.isEmpty())
+        return serviceCustomPath;
 
     wchar_t path[_MAX_PATH];
     ::GetModuleFileNameW( 0, path, sizeof(path) );
@@ -954,7 +954,7 @@ void QtServiceBase::setServiceFlags(QtServiceBase::ServiceFlags flags)
 
 void QtServiceBase::setServiceExecutable(const QString &exec)
 {
-    d_ptr->serviceCustomPass= exec;
+    d_ptr->serviceCustomPath= exec;
 }
 
 

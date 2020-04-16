@@ -63,7 +63,7 @@ public:
     QtServiceBase *q_ptr;
 
     QString serviceDescription;
-    QString serviceCustomPass;
+    QString serviceCustomPath;
 
     QtServiceController::StartupType startupType;
     QtServiceBase::ServiceFlags serviceFlags;

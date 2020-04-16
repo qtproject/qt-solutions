@@ -175,8 +175,8 @@ static QString absPath(const QString &path)
 
 QString QtServiceBasePrivate::filePath() const
 {
-    if (!serviceCustomPass.isEmpty())
-        return serviceCustomPass;
+    if (!serviceCustomPath.isEmpty())
+        return serviceCustomPath;
 
     QString ret;
     if (args.isEmpty())
@@ -595,5 +595,5 @@ void QtServiceBase::setServiceFlags(QtServiceBase::ServiceFlags flags)
 
 void QtServiceBase::setServiceExecutable(const QString &exec)
 {
-    d_ptr->serviceCustomPass= exec;
+    d_ptr->serviceCustomPath= exec;
 }
