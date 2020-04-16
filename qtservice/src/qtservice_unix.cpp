@@ -58,6 +58,43 @@
 #include <QMap>
 #include <QSettings>
 #include <QProcess>
+#include <QFile>
+
+static bool isServiceInited = false;
+
+static bool isSystemD()
+{
+    return QFileInfo::exists("/etc/systemd/");
+}
+
+static QString systemDPass()
+{
+    return "/etc/systemd/system/";
+}
+
+static void initService()
+{
+
+    if (isSystemD() && !isServiceInited)
+    {
+        QSettings::setPath(QSettings::NativeFormat,
+                           QSettings::SystemScope,
+                           systemDPass());
+        isServiceInited = true;
+    }
+}
+
+static QSettings& getSettings(const QString& serviceName)
+{
+    initService();
+
+    if (isSystemD()) {
+        static QSettings res(QSettings::SystemScope, serviceName);
+        return res;
+    }
+    static QSettings res(QSettings::SystemScope, serviceName);
+    return res;
+}
 
 static QString encodeName(const QString &name, bool allowUpper = false)
 {
@@ -138,6 +175,9 @@ static QString absPath(const QString &path)
 
 QString QtServiceBasePrivate::filePath() const
 {
+    if (!serviceCustomPass.isEmpty())
+        return serviceCustomPass;
+
     QString ret;
     if (args.isEmpty())
         return ret;
@@ -149,7 +189,7 @@ QString QtServiceBasePrivate::filePath() const
 
 QString QtServiceController::serviceDescription() const
 {
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+    auto &settings = getSettings(serviceName());
     settings.beginGroup("services");
     settings.beginGroup(serviceName());
 
@@ -163,7 +203,7 @@ QString QtServiceController::serviceDescription() const
 
 QtServiceController::StartupType QtServiceController::startupType() const
 {
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+    auto &settings = getSettings(serviceName());
     settings.beginGroup("services");
     settings.beginGroup(serviceName());
 
@@ -177,7 +217,7 @@ QtServiceController::StartupType QtServiceController::startupType() const
 
 QString QtServiceController::serviceFilePath() const
 {
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+    auto &settings = getSettings(serviceName());
     settings.beginGroup("services");
     settings.beginGroup(serviceName());
 
@@ -191,7 +231,23 @@ QString QtServiceController::serviceFilePath() const
 
 bool QtServiceController::uninstall()
 {
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+
+    if (isSystemD()) {
+        uninstallSysD(systemDPass() + serviceName() + ".service");
+    }
+
+    return uninstallUpStart();
+}
+
+bool QtServiceController::uninstallSysD(const QString &serviceFile)
+{
+    return QFile::remove(serviceFile);
+
+}
+
+bool QtServiceController::uninstallUpStart()
+{
+    auto &settings = getSettings(serviceName());
     settings.beginGroup("services");
 
     settings.remove(serviceName());
@@ -240,7 +296,12 @@ bool QtServiceController::sendCommand(int code)
 
 bool QtServiceController::isInstalled() const
 {
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+
+    if (isSystemD()) {
+        return QFileInfo::exists(systemDPass() + serviceName() + ".service");
+    }
+
+    auto &settings = getSettings(serviceName());
     settings.beginGroup("services");
 
     QStringList list = settings.childGroups();
@@ -297,7 +358,7 @@ private:
 };
 
 QtServiceSysPrivate::QtServiceSysPrivate()
-    : QtUnixServerSocket(), ident(0), serviceFlags(0)
+    : QtUnixServerSocket(), ident(nullptr), serviceFlags(nullptr)
 {
 }
 
@@ -321,7 +382,7 @@ void QtServiceSysPrivate::incomingConnection(int socketDescriptor)
 
 void QtServiceSysPrivate::slotReady()
 {
-    QTcpSocket *s = (QTcpSocket *)sender();
+    QTcpSocket *s = static_cast<QTcpSocket*>(sender());
     cache[s] += QString(s->readAll());
     QString cmd = getCommand(s);
     while (!cmd.isEmpty()) {
@@ -362,7 +423,7 @@ void QtServiceSysPrivate::slotReady()
 
 void QtServiceSysPrivate::slotClosed()
 {
-    QTcpSocket *s = (QTcpSocket *)sender();
+    QTcpSocket *s = static_cast<QTcpSocket *>(sender());
     s->deleteLater();
 }
 
@@ -400,7 +461,7 @@ void QtServiceBasePrivate::sysCleanup()
     if (sysd) {
         sysd->close();
         delete sysd;
-        sysd = 0;
+        sysd = nullptr;
     }
 }
 
@@ -418,9 +479,61 @@ bool QtServiceBasePrivate::start()
 
 bool QtServiceBasePrivate::install(const QString &account, const QString &password)
 {
+    if (isSystemD()) {
+        return installSysD(account, password);
+    }
+
+    return installUpStart(account, password);
+}
+
+bool QtServiceBasePrivate::installSysD(const QString &account, const QString &password)
+{
     Q_UNUSED(account)
     Q_UNUSED(password)
-    QSettings settings(QSettings::SystemScope, "QtSoftware");
+
+    auto &settings = getSettings(controller.serviceName());
+
+    settings.beginGroup("Unit");
+    settings.setValue("Description", serviceDescription);
+    settings.endGroup();
+
+    settings.beginGroup("Service");
+    settings.setValue("Type", "forking");
+    settings.setValue("User", "root");
+    settings.setValue("Group", "root");
+    settings.setValue("ExecStart", filePath());
+    settings.setValue("ExecStop", filePath() + " -t");
+    settings.endGroup();
+
+    settings.beginGroup("Timer");
+    settings.setValue("OnStartupSec", "60");
+
+    settings.endGroup();
+
+    settings.beginGroup("Install");
+    settings.setValue("WantedBy", "multi-user.target");
+    settings.endGroup();
+
+    settings.sync();
+
+    bool renamed = QFile(systemDPass() + controller.serviceName() + ".conf").rename(
+                systemDPass() + controller.serviceName() + ".service");
+
+    QSettings::Status ret = settings.status();
+    if (ret == QSettings::AccessError && renamed) {
+        fprintf(stderr, "Cannot install \"%s\". Cannot write to: %s. Check permissions.\n",
+                controller.serviceName().toLatin1().constData(),
+                settings.fileName().toLatin1().constData());
+    }
+    return (ret == QSettings::NoError);
+}
+
+bool QtServiceBasePrivate::installUpStart(const QString &account, const QString &password)
+{
+    Q_UNUSED(account)
+    Q_UNUSED(password)
+
+    auto &settings = getSettings(controller.serviceName());
 
     settings.beginGroup("services");
     settings.beginGroup(controller.serviceName());
@@ -480,3 +593,7 @@ void QtServiceBase::setServiceFlags(QtServiceBase::ServiceFlags flags)
         d_ptr->sysd->serviceFlags = flags;
 }
 
+void QtServiceBase::setServiceExecutable(const QString &exec)
+{
+    d_ptr->serviceCustomPass= exec;
+}
