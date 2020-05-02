@@ -129,6 +129,9 @@ public:
 
     QString serviceName() const;
 
+    QString displayName() const;
+    void setDisplayName(const QString &displayName);
+
     QString serviceDescription() const;
     void setServiceDescription(const QString &description);
 

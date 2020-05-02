@@ -65,6 +65,7 @@ public:
 
     QtServiceBase *q_ptr;
 
+    QString displayName;
     QString serviceDescription;
     QtServiceController::StartupType startupType;
     QtServiceBase::ServiceFlags serviceFlags;

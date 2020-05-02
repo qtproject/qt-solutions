@@ -711,6 +711,27 @@ QString QtServiceBase::serviceName() const
 }
 
 /*!
+    Returns the optional display name of the service.
+
+    \sa setDisplayName(), serviceName()
+*/
+QString QtServiceBase::displayName() const
+{
+    return d_ptr->displayName;
+}
+
+/*!
+    Sets the optional display name of the service. If left empty the display
+    name is equal to the service name.
+
+    \sa displayName(), serviceName()
+*/
+void QtServiceBase::setDisplayName(const QString &displayName)
+{
+    d_ptr->displayName = displayName;
+}
+
+/*!
     Returns the description of the service.
 
     \sa setServiceDescription(), serviceName()
