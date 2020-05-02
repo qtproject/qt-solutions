@@ -41,8 +41,11 @@
 #ifndef QTSERVICE_P_H
 #define QTSERVICE_P_H
 
-#include <QStringList>
 #include "qtservice.h"
+
+#include <QStringList>
+
+#include <vector>
 
 class QtServiceControllerPrivate
 {
@@ -66,6 +69,11 @@ public:
     QtServiceController::StartupType startupType;
     QtServiceBase::ServiceFlags serviceFlags;
     QStringList args;
+
+    std::vector<QtServiceBase::PreHook>  PreInstallHooks;
+    std::vector<QtServiceBase::PostHook> PostInstallHooks;
+    std::vector<QtServiceBase::PreHook > PreUninstallHooks;
+    std::vector<QtServiceBase::PostHook> PostUninstallHooks;
 
     static class QtServiceBase *instance;
 

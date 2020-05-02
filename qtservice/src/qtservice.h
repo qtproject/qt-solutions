@@ -43,6 +43,8 @@
 
 #include <QCoreApplication>
 
+#include <functional>
+
 #if defined(Q_OS_WIN)
 #  if !defined(QT_QTSERVICE_EXPORT) && !defined(QT_QTSERVICE_IMPORT)
 #    define QT_QTSERVICE_EXPORT
@@ -119,6 +121,9 @@ public:
 
     Q_DECLARE_FLAGS(ServiceFlags, ServiceFlag)
 
+    using PreHook  = std::function<bool()>;
+    using PostHook = std::function<void()>;
+
     QtServiceBase(int argc, char **argv, const QString &name);
     virtual ~QtServiceBase();
 
@@ -137,6 +142,11 @@ public:
 
     void logMessage(const QString &message, MessageType type = Success,
                 int id = 0, uint category = 0, const QByteArray &data = QByteArray());
+
+    void registerPreInstallHook(PreHook hook);
+    void registerPostInstallHook(PostHook hook);
+    void registerPreUninstallHook(PreHook hook);
+    void registerPostUninstallHook(PostHook hook);
 
     static QtServiceBase *instance();
 
