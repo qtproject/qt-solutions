@@ -862,6 +862,7 @@ bool QtServiceBasePrivate::install(const QString &account, const QString &passwo
     SC_HANDLE hSCM = pOpenSCManager(0, 0, SC_MANAGER_ALL_ACCESS);
     if (hSCM) {
         QString acc = account;
+        QString dis = displayName.isEmpty() ? controller.serviceName() : displayName;
         DWORD dwStartType = startupType == QtServiceController::AutoStartup ? SERVICE_AUTO_START : SERVICE_DEMAND_START;
         DWORD dwServiceType = SERVICE_WIN32_OWN_PROCESS;
         wchar_t *act = 0;
@@ -884,7 +885,7 @@ bool QtServiceBasePrivate::install(const QString &account, const QString &passwo
 
         // Create the service
         SC_HANDLE hService = pCreateService(hSCM, (wchar_t *)controller.serviceName().utf16(),
-                                            (wchar_t *)controller.serviceName().utf16(),
+                                            (wchar_t *)dis.utf16(),
                                             SERVICE_ALL_ACCESS,
                                             dwServiceType, // QObject::inherits ( const char * className ) for no inter active ????
                                             dwStartType, SERVICE_ERROR_NORMAL, (wchar_t *)filePath().utf16(),
