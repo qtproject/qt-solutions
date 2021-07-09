@@ -64,10 +64,10 @@ static bool isServiceInited = false;
 
 static bool isSystemD()
 {
-    return QFileInfo::exists("/etc/systemd/");
+    return QFileInfo::exists(systemDPath());
 }
 
-static QString systemDPass()
+static QString systemDPath()
 {
     return "/etc/systemd/system/";
 }
@@ -79,7 +79,7 @@ static void initService()
     {
         QSettings::setPath(QSettings::NativeFormat,
                            QSettings::SystemScope,
-                           systemDPass());
+                           systemDPath());
         isServiceInited = true;
     }
 }
@@ -233,7 +233,7 @@ bool QtServiceController::uninstall()
 {
 
     if (isSystemD()) {
-        uninstallSysD(systemDPass() + serviceName() + ".service");
+        uninstallSysD(systemDPath() + serviceName() + ".service");
     }
 
     return uninstallUpStart();
@@ -298,7 +298,7 @@ bool QtServiceController::isInstalled() const
 {
 
     if (isSystemD()) {
-        return QFileInfo::exists(systemDPass() + serviceName() + ".service");
+        return QFileInfo::exists(systemDPath() + serviceName() + ".service");
     }
 
     auto &settings = getSettings(serviceName());
@@ -516,8 +516,8 @@ bool QtServiceBasePrivate::installSysD(const QString &account, const QString &pa
 
     settings.sync();
 
-    bool renamed = QFile(systemDPass() + controller.serviceName() + ".conf").rename(
-                systemDPass() + controller.serviceName() + ".service");
+    bool renamed = QFile(systemDPath() + controller.serviceName() + ".conf").rename(
+                systemDPath() + controller.serviceName() + ".service");
 
     QSettings::Status ret = settings.status();
     if (ret == QSettings::AccessError && renamed) {
