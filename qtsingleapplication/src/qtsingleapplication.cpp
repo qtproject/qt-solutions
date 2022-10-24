@@ -286,9 +286,9 @@ QWidget* QtSingleApplication::activationWindow() const
 void QtSingleApplication::activateWindow()
 {
     if (actWin) {
-        actWin->setWindowState(actWin->windowState() & ~Qt::WindowMinimized);
-        actWin->raise();
+        actWin->setWindowFlags(Qt::Window);
         actWin->activateWindow();
+        actWin->show();
     }
 }
 
