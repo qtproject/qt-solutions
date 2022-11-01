@@ -399,7 +399,7 @@ private:
 QtServiceBase *QtServiceBasePrivate::instance = 0;
 
 QtServiceBasePrivate::QtServiceBasePrivate(const QString &name)
-    : startupType(QtServiceController::ManualStartup), serviceFlags(0), controller(name)
+    : startupType(QtServiceController::ManualStartup), controller(name)
 {
 
 }
@@ -587,6 +587,21 @@ int QtServiceBasePrivate::run(bool asService, const QStringList &argList)
 */
 
 /*!
+    \typedef QtServiceBase::PreHook
+
+    This typedef describes a hook, which can be executed before
+    (un-)installation. If the return value of the hook is false, the
+    action is canceled and no further hooks are called.
+*/
+
+/*!
+    \typedef QtServiceBase::PostHook
+
+    This typedef describes a hook, which can be executed after
+    (un-)installation.
+*/
+
+/*!
     Creates a service instance called \a name. The \a argc and \a argv
     parameters are parsed after the exec() function has been
     called. Then they are passed to the application's constructor.
@@ -626,7 +641,7 @@ QtServiceBase::QtServiceBase(int argc, char **argv, const QString &name)
     d_ptr = new QtServiceBasePrivate(nm);
     d_ptr->q_ptr = this;
 
-    d_ptr->serviceFlags = 0;
+    d_ptr->serviceFlags = {};
     d_ptr->sysd = 0;
     for (int i = 0; i < argc; ++i)
         d_ptr->args.append(QString::fromLocal8Bit(argv[i]));
@@ -656,6 +671,27 @@ QtServiceBase::~QtServiceBase()
 QString QtServiceBase::serviceName() const
 {
     return d_ptr->controller.serviceName();
+}
+
+/*!
+    Returns the optional display name of the service.
+
+    \sa setDisplayName(), serviceName()
+*/
+QString QtServiceBase::displayName() const
+{
+    return d_ptr->displayName;
+}
+
+/*!
+    Sets the optional display name of the service. If left empty the display
+    name is equal to the service name.
+
+    \sa displayName(), serviceName()
+*/
+void QtServiceBase::setDisplayName(const QString &displayName)
+{
+    d_ptr->displayName = displayName;
 }
 
 /*!
@@ -745,10 +781,25 @@ int QtServiceBase::exec()
                     account = d_ptr->args.at(2);
                 if (d_ptr->args.size() > 3)
                     password = d_ptr->args.at(3);
+
+                for (std::size_t i = 0; i < d_ptr->PreInstallHooks.size(); ++i)
+                {
+                    if (!d_ptr->PreInstallHooks[i]())
+                    {
+                        fprintf(stderr, "The service %s did not want to be installed, by hook %zu\n", serviceName().toLatin1().constData(), i);
+                        return -2;
+                    }
+                }
+
                 if (!d_ptr->install(account, password)) {
                     fprintf(stderr, "The service %s could not be installed\n", serviceName().toLatin1().constData());
                     return -1;
                 } else {
+                    for (auto& hook : d_ptr->PostInstallHooks)
+                    {
+                        hook();
+                    }
+
                     printf("The service %s has been installed under: %s\n",
                         serviceName().toLatin1().constData(), d_ptr->filePath().toLatin1().constData());
                 }
@@ -758,10 +809,24 @@ int QtServiceBase::exec()
             return 0;
         } else if (a == QLatin1String("-u") || a == QLatin1String("-uninstall")) {
             if (d_ptr->controller.isInstalled()) {
+                for (std::size_t i = 0; i < d_ptr->PreUninstallHooks.size(); ++i)
+                {
+                    if (!d_ptr->PreUninstallHooks[i]())
+                    {
+                        fprintf(stderr, "The service %s did not want to be uninstalled, by hook %zu\n", serviceName().toLatin1().constData(), i);
+                        return -2;
+                    }
+                }
+
                 if (!d_ptr->controller.uninstall()) {
                     fprintf(stderr, "The service %s could not be uninstalled\n", serviceName().toLatin1().constData());
                     return -1;
                 } else {
+                    for (auto& hook : d_ptr->PostUninstallHooks)
+                    {
+                        hook();
+                    }
+
                     printf("The service %s has been uninstalled.\n",
                         serviceName().toLatin1().constData());
                 }
@@ -845,6 +910,38 @@ int QtServiceBase::exec()
 
     \sa MessageType
 */
+
+/*!
+    Registers a pre install hook.
+*/
+void QtServiceBase::registerPreInstallHook(PreHook hook)
+{
+    d_ptr->PreInstallHooks.emplace_back(std::move(hook));
+}
+
+/*!
+    Registers a post install hook.
+*/
+void QtServiceBase::registerPostInstallHook(PostHook hook)
+{
+    d_ptr->PostInstallHooks.emplace_back(std::move(hook));
+}
+
+/*!
+    Registers a pre uninstall hook.
+*/
+void QtServiceBase::registerPreUninstallHook(PreHook hook)
+{
+    d_ptr->PreUninstallHooks.emplace_back(std::move(hook));
+}
+
+/*!
+    Registers a post uninstall hook.
+*/
+void QtServiceBase::registerPostUninstallHook(PostHook hook)
+{
+    d_ptr->PostUninstallHooks.emplace_back(std::move(hook));
+}
 
 /*!
     Returns a pointer to the current application's QtServiceBase
