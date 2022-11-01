@@ -2,7 +2,11 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 #include <QApplication>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QDesktopWidget>
+#else
+#include <QScreen>
+#endif
 #include <QLabel>
 #include <QDir>
 #include <QSettings>
@@ -40,17 +44,26 @@ InteractiveService::~InteractiveService()
 void InteractiveService::start()
 {
 #if defined(Q_OS_WIN)
-    if ((QSysInfo::WindowsVersion & QSysInfo::WV_NT_based) &&
-        (QSysInfo::WindowsVersion >= QSysInfo::WV_VISTA)) {
-        logMessage( "Service GUI not allowed on Windows Vista. See the documentation for this example for more information.", QtServiceBase::Error );
-        return;
-    }
+    #if QT_VERSION < QT_VERSION_CHECK(5, 4, 0)
+        if ((QSysInfo::WindowsVersion & QSysInfo::WV_NT_based) &&
+            (QSysInfo::WindowsVersion >= QSysInfo::WV_VISTA))
+    #else
+        if (QSysInfo::productVersion().toUInt() >= 8)
+    #endif
+        {
+            logMessage( "Service GUI not allowed on Windows Vista. See the documentation for this example for more information.", QtServiceBase::Error );
+            return;
+        }
 #endif
 
     qApp->setQuitOnLastWindowClosed(false);
 
     gui = new QLabel("Service", 0, Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     gui->move(QApplication::desktop()->availableGeometry().topLeft());
+#else
+    gui->move(QGuiApplication::primaryScreen()->availableGeometry().topLeft());
+#endif
     gui->show();
 }
 
