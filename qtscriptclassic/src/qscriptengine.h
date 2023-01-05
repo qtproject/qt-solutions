@@ -42,7 +42,7 @@ inline QScriptValue qscriptQMetaObjectConstructor(QScriptContext *, QScriptEngin
 #endif // QT_NO_QOBJECT
 
 #ifndef QT_NO_REGEXP
-class QRegExp;
+class QRegularExpression;
 #endif
 
 #ifndef QT_NO_MEMBER_TEMPLATES
@@ -152,7 +152,7 @@ public:
     QScriptValue newVariant(const QScriptValue &object, const QVariant &value);
 
 #ifndef QT_NO_REGEXP
-    QScriptValue newRegExp(const QRegExp &regexp);
+    QScriptValue newRegExp(const QRegularExpression &regexp);
 #endif
 
     QScriptValue newObject();

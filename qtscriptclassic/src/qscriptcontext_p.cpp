@@ -810,9 +810,9 @@ Ltop:
         }
 
 #ifndef QT_NO_REGEXP
-        QRegExp rx;
+        QRegularExpression rx;
         // lazy compilation of regexp literals
-        QHash<QString, QRegExp>::const_iterator it;
+        QHash<QString, QRegularExpression>::const_iterator it;
         it = eng->m_regExpLiterals.constFind(literal);
         if (it == eng->m_regExpLiterals.constEnd()) {
             rx = QScript::Ecma::RegExp::toRegExp(pattern, flags);

@@ -417,7 +417,7 @@ QScriptValue QScriptEngine::newFunction(QScriptEngine::FunctionSignature fun,
 
   \sa QScriptValue::toRegExp()
 */
-QScriptValue QScriptEngine::newRegExp(const QRegExp &regexp)
+QScriptValue QScriptEngine::newRegExp(const QRegularExpression &regexp)
 {
     Q_D(QScriptEngine);
     QScriptValueImpl v;

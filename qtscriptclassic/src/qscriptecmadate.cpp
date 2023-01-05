@@ -12,7 +12,7 @@
 #include "qscriptobject_p.h"
 
 #include <QDateTime>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QtDebug>
 #include <QLocale>
 #include <qnumeric.h>

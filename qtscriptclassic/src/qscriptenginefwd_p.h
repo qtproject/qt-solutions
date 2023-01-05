@@ -14,7 +14,7 @@
 
 #include <QHash>
 #include <QList>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QSet>
 #include <QStringList>
 #include <QTime>
@@ -488,7 +488,7 @@ public: // attributes
     QSet<QScriptObject*> visitedArrayElements;
 
 #ifndef QT_NO_REGEXP
-    QHash<QString, QRegExp> m_regExpLiterals;
+    QHash<QString, QRegularExpression> m_regExpLiterals;
 #endif
 
     QScript::IdTable m_id_table;

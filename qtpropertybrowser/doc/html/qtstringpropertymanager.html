@@ -24,7 +24,7 @@
 <table class="alignedsummary" border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#QtStringPropertyManager">QtStringPropertyManager</a></b> ( QObject * <i>parent</i> = 0 )</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"></td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#dtor.QtStringPropertyManager">~QtStringPropertyManager</a></b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QRegExp </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#regExp">regExp</a></b> ( const QtProperty * <i>property</i> ) const</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QRegularExpression </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#regExp">regExp</a></b> ( const QtProperty * <i>property</i> ) const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#value">value</a></b> ( const QtProperty * <i>property</i> ) const</td></tr>
 </table>
 <ul>
@@ -35,7 +35,7 @@
 <a name="public-slots"></a>
 <h2>Public Slots</h2>
 <table class="alignedsummary" border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#setRegExp">setRegExp</a></b> ( QtProperty * <i>property</i>, const QRegExp &amp; <i>regExp</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#setRegExp">setRegExp</a></b> ( QtProperty * <i>property</i>, const QRegularExpression &amp; <i>regExp</i> )</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#setValue">setValue</a></b> ( QtProperty * <i>property</i>, const QString &amp; <i>value</i> )</td></tr>
 </table>
 <ul>
@@ -45,7 +45,7 @@
 <a name="signals"></a>
 <h2>Signals</h2>
 <table class="alignedsummary" border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#regExpChanged">regExpChanged</a></b> ( QtProperty * <i>property</i>, const QRegExp &amp; <i>regExp</i> )</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#regExpChanged">regExpChanged</a></b> ( QtProperty * <i>property</i>, const QRegularExpression &amp; <i>regExp</i> )</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void </td><td class="memItemRight" valign="bottom"><b><a href="qtstringpropertymanager.html#valueChanged">valueChanged</a></b> ( QtProperty * <i>property</i>, const QString &amp; <i>value</i> )</td></tr>
 </table>
 <ul>
@@ -89,14 +89,14 @@
 <p>Destroys this manager, and all the properties it has created.</p>
 <h3 class="fn"><a name="initializeProperty"></a>void QtStringPropertyManager::initializeProperty ( <a href="qtproperty.html">QtProperty</a> * <i>property</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
 <p>Reimplemented from <a href="qtabstractpropertymanager.html#initializeProperty">QtAbstractPropertyManager::initializeProperty</a>().</p>
-<h3 class="fn"><a name="regExp"></a><a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> QtStringPropertyManager::regExp ( const <a href="qtproperty.html">QtProperty</a> * <i>property</i> ) const</h3>
+<h3 class="fn"><a name="regExp"></a><a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> QtStringPropertyManager::regExp ( const <a href="qtproperty.html">QtProperty</a> * <i>property</i> ) const</h3>
 <p>Returns the given <i>property</i>'s currently set regular expression.</p>
 <p>If the given <i>property</i> is not managed by this manager, this function returns an empty expression.</p>
 <p>See also <a href="qtstringpropertymanager.html#setRegExp">setRegExp</a>().</p>
-<h3 class="fn"><a name="regExpChanged"></a>void QtStringPropertyManager::regExpChanged ( <a href="qtproperty.html">QtProperty</a> * <i>property</i>, const <a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> &amp; <i>regExp</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<h3 class="fn"><a name="regExpChanged"></a>void QtStringPropertyManager::regExpChanged ( <a href="qtproperty.html">QtProperty</a> * <i>property</i>, const <a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> &amp; <i>regExp</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
 <p>This signal is emitted whenever a property created by this manager changes its currenlty set regular expression, passing a pointer to the <i>property</i> and the new <i>regExp</i> as parameters.</p>
 <p>See also <a href="qtstringpropertymanager.html#setRegExp">setRegExp</a>().</p>
-<h3 class="fn"><a name="setRegExp"></a>void QtStringPropertyManager::setRegExp ( <a href="qtproperty.html">QtProperty</a> * <i>property</i>, const <a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> &amp; <i>regExp</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="setRegExp"></a>void QtStringPropertyManager::setRegExp ( <a href="qtproperty.html">QtProperty</a> * <i>property</i>, const <a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> &amp; <i>regExp</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
 <p>Sets the regular expression of the given <i>property</i> to <i>regExp</i>.</p>
 <p>See also <a href="qtstringpropertymanager.html#regExp">regExp</a>(), <a href="qtstringpropertymanager.html#setValue">setValue</a>(), and <a href="qtstringpropertymanager.html#regExpChanged">regExpChanged</a>().</p>
 <h3 class="fn"><a name="setValue"></a>void QtStringPropertyManager::setValue ( <a href="qtproperty.html">QtProperty</a> * <i>property</i>, const <a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>

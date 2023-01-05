@@ -284,10 +284,10 @@ inline QDateTime QScriptValueImpl::toDateTime() const
 }
 
 #ifndef QT_NO_REGEXP
-inline QRegExp QScriptValueImpl::toRegExp() const
+inline QRegularExpression QScriptValueImpl::toRegExp() const
 {
     if (!isRegExp())
-        return QRegExp();
+        return QRegularExpression();
     return engine()->regexpConstructor->toRegExp(*this);
 }
 #endif // QT_NO_REGEXP

@@ -12,7 +12,7 @@
 #include "qscriptobject_p.h"
 
 #include <QStringList>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QtDebug>
 
 QT_BEGIN_NAMESPACE
@@ -110,7 +110,7 @@ void RegExp::execute(QScriptContextPrivate *context)
 void RegExp::newRegExp(QScriptValueImpl *result, const QString &pattern, int flags)
 {
 #ifndef QT_NO_REGEXP
-    QRegExp rx = toRegExp(pattern, flags);
+    QRegularExpression rx = toRegExp(pattern, flags);
     newRegExp_helper(result, rx, flags);
 #else
     engine()->newObject(result, publicPrototype, classInfo());
@@ -119,39 +119,39 @@ void RegExp::newRegExp(QScriptValueImpl *result, const QString &pattern, int fla
 }
 
 #ifndef QT_NO_REGEXP
-void RegExp::newRegExp(QScriptValueImpl *result, const QRegExp &rx, int flags)
+void RegExp::newRegExp(QScriptValueImpl *result, const QRegularExpression &rx, int flags)
 {
     Q_ASSERT(!(flags & IgnoreCase) || (rx.caseSensitivity() == Qt::CaseInsensitive));
     newRegExp_helper(result, rx, flags);
 }
 
-void RegExp::newRegExp_helper(QScriptValueImpl *result, const QRegExp &rx,
+void RegExp::newRegExp_helper(QScriptValueImpl *result, const QRegularExpression &rx,
                               int flags)
 {
     engine()->newObject(result, publicPrototype, classInfo());
     initRegExp(result, rx, flags);
 }
 
-QRegExp RegExp::toRegExp(const QScriptValueImpl &value) const
+QRegularExpression RegExp::toRegExp(const QScriptValueImpl &value) const
 {
     Instance *rx_data = Instance::get(value, classInfo());
     Q_ASSERT(rx_data != 0);
     return rx_data->value;
 }
 
-QRegExp RegExp::toRegExp(const QString &pattern, int flags)
+QRegularExpression RegExp::toRegExp(const QString &pattern, int flags)
 {
     bool ignoreCase = (flags & IgnoreCase) != 0;
-    return QRegExp(pattern,
+    return QRegularExpression(pattern,
                    (ignoreCase ? Qt::CaseInsensitive: Qt::CaseSensitive),
-                   QRegExp::RegExp2);
+                   QRegularExpression::RegExp2);
 }
 
 #endif // QT_NO_REGEXP
 
 void RegExp::initRegExp(QScriptValueImpl *result,
 #ifndef QT_NO_REGEXP
-                        const QRegExp &rx,
+                        const QRegularExpression &rx,
 #else
                         const QString &pattern,
 #endif

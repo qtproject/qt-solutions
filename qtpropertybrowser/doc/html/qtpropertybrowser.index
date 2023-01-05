@@ -187,24 +187,24 @@
             <function access="public" threadsafety="unspecified" status="commendable" name="value" fullname="QtStringPropertyManager::value" href="qtstringpropertymanager.html#value" location="qtpropertymanager.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QString" signature="value(const QtProperty * property) const">
                 <parameter left="const QtProperty *" right="" name="property" default=""/>
             </function>
-            <function access="public" threadsafety="unspecified" status="commendable" name="regExp" fullname="QtStringPropertyManager::regExp" href="qtstringpropertymanager.html#regExp" location="qtpropertymanager.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QRegExp" signature="regExp(const QtProperty * property) const">
+            <function access="public" threadsafety="unspecified" status="commendable" name="regExp" fullname="QtStringPropertyManager::regExp" href="qtstringpropertymanager.html#regExp" location="qtpropertymanager.h" virtual="non" meta="plain" const="true" static="false" overload="false" type="QRegularExpression" signature="regExp(const QtProperty * property) const">
                 <parameter left="const QtProperty *" right="" name="property" default=""/>
             </function>
             <function access="public" threadsafety="unspecified" status="commendable" name="setValue" fullname="QtStringPropertyManager::setValue" href="qtstringpropertymanager.html#setValue" location="qtpropertymanager.cpp" virtual="non" meta="slot" const="false" static="false" overload="false" type="void" signature="setValue(QtProperty * property, const QString &amp; value)">
                 <parameter left="QtProperty *" right="" name="property" default=""/>
                 <parameter left="const QString &amp;" right="" name="value" default=""/>
             </function>
-            <function access="public" threadsafety="unspecified" status="commendable" name="setRegExp" fullname="QtStringPropertyManager::setRegExp" href="qtstringpropertymanager.html#setRegExp" location="qtpropertymanager.h" virtual="non" meta="slot" const="false" static="false" overload="false" type="void" signature="setRegExp(QtProperty * property, const QRegExp &amp; regExp)">
+            <function access="public" threadsafety="unspecified" status="commendable" name="setRegExp" fullname="QtStringPropertyManager::setRegExp" href="qtstringpropertymanager.html#setRegExp" location="qtpropertymanager.h" virtual="non" meta="slot" const="false" static="false" overload="false" type="void" signature="setRegExp(QtProperty * property, const QRegularExpression &amp; regExp)">
                 <parameter left="QtProperty *" right="" name="property" default=""/>
-                <parameter left="const QRegExp &amp;" right="" name="regExp" default=""/>
+                <parameter left="const QRegularExpression &amp;" right="" name="regExp" default=""/>
             </function>
             <function access="public" threadsafety="unspecified" status="commendable" name="valueChanged" fullname="QtStringPropertyManager::valueChanged" href="qtstringpropertymanager.html#valueChanged" location="qtpropertymanager.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="valueChanged(QtProperty * property, const QString &amp; value)">
                 <parameter left="QtProperty *" right="" name="property" default=""/>
                 <parameter left="const QString &amp;" right="" name="value" default=""/>
             </function>
-            <function access="public" threadsafety="unspecified" status="commendable" name="regExpChanged" fullname="QtStringPropertyManager::regExpChanged" href="qtstringpropertymanager.html#regExpChanged" location="qtpropertymanager.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="regExpChanged(QtProperty * property, const QRegExp &amp; regExp)">
+            <function access="public" threadsafety="unspecified" status="commendable" name="regExpChanged" fullname="QtStringPropertyManager::regExpChanged" href="qtstringpropertymanager.html#regExpChanged" location="qtpropertymanager.h" virtual="non" meta="signal" const="false" static="false" overload="false" type="void" signature="regExpChanged(QtProperty * property, const QRegularExpression &amp; regExp)">
                 <parameter left="QtProperty *" right="" name="property" default=""/>
-                <parameter left="const QRegExp &amp;" right="" name="regExp" default=""/>
+                <parameter left="const QRegularExpression &amp;" right="" name="regExp" default=""/>
             </function>
             <function access="protected" threadsafety="unspecified" status="commendable" name="valueText" fullname="QtStringPropertyManager::valueText" href="qtstringpropertymanager.html#valueText" location="qtpropertymanager.h" virtual="impure" meta="plain" const="true" static="false" overload="false" type="QString" signature="valueText(const QtProperty * property) const">
                 <parameter left="const QtProperty *" right="" name="property" default=""/>

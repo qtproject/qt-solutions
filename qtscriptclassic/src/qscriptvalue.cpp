@@ -15,7 +15,7 @@
 #include "qscriptclass_p.h"
 
 #include <QDateTime>
-#include <QRegExp>
+#include <QRegularExpression>
 
 QT_BEGIN_NAMESPACE
 
@@ -917,17 +917,17 @@ QDateTime QScriptValue::toDateTime() const
 
 #ifndef QT_NO_REGEXP
 /*!
-  Returns the QRegExp representation of this value.
+  Returns the QRegularExpression representation of this value.
   If this QScriptValue is not a regular expression, an empty
-  QRegExp is returned.
+  QRegularExpression is returned.
 
   \sa isRegExp()
 */
-QRegExp QScriptValue::toRegExp() const
+QRegularExpression QScriptValue::toRegExp() const
 {
     Q_D(const QScriptValue);
     if (!d)
-        return QRegExp();
+        return QRegularExpression();
     return d->value.toRegExp();
 }
 #endif // QT_NO_REGEXP

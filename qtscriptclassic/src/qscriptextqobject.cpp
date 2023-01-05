@@ -16,7 +16,7 @@
 
 #include <QtDebug>
 #include <QMetaMethod>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QVarLengthArray>
 #include <QPointer>
 
@@ -485,7 +485,7 @@ static void callQtMethod(QScriptContextPrivate *context, QMetaMethod::MethodType
                     }
                 } else if (actual.isRegExp()) {
                     switch (tid) {
-                    case QMetaType::QRegExp:
+                    case QMetaType::QRegularExpression:
                         // perfect
                         break;
                     default:
@@ -1482,7 +1482,7 @@ QScriptValueImpl QScript::ExtQObject::method_findChildren(QScriptContextPrivate 
         QScriptValueImpl arg = context->argument(0);
 #ifndef QT_NO_REGEXP
         if (arg.isRegExp()) {
-            QRegExp re = arg.toRegExp();
+            QRegularExpression re = arg.toRegExp();
             found = qFindChildren<QObject*>(obj, re);
         } else
 #endif

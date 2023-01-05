@@ -26,7 +26,7 @@
 
 #include <QDate>
 #include <QDateTime>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QVariant>
 
@@ -1386,8 +1386,8 @@ QScriptValueImpl QScriptEnginePrivate::create(int type, const void *ptr)
             dateConstructor->newDate(&result, date);
         } break;
 #ifndef QT_NO_REGEXP
-        case QMetaType::QRegExp: {
-            QRegExp rx = *reinterpret_cast<const QRegExp *>(ptr);
+        case QMetaType::QRegularExpression: {
+            QRegularExpression rx = *reinterpret_cast<const QRegularExpression *>(ptr);
             regexpConstructor->newRegExp(&result, rx);
         } break;
 #endif
@@ -1508,9 +1508,9 @@ bool QScriptEnginePrivate::convert(const QScriptValueImpl &value,
             return true;
         } break;
 #ifndef QT_NO_REGEXP
-    case QMetaType::QRegExp:
+    case QMetaType::QRegularExpression:
         if (value.isRegExp()) {
-            *reinterpret_cast<QRegExp *>(ptr) = value.toRegExp();
+            *reinterpret_cast<QRegularExpression *>(ptr) = value.toRegExp();
             return true;
         } break;
 #endif

@@ -25,7 +25,7 @@ class QObject;
 struct QMetaObject;
 class QDateTime;
 #ifndef QT_NO_REGEXP
-class QRegExp;
+class QRegularExpression;
 #endif
 
 typedef QList<QScriptValue> QScriptValueList;
@@ -126,7 +126,7 @@ public:
     QScriptValue toObject() const;
     QDateTime toDateTime() const;
 #ifndef QT_NO_REGEXP
-    QRegExp toRegExp() const;
+    QRegularExpression toRegExp() const;
 #endif
 
     bool instanceOf(const QScriptValue &other) const;

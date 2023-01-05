@@ -64,7 +64,7 @@
          <span class="comment">// document back.</span>
          QTcpSocket* socket = (QTcpSocket*)sender();
          if (socket-&gt;canReadLine()) {
-             QStringList tokens = QString(socket-&gt;readLine()).split(QRegExp(&quot;[ \r\n][ \r\n]*&quot;));
+             QStringList tokens = QString(socket-&gt;readLine()).split(QRegularExpression(&quot;[ \r\n][ \r\n]*&quot;));
              if (tokens[0] == &quot;GET&quot;) {
                  QTextStream os(socket);
                  os.setAutoDetectUnicode(true);
