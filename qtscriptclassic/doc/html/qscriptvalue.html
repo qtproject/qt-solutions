@@ -93,7 +93,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">qsreal </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toNumber">toNumber</a></b> () const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const QMetaObject * </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toQMetaObject">toQMetaObject</a></b> () const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QObject * </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toQObject">toQObject</a></b> () const</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">QRegExp </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toRegExp">toRegExp</a></b> () const</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QRegularExpression </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toRegExp">toRegExp</a></b> () const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">QString </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toString">toString</a></b> () const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">quint16 </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toUInt16">toUInt16</a></b> () const</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">quint32 </td><td class="memItemRight" valign="bottom"><b><a href="qscriptvalue.html#toUInt32">toUInt32</a></b> () const</td></tr>
@@ -410,8 +410,8 @@
 <p>If this <a href="qscriptvalue.html">QScriptValue</a> is a <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a>, returns the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> pointer that the <a href="qscriptvalue.html">QScriptValue</a> represents; otherwise, returns 0.</p>
 <p>If the <a href="http://qt.nokia.com/doc/4.6/qobject.html">QObject</a> that this <a href="qscriptvalue.html">QScriptValue</a> wraps has been deleted, this function returns 0 (i.e&#x2e; it is possible for toQObject() to return 0 even when <a href="qscriptvalue.html#isQObject">isQObject</a>() returns true).</p>
 <p>See also <a href="qscriptvalue.html#isQObject">isQObject</a>().</p>
-<h3 class="fn"><a name="toRegExp"></a><a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> QScriptValue::toRegExp () const</h3>
-<p>Returns the <a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> representation of this value. If this <a href="qscriptvalue.html">QScriptValue</a> is not a regular expression, an empty <a href="http://qt.nokia.com/doc/4.6/qregexp.html">QRegExp</a> is returned.</p>
+<h3 class="fn"><a name="toRegExp"></a><a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> QScriptValue::toRegExp () const</h3>
+<p>Returns the <a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> representation of this value. If this <a href="qscriptvalue.html">QScriptValue</a> is not a regular expression, an empty <a href="http://qt.nokia.com/doc/4.6/QRegularExpression.html">QRegularExpression</a> is returned.</p>
 <p>See also <a href="qscriptvalue.html#isRegExp">isRegExp</a>().</p>
 <h3 class="fn"><a name="toString"></a><a href="http://qt.nokia.com/doc/4.6/qstring.html">QString</a> QScriptValue::toString () const</h3>
 <p>Returns the string value of this <a href="qscriptvalue.html">QScriptValue</a>, as defined in <a href="http://qt.nokia.com/doc/4.6/http-www-ecma-international-org-publications-standards-ecma-262-htm.html">ECMA-262</a> section 9.8, &quot;ToString&quot;.</p>

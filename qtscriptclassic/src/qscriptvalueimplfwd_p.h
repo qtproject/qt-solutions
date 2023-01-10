@@ -103,7 +103,7 @@ public:
     inline const QMetaObject *toQMetaObject() const;
     inline QDateTime toDateTime() const;
 #ifndef QT_NO_REGEXP
-    inline QRegExp toRegExp() const;
+    inline QRegularExpression toRegExp() const;
 #endif
 
     inline QVariant &variantValue() const;

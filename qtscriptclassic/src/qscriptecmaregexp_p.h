@@ -16,7 +16,7 @@
 // We mean it.
 //
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 
 #include "qscriptecmacore_p.h"
@@ -49,7 +49,7 @@ public:
 
     public: // attributes
 #ifndef QT_NO_REGEXP
-        QRegExp value;
+        QRegularExpression value;
 #else
         QString pattern;
 #endif
@@ -62,10 +62,10 @@ public:
     void newRegExp(QScriptValueImpl *result, const QString &pattern,
                    int flags);
 #ifndef QT_NO_REGEXP
-    void newRegExp(QScriptValueImpl *result, const QRegExp &rx,
+    void newRegExp(QScriptValueImpl *result, const QRegularExpression &rx,
                    int flags = 0);
-    QRegExp toRegExp(const QScriptValueImpl &value) const;
-    static QRegExp toRegExp(const QString &pattern, int flags);
+    QRegularExpression toRegExp(const QScriptValueImpl &value) const;
+    static QRegularExpression toRegExp(const QString &pattern, int flags);
 #endif
 
     static int flagFromChar(const QChar &ch);
@@ -84,12 +84,12 @@ protected:
 
 private:
 #ifndef QT_NO_REGEXP
-    void newRegExp_helper(QScriptValueImpl *result, const QRegExp &rx,
+    void newRegExp_helper(QScriptValueImpl *result, const QRegularExpression &rx,
                           int flags);
 #endif
     void initRegExp(QScriptValueImpl *result,
 #ifndef QT_NO_REGEXP
-                    const QRegExp &rx,
+                    const QRegularExpression &rx,
 #else
                     const QString &pattern,
 #endif
