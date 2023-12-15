@@ -10,6 +10,7 @@
 #include "qwinhost.h"
 
 #include <QEvent>
+#include <QScreen>
 #include <qt_windows.h>
 
 #if QT_VERSION >= 0x050000
@@ -270,7 +271,13 @@ void QWinHost::showEvent(QShowEvent *e)
     QWidget::showEvent(e);
 
     if (hwnd)
-	SetWindowPos(hwnd, HWND_TOP, 0, 0, width(), height(), SWP_SHOWWINDOW);
+    {
+        // High DPI Support
+        qreal dpr = this->screen()->devicePixelRatio();
+        qreal w = width() * dpr;
+        qreal h = height() * dpr;
+        SetWindowPos(hwnd, HWND_TOP, 0, 0, (int)w, (int)h, SWP_SHOWWINDOW);
+    }
 }
 
 /*!
@@ -292,7 +299,13 @@ void QWinHost::resizeEvent(QResizeEvent *e)
     QWidget::resizeEvent(e);
 
     if (hwnd)
-	SetWindowPos(hwnd, HWND_TOP, 0, 0, width(), height(), 0);
+    {
+        // High DPI Support
+        qreal dpr = this->screen()->devicePixelRatio();
+        qreal w = width() * dpr;
+        qreal h = height() * dpr;
+        SetWindowPos(hwnd, HWND_TOP, 0, 0, (int)w, (int)h, 0);
+    }
 }
 
 /*!
