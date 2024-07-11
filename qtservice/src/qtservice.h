@@ -22,7 +22,11 @@
 #  define QT_QTSERVICE_EXPORT
 #endif
 
+#if QT_VERSION >= 0x060000
+#include <QtCore/qcontainerfwd.h>
+#else
 class QStringList;
+#endif
 class QtServiceControllerPrivate;
 
 class QT_QTSERVICE_EXPORT QtServiceController
