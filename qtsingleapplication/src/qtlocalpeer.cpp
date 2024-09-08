@@ -5,7 +5,9 @@
 #include "qtlocalpeer.h"
 #include <QCoreApplication>
 #include <QDataStream>
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QRegularExpression>
+#endif
 #include <QTime>
 
 #if defined(Q_OS_WIN)
@@ -42,7 +44,11 @@ QtLocalPeer::QtLocalPeer(QObject* parent, const QString &appId)
 #endif
         prefix = id.section(QLatin1Char('/'), -1);
     }
+#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
     prefix.remove(QRegularExpression("[^a-zA-Z]"));
+#else
+    prefix.remove(QRegExp("[^a-zA-Z]"));
+#endif
     prefix.truncate(6);
 
     QByteArray idc = id.toUtf8();
@@ -71,7 +77,6 @@ QtLocalPeer::QtLocalPeer(QObject* parent, const QString &appId)
     lockFile.setFileName(lockName);
     lockFile.open(QIODevice::ReadWrite);
 }
-
 
 
 bool QtLocalPeer::isClient()
